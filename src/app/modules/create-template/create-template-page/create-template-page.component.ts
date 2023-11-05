@@ -14,13 +14,30 @@ export class CreateTemplatePageComponent implements OnInit {
   public selectedContestants: Array<TestContestant> = [];
 
   constructor(
-    private omdbApiService: OMDbApiService, 
+    private omdbApiService: OMDbApiService,
     private contestantService: ContestantService) { }
 
   ngOnInit(): void {
     // testing init
-    this.omdbApiService.getContestants('Star Wars', 'series')
+    this.omdbApiService.getContestants('Star Wars', 'movie')
       .then((contestants) => { this.contestants = contestants })
+  }
+
+  public showContestants() {
+    console.log(this.contestants);
+  }
+
+  public testingPurposes() {
+    this.contestants.forEach(contestant => {
+      this.contestantService.postContestant(contestant).subscribe({
+        next: stuff => {
+          /* console.log(stuff); */
+        },
+        error: err => {
+          console.log(err);
+        }
+      });
+    })
   }
 
   public removeContestant(contestant: TestContestant) {

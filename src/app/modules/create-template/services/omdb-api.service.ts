@@ -11,7 +11,7 @@ export class OMDbApiService {
   private baseUrl: string = "https://www.omdbapi.com";
   /* private seriesUrl: string = "type=series";
   private moviesUrl: string = "type=movie"; */
-  private notAnEnvironmentApiKey: string = "I-C-U";
+  private notAnEnvironmentApiKey: string = "4c1747e7";// "I-C-U";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -47,11 +47,13 @@ export class OMDbApiService {
                   author: ''
                 };
                 contestants.push(contestant);
+                // resolve aca
               })
             },
             error: (err) => {
               apiOk = false;
               console.log(err);
+              // reject aca
             }
           });
       } // unsubscribe?

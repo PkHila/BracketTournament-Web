@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { TestContestant } from 'src/app/core/models';
 
 @Injectable({
@@ -7,12 +8,12 @@ import { TestContestant } from 'src/app/core/models';
 })
 export class ContestantService {
 
-  private baseUrl: string = "http://localhost:3000"
+  private baseUrl: string = "http://localhost:3000";
 
   constructor(private httpClient: HttpClient) { }
 
-  public postContestant(contestant: TestContestant) {
-    this.httpClient.post<TestContestant>(`${this.baseUrl}/contestants`, contestant);
+  public postContestant(contestant: TestContestant): Observable<TestContestant> {
+    return this.httpClient.post<TestContestant>(`${this.baseUrl}/contestants`, contestant);
   }
 
   public addContestant(contestant: TestContestant, selectedContestants: TestContestant[]) {
