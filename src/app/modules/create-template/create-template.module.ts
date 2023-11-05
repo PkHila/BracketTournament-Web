@@ -6,6 +6,7 @@ import { ContestantCardSmallComponent } from './contestant-card-small/contestant
 import { ApiSearchResultsComponent } from './api-search-results/api-search-results.component';
 import { ContestantListItemComponent } from './contestant-list-item/contestant-list-item.component';
 import { SelectedContestantListComponent } from './selected-contestant-list/selected-contestant-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SelectedContestantListComponent } from './selected-contestant-list/sele
   ],
   imports: [
     CommonModule,
-    CreateTemplateRoutingModule
+    CreateTemplateRoutingModule,
+    HttpClientModule
   ]
 })
 export class CreateTemplateModule { }
