@@ -1,0 +1,21 @@
+.contestant-card-small{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items:  center;
+    padding: 1rem;
+}
+.cover-img{
+    width: 10rem;
+}
+
+.card-name{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.card-info{
+    color: rgb(189, 189, 189);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}

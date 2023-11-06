@@ -1,0 +1,15 @@
+.selected-contestants-list {
+
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    overflow-y: scroll;
+    gap: 10px; /*hacer relativo despues*/
+
+    /*estilo separado de los campos de flexbox*/
+    height:inherit; /*creo que esto es efectivo (?*/
+    background-color: #20b2aa;
+}
