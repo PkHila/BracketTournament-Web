@@ -1,0 +1,30 @@
+body{
+    width: 100vw; /*esto es un porcentaje? es la unidad adecuada?*/
+    height: 100vh;
+    overflow: hidden; /*para que no trate de scrollear*/
+    padding: 10px;
+
+    background: conic-gradient(
+        from 84deg at -6% -19%,
+        rgba(37, 87, 122, 1) 16deg,
+        rgba(59, 168, 164, 1) 38deg,
+        rgba(87, 204, 153, 1) 52deg,
+        rgba(128, 237, 153, 1) 71deg,
+        rgba(199, 249, 204, 1) 86deg
+    );
+    background-blend-mode: normal;
+}
+
+.createTemplate-view{
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 10px; /*hacer relativo despues*/
+
+    /*otros*/
+    height:95vh; /*no se si es la unidad adecuada*/
+    width:95vw;
+    
+}

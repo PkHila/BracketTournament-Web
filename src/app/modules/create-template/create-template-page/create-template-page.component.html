@@ -1,7 +1,12 @@
-<app-api-search-results [contestants]="contestants" 
-(addContestant)="addContestant($event)">
-</app-api-search-results>
-
-<app-selected-contestant-list [selectedContestants]="selectedContestants" 
-(removeContestant)="removeContestant($event)">
-</app-selected-contestant-list>
+<body>
+    <section class="createTemplate-view">
+        <app-api-search-results [contestants]="contestants" 
+        (addContestant)="addContestant($event)">
+        </app-api-search-results>
+    
+        <app-selected-contestant-list [selectedContestants]="selectedContestants" 
+        (removeContestant)="removeContestant($event)">
+    </app-selected-contestant-list>
+    
+    </section>
+</body>
