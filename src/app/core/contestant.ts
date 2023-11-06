@@ -1,5 +1,5 @@
 export interface Contestant {
-    id: number;
+    id?: number;
     name: string;
     img: string;
     date: string;
