@@ -1,6 +1,7 @@
 .selected-contestants-list {
 
     display: inline-flex;
+    flex-grow: 0.5;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -12,4 +13,5 @@
     /*estilo separado de los campos de flexbox*/
     height:inherit; /*creo que esto es efectivo (?*/
     background-color: #20b2aa;
+    padding-top: 1rem;
 }

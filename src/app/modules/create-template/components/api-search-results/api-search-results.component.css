@@ -7,9 +7,10 @@
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: space-evenly;
-    overflow-y: scroll;
 
     /*otros*/
     background-color: lightseagreen;
     height:inherit; /*creo que esto es efectivo (?*/
+    overflow-y: scroll;
+    border-radius: 1rem;
 }

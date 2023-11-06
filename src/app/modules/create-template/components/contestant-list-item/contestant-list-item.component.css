@@ -2,7 +2,7 @@
     display: grid;
     text-align: center;
     margin: 5px; /*hacer relativo despues*/
-    grid-template-columns: 0.7fr 1.3fr;
+    grid-template-columns: 120px 1.3fr;
     grid-template-rows: 0.2fr 0.2fr;
     gap: 0px 0px;
     grid-auto-flow: row;
@@ -19,11 +19,13 @@
 }
 
 .cover-img > img{ 
-    max-width: 10vw;
-    min-height: 50px;
-    max-height: 20vh;
+    height: 100%;
+    width: 100%;
     display: block;
     margin: auto;
+    border-radius: 1rem;
+    object-fit: contain;
+    overflow: hidden;
 }
     
   
