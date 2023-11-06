@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TestContestant } from 'src/app/core/models';
 import { OMDbApiService } from '../services/omdb-api.service';
 import { ContestantService } from '../services/contestant.service';
+import { Contestant } from 'src/app/core/interfaces';
 
 @Component({
   selector: 'app-create-template-page',
@@ -10,8 +10,8 @@ import { ContestantService } from '../services/contestant.service';
 })
 export class CreateTemplatePageComponent implements OnInit {
 
-  public contestants: Array<TestContestant> = [];
-  public selectedContestants: Array<TestContestant> = [];
+  public contestants: Array<Contestant> = [];
+  public selectedContestants: Array<Contestant> = [];
 
   constructor(
     private omdbApiService: OMDbApiService,
@@ -40,10 +40,10 @@ export class CreateTemplatePageComponent implements OnInit {
     })
   }
 
-  public removeContestant(contestant: TestContestant) {
+  public removeContestant(contestant: Contestant) {
     this.contestantService.removeContestant(contestant, this.selectedContestants);
   }
-  public addContestant(contestant: TestContestant) {
+  public addContestant(contestant: Contestant) {
     this.contestantService.addContestant(contestant, this.selectedContestants);
   }
 
