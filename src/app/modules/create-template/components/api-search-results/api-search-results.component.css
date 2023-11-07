@@ -1,0 +1,16 @@
+.api-search-results{
+    flex-basis: 720px;  /*no entiendo como usar esto y no funciona como quiero*/ 
+    flex-grow: 0.75;    /*no entiendo como usar esto y no funciona como quiero*/ 
+    flex-shrink: 0.5;   /*no entiendo como usar esto y no funciona como quiero*/ 
+    display: flex; /*por ahí mas tarde se convierte en un flex o grid*/
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+
+    /*otros*/
+    background-color: rgb(31, 178, 170, 0.5);
+    height:95vh;
+    overflow-y: scroll;
+    border-radius: 1rem;
+}

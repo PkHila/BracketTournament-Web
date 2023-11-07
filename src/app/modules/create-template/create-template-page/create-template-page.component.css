@@ -1,0 +1,13 @@
+.createTemplate-view{
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 10px; /*hacer relativo despues*/
+
+    /*otros*/
+    height:95vh; /*no se si es la unidad adecuada*/
+    width:95vw;
+    
+}

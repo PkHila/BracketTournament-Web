@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Contestant } from 'src/app/core/contestant';
 
 @Component({
   selector: 'app-contestant-card-small',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./contestant-card-small.component.css']
 })
 export class ContestantCardSmallComponent {
-
+  @Input() contestant: Contestant ={
+    name:"",
+    img: "",
+    date: "",
+    author: ""
+  }
 }
