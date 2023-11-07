@@ -9,6 +9,7 @@
     grid-template-areas:
       "portada titulo"
       "portada info";
+      margin-top: 1.2rem;
   }
   
 .cover-img {
