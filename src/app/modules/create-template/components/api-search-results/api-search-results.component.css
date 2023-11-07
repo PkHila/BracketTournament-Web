@@ -9,8 +9,8 @@
     justify-content: space-evenly;
 
     /*otros*/
-    background-color: lightseagreen;
-    height:inherit; /*creo que esto es efectivo (?*/
+    background-color: rgb(31, 178, 170, 0.5);
+    height:95vh;
     overflow-y: scroll;
     border-radius: 1rem;
 }

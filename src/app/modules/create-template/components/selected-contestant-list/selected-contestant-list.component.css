@@ -11,7 +11,9 @@
     gap: 10px; /*hacer relativo despues*/
 
     /*estilo separado de los campos de flexbox*/
-    height:inherit; /*creo que esto es efectivo (?*/
-    background-color: #20b2aa;
-    padding-top: 1rem;
+    height:95vh; /*creo que esto es efectivo (?*/
+    width: 25vw;
+    background-color:  rgba(154, 185, 163, 0.5);;
+    margin: 0;
+    
 }
