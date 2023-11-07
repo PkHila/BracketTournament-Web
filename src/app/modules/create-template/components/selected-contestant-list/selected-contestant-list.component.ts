@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { TestContestant } from 'src/app/core/models';
+import { Contestant } from 'src/app/core/interfaces';
 
 @Component({
   selector: 'app-selected-contestant-list',
@@ -8,7 +8,7 @@ import { TestContestant } from 'src/app/core/models';
 })
 export class SelectedContestantListComponent {
 
-  @Input() selectedContestants: Array<TestContestant> = [];
-  @Output() removeContestant: EventEmitter<TestContestant> = new EventEmitter();
+  @Input() selectedContestants: Array<Contestant> = [];
+  @Output() removeContestant: EventEmitter<Contestant> = new EventEmitter();
 
 }

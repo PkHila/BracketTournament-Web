@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { TestContestant } from 'src/app/core/models';
+import { Contestant } from 'src/app/core/interfaces';
 
 @Component({
   selector: 'app-api-search-results',
@@ -8,7 +8,7 @@ import { TestContestant } from 'src/app/core/models';
 })
 export class ApiSearchResultsComponent {
 
-  @Input() contestants: Array<TestContestant> = [];
-  @Output() addContestant: EventEmitter<TestContestant> = new EventEmitter();
+  @Input() contestants: Array<Contestant> = [];
+  @Output() addContestant: EventEmitter<Contestant> = new EventEmitter();
 
 }
