@@ -27,37 +27,20 @@ export class OMDbApiService {
   public getContestants(query: string, type: string): Observable<Contestant[]> {
     const searchUrl: string = `${this.baseUrl}/?s=${query.toLocaleLowerCase()}&apikey=${environment.omdbApiKey}&type=${type}`;
 
-    return this.httpClient.get<OMDbResponse>(searchUrl).pipe<OMDbSearchResult[]>(
-      map(response => {
-        return response.Search
-      })).pipe<Contestant[]>(map(asdsad => {}))
-      )
-
-
-    const contestants: Array<Contestant> = JSON.parse(sessionStorage.getItem(searchUrl) || '[]');
-    if (contestants.length === 0) {
-
-      this.httpClient.get<OMDbResponse>(searchUrl)
-        .subscribe({
-          next: (response) => {
-            response.Search.forEach(result => {
-              const contestant: Contestant = {
-                name: result.Title,
-                img: result.Poster,
-                date: result.Year,
-                author: ''
-              };
-              contestants.push(contestant);
-            })
-
-          },
-          error: (err) => {
-            console.log('algo malió sal')
-            // asi no hay que envolver en un try catch 
-            // aunque tal vez sea mejor ya que si nos encontramos con un error en la API no depende de nosotros
-          }
-        });
-    }
-  });
-}
+    return this.httpClient.get<OMDbResponse>(searchUrl)
+      .pipe<OMDbSearchResult[]>(
+        map(response => {
+          return response.Search
+        }))
+      .pipe<Contestant[]>(
+        map(results => {
+          const contestants = results.map(result => <Contestant>{
+            name: result.Title,
+            img: result.Poster,
+            date: result.Year,
+            author: ''
+          })
+          return contestants;
+        }))
+  }
 }
