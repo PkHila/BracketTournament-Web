@@ -5,12 +5,12 @@
     display: flex; /*por ahí mas tarde se convierte en un flex o grid*/
     flex-direction: row;
     flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: space-evenly;
+    padding-left: 3rem;
+    overflow-y: scroll;
+    border-radius: 1rem;
 
     /*otros*/
     background-color: rgb(31, 178, 170, 0.5);
     height:95vh;
-    overflow-y: scroll;
-    border-radius: 1rem;
+    width: 55vw;
 }

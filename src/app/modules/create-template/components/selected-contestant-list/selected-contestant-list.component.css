@@ -1,7 +1,7 @@
 .selected-contestants-list {
 
-    display: inline-flex;
     flex-grow: 0.5;
+    display: inline-flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -12,8 +12,8 @@
 
     /*estilo separado de los campos de flexbox*/
     height:95vh; /*creo que esto es efectivo (?*/
-    width: 25vw;
-    background-color:  rgba(154, 185, 163, 0.5);;
+    width: 30vw;
+    background-color:  rgba(154, 185, 163, 0.5);
     margin: 0;
     
 }
