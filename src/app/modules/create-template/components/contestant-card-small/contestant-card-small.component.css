@@ -8,6 +8,7 @@
 .cover-img{
     width: 10rem;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 .card-name{

@@ -8,7 +8,11 @@ import { Contestant } from 'src/app/core/interfaces';
 })
 export class SelectedContestantListComponent {
 
-  @Input() selectedContestants: Array<Contestant> = [];
+  @Input() selectedContestants!: Array<Contestant>;
   @Output() removeContestant: EventEmitter<Contestant> = new EventEmitter();
+
+  public onRemoveContestant (selectedContestant: Contestant): void {
+    this.removeContestant.emit(selectedContestant);
+  }
 
 }

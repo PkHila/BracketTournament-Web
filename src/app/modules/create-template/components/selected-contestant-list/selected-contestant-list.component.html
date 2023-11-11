@@ -1,3 +1,4 @@
 <section class="selected-contestants-list">
-    <app-contestant-list-item *ngFor="let content of selectedContestants"></app-contestant-list-item>
+    <app-contestant-list-item *ngFor="let constestant of selectedContestants" [contestant]="constestant"
+        (selectContestant)="onRemoveContestant($event)"></app-contestant-list-item>
 </section>

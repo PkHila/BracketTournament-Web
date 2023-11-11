@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Contestant } from 'src/app/core/contestant';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Contestant } from 'src/app/core/interfaces';
 
 @Component({
   selector: 'app-contestant-list-item',
@@ -7,10 +7,10 @@ import { Contestant } from 'src/app/core/contestant';
   styleUrls: ['./contestant-list-item.component.css']
 })
 export class ContestantListItemComponent {
-  @Input() contestant: Contestant ={
-    name:"",
-    img: "",
-    date: "",
-    author: ""
+  @Input() contestant!: Contestant;
+  @Output() selectContestant = new EventEmitter<Contestant>();
+
+  public onImageClick(): void {
+    this.selectContestant.emit(this.contestant);
   }
 }
