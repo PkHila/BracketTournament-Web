@@ -36,5 +36,4 @@ export class CreateTemplatePageComponent implements OnInit {
   public onRemoveContestant(selectedContestant: Contestant) {
     this.contestantService.removeContestant(selectedContestant, this.selectedContestants);
   }
-
 }
