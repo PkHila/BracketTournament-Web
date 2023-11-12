@@ -10,7 +10,7 @@ import { Contestant } from 'src/app/core/interfaces';
 })
 export class CreateTemplatePageComponent implements OnInit {
 
-  public contestants?: Array<Contestant>;
+  public contestants: Array<Contestant> = [];
   public selectedContestants: Array<Contestant> = [];
 
   constructor(
@@ -36,4 +36,5 @@ export class CreateTemplatePageComponent implements OnInit {
   public onRemoveContestant(selectedContestant: Contestant) {
     this.contestantService.removeContestant(selectedContestant, this.selectedContestants);
   }
+
 }
