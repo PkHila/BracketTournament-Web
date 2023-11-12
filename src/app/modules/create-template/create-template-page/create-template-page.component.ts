@@ -24,14 +24,10 @@ export class CreateTemplatePageComponent implements OnInit {
   }
 
   public onContestantSelected(selectedContestant: Contestant): void {
-    this.selectedContestants.push(selectedContestant);
+    this.contestantService.addContestant(selectedContestant, this.selectedContestants);
   }
 
-  public onRemoveContestant(contestant: Contestant) {
-    /* feature disabled for unintended cascade deletion */
-    /* this.contestantService.removeContestant(contestant, this.selectedContestants); */
-    console.log("feature disabled");
-    
+  public onRemoveContestant(selectedContestant: Contestant) {
+    this.contestantService.removeContestant(selectedContestant, this.selectedContestants);
   }
-
 }
