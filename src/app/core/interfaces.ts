@@ -8,7 +8,7 @@ export interface Contestant {
 
 export interface Template {
     id?: number;
-    contestantIds: Array<number>;
+    contestantIds: Array<Contestant> | Array<number>;
 }
 
 export interface PlayedTournament {
