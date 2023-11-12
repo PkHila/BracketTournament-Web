@@ -17,11 +17,12 @@ export class ContestantService {
   }
 
   public addContestant(contestant: Contestant, selectedContestants: Contestant[]) {
-    selectedContestants.push(contestant);
+    if (!selectedContestants.includes(contestant)) {
+      selectedContestants.push(contestant);
+    }
   }
 
   public removeContestant(contestant: Contestant, selectedContestants: Contestant[]) {
-    // tal vez necesita mas proteccion
-    selectedContestants.splice(selectedContestants.indexOf(contestant));
+    selectedContestants.splice(selectedContestants.indexOf(contestant), 1);
   }
 }

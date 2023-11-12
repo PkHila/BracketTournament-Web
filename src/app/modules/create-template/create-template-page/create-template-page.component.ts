@@ -10,7 +10,7 @@ import { Contestant } from 'src/app/core/interfaces';
 })
 export class CreateTemplatePageComponent implements OnInit {
 
-  public contestants: Array<Contestant> = [];
+  public contestants?: Array<Contestant>;
   public selectedContestants: Array<Contestant> = [];
 
   constructor(
@@ -29,28 +29,11 @@ export class CreateTemplatePageComponent implements OnInit {
     })
   }
 
-  public showContestants() {
-    console.log(this.contestants);
+  public onContestantSelected(selectedContestant: Contestant): void {
+    this.contestantService.addContestant(selectedContestant, this.selectedContestants);
   }
 
-  /* public testingPurposes() {
-    this.contestants.forEach(contestant => {
-      this.contestantService.postContestant(contestant).subscribe({
-        next: stuff => {
-          console.log(stuff);
-        },
-        error: err => {
-          console.log(err);
-        }
-      });
-    })
-  } */
-
-  public removeContestant(contestant: Contestant) {
-    this.contestantService.removeContestant(contestant, this.selectedContestants);
+  public onRemoveContestant(selectedContestant: Contestant) {
+    this.contestantService.removeContestant(selectedContestant, this.selectedContestants);
   }
-  public addContestant(contestant: Contestant) {
-    this.contestantService.addContestant(contestant, this.selectedContestants);
-  }
-
 }

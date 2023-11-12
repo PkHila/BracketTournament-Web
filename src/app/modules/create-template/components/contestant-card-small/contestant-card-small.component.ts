@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Contestant } from 'src/app/core/interfaces';
 
 @Component({
@@ -7,10 +7,10 @@ import { Contestant } from 'src/app/core/interfaces';
   styleUrls: ['./contestant-card-small.component.css']
 })
 export class ContestantCardSmallComponent {
-  @Input() contestant: Contestant ={
-    name:"",
-    img: "",
-    date: "",
-    author: ""
+  @Input() contestant!: Contestant;
+  @Output() selectContestant = new EventEmitter<Contestant>();
+
+  public onImageClick(): void {
+    this.selectContestant.emit(this.contestant);
   }
 }

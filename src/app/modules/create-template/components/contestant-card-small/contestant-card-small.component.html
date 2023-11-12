@@ -1,5 +1,5 @@
 <section class="contestant-card-small">
-    <img class="cover-img" src={{contestant.img}} alt="Cover Image"><br>
+    <img class="cover-img" src={{contestant.img}} alt="Cover Image" (click)="onImageClick()"><br>
     <p class="card-name">{{contestant.name}}</p>
-    <p class="card-info">{{contestant.date}}<br> {{contestant.author}}</p>
+    <p class="card-info">{{contestant.date}} <br> {{contestant.author}}</p>
 </section>

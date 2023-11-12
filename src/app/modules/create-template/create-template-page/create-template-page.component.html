@@ -1,11 +1,10 @@
 <section class="createTemplate-view">
-    <app-api-search-results [contestants]="contestants" (addContestant)="addContestant($event)">
+    <app-api-search-results *ngIf="contestants" [contestants]="contestants"
+    (addContestant)="onContestantSelected($event)">
     </app-api-search-results>
 
     <app-selected-contestant-list [selectedContestants]="selectedContestants"
-        (removeContestant)="removeContestant($event)">
+        (removeContestant)="onRemoveContestant($event)">
     </app-selected-contestant-list>
 
 </section>
-<!-- <button (click)="testingPurposes()">Testing Purposes</button> -->
-<!-- <button (click)="showContestants()">Show</button> -->
