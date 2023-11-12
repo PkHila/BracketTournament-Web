@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OMDbApiService } from '../services/omdb-api.service';
 import { ContestantService } from '../services/contestant.service';
 import { Contestant } from 'src/app/core/interfaces';
@@ -12,6 +12,7 @@ export class CreateTemplatePageComponent implements OnInit {
 
   public contestants?: Array<Contestant>;
   public selectedContestants: Array<Contestant> = [];
+  @Input() category!: string;
 
   constructor(
     private omdbApiService: OMDbApiService,
@@ -33,7 +34,18 @@ export class CreateTemplatePageComponent implements OnInit {
     this.contestantService.addContestant(selectedContestant, this.selectedContestants);
   }
 
-  public onRemoveContestant(selectedContestant: Contestant) {
+  public onRemoveContestant(selectedContestant: Contestant): void {
     this.contestantService.removeContestant(selectedContestant, this.selectedContestants);
+  }
+
+  public onSearch(searchTerm: string): void {
+    this.omdbApiService.getContestants(searchTerm, this.category).subscribe({
+      next: (contestants) => {
+        this.contestants = contestants
+      },
+      error: () => {
+        console.log("error");        
+      }
+    })
   }
 }

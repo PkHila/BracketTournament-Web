@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angul
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchBarComponent {
-  public searchTerm: string = ''
+  public searchTerm: string = '';
   @Output() search = new EventEmitter<string>;
 
   public onSearch () {
