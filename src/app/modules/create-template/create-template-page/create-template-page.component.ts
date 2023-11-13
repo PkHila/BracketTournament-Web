@@ -11,7 +11,7 @@ import { Contestant } from 'src/app/core/interfaces';
 export class CreateTemplatePageComponent implements OnInit {
 
   public contestants?: Array<Contestant>;
-  public selectedContestants: Array<Contestant> = [];
+  public selectedContestants: Array<Contestant> = []; // usar un validador asincronico para validar la no repeticion de nombres de plantillas
   @Input() category!: string;
 
   constructor(
@@ -20,12 +20,13 @@ export class CreateTemplatePageComponent implements OnInit {
 
   ngOnInit(): void {
     // testing init
+    this.category = 'movie'
     this.omdbApiService.getContestants('Star Wars', 'movie').subscribe({
       next: (contestants) => {
         this.contestants = contestants
       },
       error: () => {
-        console.log("error");        
+        console.log("error");
       }
     })
   }
@@ -44,7 +45,7 @@ export class CreateTemplatePageComponent implements OnInit {
         this.contestants = contestants
       },
       error: () => {
-        console.log("error");        
+        console.log("error");
       }
     })
   }

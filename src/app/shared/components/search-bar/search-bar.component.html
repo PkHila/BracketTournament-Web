@@ -1,6 +1,6 @@
 <section>
-    <form>
-        <input type="text">
-        <input type="submit" value="?">
+    <form [formGroup]="form" (ngSubmit)="onSearch()">
+        <input type="text" formControlName="searchTerm">
+        <input type="submit" [disabled]="!form.valid" value="?">
     </form>
 </section>

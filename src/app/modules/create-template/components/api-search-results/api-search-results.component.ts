@@ -10,8 +10,13 @@ export class ApiSearchResultsComponent {
 
   @Input() contestants!: Array<Contestant>;
   @Output() addContestant: EventEmitter<Contestant> = new EventEmitter();
+  @Output() search: EventEmitter<string> = new EventEmitter();
 
   public onContestantSelected (selectedContestant: Contestant): void {
     this.addContestant.emit(selectedContestant);
+  }
+
+  public onSearch (searchTerm: string): void {
+    this.search.emit(searchTerm);
   }
 }

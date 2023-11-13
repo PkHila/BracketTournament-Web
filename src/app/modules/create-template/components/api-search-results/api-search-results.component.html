@@ -1,4 +1,5 @@
 <section class="api-search-results">
+    <app-search-bar (search)="onSearch($event)"></app-search-bar>
     <app-contestant-card-small *ngFor="let contestant of contestants" [contestant]="contestant"
         (selectContestant)="onContestantSelected($event)">
     </app-contestant-card-small>

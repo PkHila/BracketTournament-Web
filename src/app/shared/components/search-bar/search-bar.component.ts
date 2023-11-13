@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,17 +8,16 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angul
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchBarComponent {
-  public searchTerm: string = '';
+
   @Output() search = new EventEmitter<string>;
 
-  public onSearch () {
-    this.search.emit(this.searchTerm);
-  }
+  public form = this.formBuilder.group({
+    searchTerm: ['', [Validators.required]] // otros validadores?
+  })
 
-  /**
-   * todo:
-   * reactive Form para prevenir vacios
-   * tal vez mostrar las busquedas recientes 
-   * aunque eso no esta implementado para prevenir pegarle a la api
-   */
+  constructor(private formBuilder: FormBuilder) { }
+
+  public onSearch() {
+    this.search.emit(this.form.controls['searchTerm'].value!);
+  }
 }
