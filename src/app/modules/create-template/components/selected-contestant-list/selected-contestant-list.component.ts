@@ -4,7 +4,7 @@ import { Contestant } from 'src/app/core/interfaces';
 @Component({
   selector: 'app-selected-contestant-list',
   templateUrl: './selected-contestant-list.component.html',
-  styleUrls: ['./selected-contestant-list.component.css']
+  styleUrls: ['./selected-contestant-list.component.scss']
 })
 export class SelectedContestantListComponent {
 

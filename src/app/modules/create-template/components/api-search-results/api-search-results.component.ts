@@ -4,7 +4,7 @@ import { Contestant } from 'src/app/core/interfaces';
 @Component({
   selector: 'app-api-search-results',
   templateUrl: './api-search-results.component.html',
-  styleUrls: ['./api-search-results.component.css']
+  styleUrls: ['./api-search-results.component.scss']
 })
 export class ApiSearchResultsComponent {
 
