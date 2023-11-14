@@ -1,6 +1,5 @@
-<section>
-    <form [formGroup]="form" (ngSubmit)="onSearch()">
-        <input type="text" formControlName="searchTerm">
-        <input type="submit" [disabled]="!form.valid" value="?">
+
+    <form class="d-flex border rounded-1" role="search" [formGroup]="form" (ngSubmit)="onSearch()">
+        <input type="text" class="form-control" formControlName="searchTerm">
+        <input class="btn btn-primary" type="submit" [disabled]="!form.valid" value="?">
     </form>
-</section>
