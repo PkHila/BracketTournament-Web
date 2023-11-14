@@ -9,6 +9,7 @@ import { SelectedContestantListComponent } from './components/selected-contestan
 import { HttpClientModule } from '@angular/common/http';
 import { CreateTemplatePageComponent } from './create-template-page/create-template-page.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     CreateTemplateRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class CreateTemplateModule { }

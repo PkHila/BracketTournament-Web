@@ -4,7 +4,7 @@
     </app-api-search-results>
 
     <app-selected-contestant-list [selectedContestants]="selectedContestants"
-        (removeContestant)="onRemoveContestant($event)">
+        (removeContestant)="onRemoveContestant($event)"
+        (createTemplate)="createTemplate($event)">
     </app-selected-contestant-list>
-
 </section>

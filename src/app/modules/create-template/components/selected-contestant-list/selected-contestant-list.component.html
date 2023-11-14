@@ -1,4 +1,11 @@
-<section class="selected-contestants-list">
-    <app-contestant-list-item *ngFor="let constestant of selectedContestants" [contestant]="constestant"
-        (selectContestant)="onRemoveContestant($event)"></app-contestant-list-item>
-</section>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <section class="selected-contestants-list">
+        <input type="text" class="textBox" formControlName="templateName">
+        <app-contestant-list-item *ngFor="let constestant of selectedContestants" [contestant]="constestant"
+            (selectContestant)="onRemoveContestant($event)"></app-contestant-list-item>
+        <div class="bottom">
+            <p>{{selectedContestants.length}} elementos</p>
+            <input type="submit" [disabled]="!isSubmitEnabled()" value="Crear">
+        </div>
+    </section>
+</form>

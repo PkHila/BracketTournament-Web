@@ -8,12 +8,14 @@ export interface Contestant {
 
 export interface Template {
     id?: number;
-    contestantIds: Array<number>;
+    contestants: Array<Contestant> | Array<number>;
+    templateName: string;
+    category: string;
 }
 
 export interface PlayedTournament {
     id?: number;
-    contestants: Array<Contestant> | Array<number>;
+    template: Template;
     rounds: Array<Round>;
 }
 
