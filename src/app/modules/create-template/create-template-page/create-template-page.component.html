@@ -1,5 +1,5 @@
 <section class="createTemplate-view">
-    <app-api-search-results *ngIf="contestants" [contestants]="contestants"
+    <app-api-search-results [contestants]="contestants"
         (addContestant)="onContestantSelected($event)" (search)="onSearch($event)">
     </app-api-search-results>
 

@@ -20,15 +20,7 @@ export class CreateTemplatePageComponent implements OnInit {
 
   ngOnInit(): void {
     // testing init
-    this.category = 'movie'
-    this.omdbApiService.getContestants('Star Wars', 'movie').subscribe({
-      next: (contestants) => {
-        this.contestants = contestants
-      },
-      error: () => {
-        console.log("error");
-      }
-    })
+    this.category = 'movie';
   }
 
   public onContestantSelected(selectedContestant: Contestant): void {
