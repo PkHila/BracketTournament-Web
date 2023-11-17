@@ -1,4 +1,5 @@
 <section class="selected-contestants-list">
+    <input type="text" class="form-control fs-5" formControlName="templateName">
     <app-contestant-list-item *ngFor="let constestant of selectedContestants" [contestant]="constestant"
         (selectContestant)="onRemoveContestant($event)"></app-contestant-list-item>
 </section>

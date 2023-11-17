@@ -1,21 +1,11 @@
 <div class="container my-3 h-100">
-    <div class="row my-5 justify-content-center">
+    <div class="row my-5 bg-warning justify-content-center">
         <div class="col-10">
             <app-search-bar (search)="onSearch($event)"></app-search-bar>
         </div>
     </div>
-    <div class="row row-cols-4 gy-3 bg-warning overflow-y-scroll h-75">
 
-        
-        <div class="col-100">
-            <div class="card text-bg-primary bg-gradient h-100">
-                <img class="card-img-top object-fit-cover"  style="height: 75%;" src="https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg" alt="Cover Image">
-                <div class="card-body">
-                    <h6 class="card-title">Abbey Road</h6>
-                    <p class="card-text">1964 <br></p>
-                </div>
-            </div>
-        </div>
+    <div class="row row-cols-4 gy-3 bg-warning overflow-y-scroll h-75">
         
         <app-contestant-card-small *ngFor="let contestant of contestants" [contestant]="contestant"
             (selectContestant)="onContestantSelected($event)">
