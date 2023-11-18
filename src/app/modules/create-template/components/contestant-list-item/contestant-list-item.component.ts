@@ -10,7 +10,7 @@ export class ContestantListItemComponent {
   @Input() contestant!: Contestant;
   @Output() selectContestant = new EventEmitter<Contestant>();
 
-  public onImageClick(): void {
+  public onCardClick(): void {
     this.selectContestant.emit(this.contestant);
   }
 }
