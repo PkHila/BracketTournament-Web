@@ -8,7 +8,8 @@ export interface Contestant {
 
 export interface Template {
     id?: number;
-    contestants: Array<Contestant> | Array<number>;
+    contestants?: Array<Contestant>;
+    contestantIds?: Array<number>;
     templateName: string;
     category: string;
 }

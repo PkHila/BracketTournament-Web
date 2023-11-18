@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { OMDbResponse, OMDbSearchResult } from './types/interfaces';
 import { environment } from 'src/environments/environment.development';
 import { Contestant } from 'src/app/core/interfaces';
-import { map, mergeMap, Observable } from 'rxjs';
+import { map, mergeMap, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,10 @@ export class OMDbApiService {
     return this.httpClient.get<OMDbResponse>(searchUrl)
       .pipe<OMDbSearchResult[]>(
         map(response => {
+          console.log(response);
+          if (response.Response === "false") {
+            throw new Error('No se encontraron resultados');
+          }
           return response.Search
         }))
       .pipe<Contestant[]>(

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, of } from 'rxjs';
+import { BehaviorSubject, catchError, forkJoin, map, mergeMap, of } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { Contestant, Template } from 'src/app/core/interfaces';
 
@@ -13,24 +13,12 @@ export class ContestantService {
   private contestantsInDatabase = new BehaviorSubject<Contestant[]>([]);
   private templateNamesInDatabase = new BehaviorSubject<string[]>([]);
 
-  constructor(private httpClient: HttpClient) {
-    this.fetchContestants();
-    this.fetchTemplateNames();
-  }
-
-  private fetchContestants(): void {
-    this.httpClient.get<Contestant[]>(`${this.baseUrl}/contestants`).subscribe({
-      next: contestants => {
-        this.contestantsInDatabase.next(contestants);
-      },
-      error: () => {
-        console.log('error');
-      }
-    })
+  constructor(private http: HttpClient) {
+    this.fetchTemplateNames(); // need to change
   }
 
   private fetchTemplateNames(): void {
-    this.httpClient.get<Template[]>(`${this.baseUrl}/templates`)
+    this.http.get<Template[]>(`${this.baseUrl}/templates`)
       .pipe<string[]>(
         map(templates => {
           const templatesNames = templates.map(template =>
@@ -51,12 +39,45 @@ export class ContestantService {
     return of(this.templateNamesInDatabase.value.includes(templateName.toLocaleLowerCase()));
   }
 
-  /* public postTemplate(template: Template): Observable<boolean>  {
-    
-  } */
+  public postTemplate(template: Template): Observable<Template> {
+    template.contestantIds = [];
+
+    const contestantObservables = template.contestants!.map(contestant =>
+      this.handleContestantPostings(contestant)
+    );
+
+    return forkJoin(contestantObservables).pipe(
+      mergeMap((validatedContestants) => {
+        validatedContestants.forEach(contestant => {
+          template.contestantIds!.push(contestant.id!);
+        });
+        template.contestants = undefined; // drop unnecesary bloat
+        return this.http.post<Template>(`${this.baseUrl}/templates`, template)
+      })
+    );
+  }
+
+  private handleContestantPostings(contestant: Contestant): Observable<Contestant> {
+    if (contestant.img === undefined) { contestant.img = ''; }
+    if (contestant.date === undefined) { contestant.date = ''; }
+    if (contestant.author === undefined) { contestant.author = ''; }
+
+    return this.http.get<Contestant[]>(
+      `${this.baseUrl}/contestants?name=${contestant.name}&img=${contestant.img}&date=${contestant.date}&author=${contestant.author}`
+    ).pipe(
+      mergeMap(dbContestant => {
+        contestant.id = dbContestant[0]?.id;
+        if (contestant.id === undefined) {
+          return this.postContestant(contestant);
+        } else {
+          return of(contestant);
+        }
+      })
+    );
+  }
 
   private postContestant(contestant: Contestant): Observable<Contestant> {
-    return this.httpClient.post<Contestant>(`${this.baseUrl}/contestants`, contestant);
+    return this.http.post<Contestant>(`${this.baseUrl}/contestants`, contestant);
   }
 
   public addContestant(contestant: Contestant, selectedContestants: Contestant[]) {

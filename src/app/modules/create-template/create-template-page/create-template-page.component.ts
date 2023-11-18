@@ -34,10 +34,10 @@ export class CreateTemplatePageComponent implements OnInit {
   public onSearch(searchTerm: string): void {
     this.omdbApiService.getContestants(searchTerm, this.category).subscribe({
       next: (contestants) => {
-        this.contestants = contestants
+        this.contestants = contestants;
       },
       error: () => {
-        console.log("error");
+        this.contestants = [];
       }
     })
   }
@@ -48,7 +48,13 @@ export class CreateTemplatePageComponent implements OnInit {
       category: this.category,
       contestants: this.selectedContestants 
     }
-    console.log(template);
-    
+    this.contestantService.postTemplate(template).subscribe({
+      next: resp => {
+        console.log('agregado con exito');        
+      },
+      error: () => {
+        console.log('error');        
+      }
+    });
   }
 }
