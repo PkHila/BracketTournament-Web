@@ -3,8 +3,8 @@
 
 /* You can add global styles to this file, and also import other style files */
 body{
-    width: 100vw; /*esto es un porcentaje? es la unidad adecuada?*/
-    height: 100vh;
+    width: 100%; /*esto es un porcentaje? es la unidad adecuada?*/
+    height: 100%;
     overflow: hidden; /*para que no trate de scrollear*/
 
     background: conic-gradient(
