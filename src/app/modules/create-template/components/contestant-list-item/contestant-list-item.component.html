@@ -1,13 +1,15 @@
-<div class="contestant-list-item">
-
-    <section class="cover-img">
-        <img src={{contestant.img}} alt="Cover image" (click)="onImageClick()">
-    </section>
-    <section class="title">
-        <p>{{contestant.name}}</p>
-    </section>
-    <section class="info">
-        <p>{{contestant.date}}</p>
-        <p>{{contestant.author}}</p>
-    </section>
+<div class="card list-group-item justify-content-center" (click)="onCardClick()">
+    <div class="row align-items-center">
+        <div class="col-3">
+            <img src={{contestant.img}} alt="Cover image">
+        </div>
+            <div class="col-9"><div class="card-title">
+                <p>{{contestant.name}}</p>
+            </div>
+            <div class="card-text">
+                <p>{{contestant.date}}</p>
+                <p>{{contestant.author}}</p>
+            </div>
+        </div>
+    </div>
 </div>

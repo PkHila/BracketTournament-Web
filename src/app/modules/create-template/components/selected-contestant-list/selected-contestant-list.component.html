@@ -1,11 +1,19 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <section class="selected-contestants-list">
-        <input type="text" class="textBox" formControlName="templateName">
-        <app-contestant-list-item *ngFor="let constestant of selectedContestants" [contestant]="constestant"
-            (selectContestant)="onRemoveContestant($event)"></app-contestant-list-item>
-        <div class="bottom">
-            <p>{{selectedContestants.length}} elementos</p>
-            <input type="submit" [disabled]="!isSubmitEnabled()" value="Crear">
+    <div class="selected-contestants-list container">
+        <div class="row mt-2">
+            <input type="text" class="form-control" formControlName="templateName">
         </div>
-    </section>
+        <div class="row bg-white align-items-start" style="height: 500px; overflow-y: scroll;">
+            <div class="col list-group list-group-flush justify-items-center">
+                <app-contestant-list-item *ngFor="let constestant of selectedContestants" [contestant]="constestant"
+                (selectContestant)="onRemoveContestant($event)">
+                </app-contestant-list-item>
+            </div>
+        </div>
+        
+        <div class="row">
+            <p class="col-4">{{selectedContestants.length}} elementos</p>
+            <input type="submit" class="btn btn-primary col-8" [disabled]="!isSubmitEnabled()" value="Crear">
+        </div>
+    </div>
 </form>

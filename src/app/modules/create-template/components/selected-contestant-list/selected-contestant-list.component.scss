@@ -8,6 +8,7 @@
     align-items: stretch;
     align-content: stretch;
     overflow-y: scroll;
+    overflow-x: hidden;
     gap: 10px; /*hacer relativo despues*/
 
     /*estilo separado de los campos de flexbox*/
@@ -18,12 +19,3 @@
     
 }
 
-.textBox  {
-    position: absolute;
-    top: 0;
-}
-
-.bottom {
-    position: absolute;
-    bottom: 0;
-}

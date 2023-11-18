@@ -16,6 +16,7 @@ export class OMDbApiService {
 
   constructor(private httpClient: HttpClient) { }
 
+
   // todo / log: 
   // agregar paginacion para mas de 10 resultados => &page=...
   // considerar que cada consulta va a sumar al daily limit

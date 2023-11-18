@@ -6,7 +6,7 @@ import { Contestant, Template } from 'src/app/core/interfaces';
 @Component({
   selector: 'app-create-template-page',
   templateUrl: './create-template-page.component.html',
-  styleUrls: ['./create-template-page.component.css']
+  styleUrls: ['./create-template-page.component.scss']
 })
 export class CreateTemplatePageComponent implements OnInit {
 

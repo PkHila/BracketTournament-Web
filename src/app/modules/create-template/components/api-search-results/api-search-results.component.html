@@ -1,6 +1,14 @@
-<section class="api-search-results">
-    <app-search-bar (search)="onSearch($event)"></app-search-bar>
-    <app-contestant-card-small *ngFor="let contestant of contestants" [contestant]="contestant"
-        (selectContestant)="onContestantSelected($event)">
-    </app-contestant-card-small>
-</section>
+<div class="container my-3 h-100">
+    <div class="row bg-warning justify-content-center">
+        <div class="col-10">
+            <app-search-bar (search)="onSearch($event)"></app-search-bar>
+        </div>
+    </div>
+
+    <div class="row row-cols-4 bg-warning overflow-y-scroll gy-3 mt-0">
+        
+        <app-contestant-card-small *ngFor="let contestant of contestants" [contestant]="contestant"
+            (selectContestant)="onContestantSelected($event)">
+        </app-contestant-card-small>
+    </div>
+</div>

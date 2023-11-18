@@ -7,7 +7,7 @@ import { ContestantService } from '../../services/contestant.service';
 @Component({
   selector: 'app-selected-contestant-list',
   templateUrl: './selected-contestant-list.component.html',
-  styleUrls: ['./selected-contestant-list.component.css']
+  styleUrls: ['./selected-contestant-list.component.scss']
 })
 export class SelectedContestantListComponent {
 
