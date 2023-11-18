@@ -3,8 +3,8 @@
         <div class="row mt-2">
             <input type="text" class="form-control" formControlName="templateName">
         </div>
-        <div class="row bg-danger align-items-start"  style="height: 400px;">
-            <div class="col">
+        <div class="row bg-white align-items-start" style="height: 500px; overflow-y: scroll;">
+            <div class="col list-group list-group-flush justify-items-center">
                 <app-contestant-list-item *ngFor="let constestant of selectedContestants" [contestant]="constestant"
                 (selectContestant)="onRemoveContestant($event)">
                 </app-contestant-list-item>

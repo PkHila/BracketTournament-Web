@@ -5,7 +5,7 @@
         </div>
     </div>
 
-    <div class="row row-cols-4 gy-3 bg-warning overflow-y-scroll h-75">
+    <div class="row row-cols-4 bg-warning overflow-y-scroll gy-3 mt-0">
         
         <app-contestant-card-small *ngFor="let contestant of contestants" [contestant]="contestant"
             (selectContestant)="onContestantSelected($event)">
