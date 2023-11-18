@@ -85,7 +85,9 @@
         8,
         9,
         10
-      ]
+      ],
+      "templateName": "Star Wars",
+      "category": "movie"
     }
   ],
   "played-tournaments": []

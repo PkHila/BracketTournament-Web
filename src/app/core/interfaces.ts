@@ -13,7 +13,7 @@ export interface Template {
     category: string;
 }
 
-export interface PlayedTournament {
+export interface Tournament {
     id?: number;
     template: Template;
     rounds: Array<Round>;
