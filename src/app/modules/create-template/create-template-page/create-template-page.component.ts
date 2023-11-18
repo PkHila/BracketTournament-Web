@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { OMDbApiService } from '../services/omdb-api.service';
 import { ContestantService } from '../services/contestant.service';
-import { Contestant } from 'src/app/core/interfaces';
+import { Contestant, Template } from 'src/app/core/interfaces';
 
 @Component({
   selector: 'app-create-template-page',
@@ -20,15 +20,7 @@ export class CreateTemplatePageComponent implements OnInit {
 
   ngOnInit(): void {
     // testing init
-    this.category = 'movie'
-    this.omdbApiService.getContestants('Star Wars', 'movie').subscribe({
-      next: (contestants) => {
-        this.contestants = contestants
-      },
-      error: () => {
-        console.log("error");
-      }
-    })
+    this.category = 'movie';
   }
 
   public onContestantSelected(selectedContestant: Contestant): void {
@@ -48,5 +40,15 @@ export class CreateTemplatePageComponent implements OnInit {
         console.log("error");
       }
     })
+  }
+
+  public createTemplate(templateName: string) {
+    const template: Template = {
+      templateName: templateName,
+      category: this.category,
+      contestants: this.selectedContestants 
+    }
+    console.log(template);
+    
   }
 }
