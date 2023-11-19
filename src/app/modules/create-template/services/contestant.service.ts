@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, forkJoin, map, mergeMap, of } from 'rxjs';
+import { BehaviorSubject, delay, forkJoin, map, mergeMap, of } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { Contestant, Template } from 'src/app/core/interfaces';
 
@@ -10,7 +10,6 @@ import { Contestant, Template } from 'src/app/core/interfaces';
 export class ContestantService {
 
   private baseUrl: string = "http://localhost:3000";
-  private contestantsInDatabase = new BehaviorSubject<Contestant[]>([]);
   private templateNamesInDatabase = new BehaviorSubject<string[]>([]);
 
   constructor(private http: HttpClient) {
@@ -39,7 +38,7 @@ export class ContestantService {
     return of(this.templateNamesInDatabase.value.includes(templateName.toLocaleLowerCase()));
   }
 
-  public postTemplate(template: Template): Observable<Template> {
+  public postTemplateLegacy(template: Template): Observable<Template> {
     template.contestantIds = [];
 
     const contestantObservables = template.contestants!.map(contestant =>
@@ -52,7 +51,10 @@ export class ContestantService {
           template.contestantIds!.push(contestant.id!);
         });
         template.contestants = undefined; // drop unnecesary bloat
-        return this.http.post<Template>(`${this.baseUrl}/templates`, template)
+        return of(null).pipe(delay(3000)).pipe(
+          mergeMap(() => {
+            return this.http.post<Template>(`${this.baseUrl}/templates`, template)
+          }))
       })
     );
   }
@@ -68,12 +70,20 @@ export class ContestantService {
       mergeMap(dbContestant => {
         contestant.id = dbContestant[0]?.id;
         if (contestant.id === undefined) {
-          return this.postContestant(contestant);
+          return of(null).pipe(delay(1000)).pipe(
+            mergeMap(() => {
+              return this.postContestant(contestant);
+            })
+          )
         } else {
           return of(contestant);
         }
       })
     );
+  }
+
+  public postTemplate(template: Template): Observable<Template> {
+    return this.http.post<Template>(`${this.baseUrl}/templates`, template);
   }
 
   private postContestant(contestant: Contestant): Observable<Contestant> {

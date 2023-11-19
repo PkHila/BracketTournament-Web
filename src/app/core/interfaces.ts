@@ -4,6 +4,10 @@ export interface Contestant {
     img?: string;
     date?: string;
     author?: string;
+    tournamentsPlayed?: number;
+    matchesPlayed?: number;
+    matchesWon?: number;
+    tournamentsWon?: number;
 }
 
 export interface Template {
@@ -26,6 +30,6 @@ export interface Round {
 }
 
 export interface Match {
-    firstContestantId: number;
-    secondContestantId?: number;
+    firstContestant: Contestant;
+    secondContestant?: Contestant;
 }
