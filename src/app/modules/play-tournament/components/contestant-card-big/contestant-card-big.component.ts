@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Contestant } from 'src/app/core/interfaces';
 
 @Component({
   selector: 'app-contestant-card-big',
@@ -11,4 +12,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./contestant-card-big.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContestantCardBigComponent { }
+export class ContestantCardBigComponent {
+
+  @Input() contestant!: Contestant;
+ }
