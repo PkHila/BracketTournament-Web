@@ -82,10 +82,6 @@ export class ContestantService {
     );
   }
 
-  public postTemplate(template: Template): Observable<Template> {
-    return this.http.post<Template>(`${this.baseUrl}/templates`, template);
-  }
-
   private postContestant(contestant: Contestant): Observable<Contestant> {
     return this.http.post<Contestant>(`${this.baseUrl}/contestants`, contestant);
   }
