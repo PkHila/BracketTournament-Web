@@ -69,6 +69,83 @@
       "date": "2019",
       "author": "",
       "id": 10
+    },
+    {
+      "name": "Harry Potter and the Chamber of Secrets",
+      "img": "https://m.media-amazon.com/images/M/MV5BMjE0YjUzNDUtMjc5OS00MTU3LTgxMmUtODhkOThkMzdjNWI4XkEyXkFqcGdeQXVyMTA3MzQ4MTc0._V1_SX300.jpg",
+      "date": "2002",
+      "author": "",
+      "id": 11
+    },
+    {
+      "name": "Harry Potter and the Sorcerer's Stone",
+      "img": "https://m.media-amazon.com/images/M/MV5BNmQ0ODBhMjUtNDRhOC00MGQzLTk5MTAtZDliODg5NmU5MjZhXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg",
+      "date": "2001",
+      "author": "",
+      "id": 12
+    },
+    {
+      "name": "Harry Potter and the Prisoner of Azkaban",
+      "img": "https://m.media-amazon.com/images/M/MV5BMTY4NTIwODg0N15BMl5BanBnXkFtZTcwOTc0MjEzMw@@._V1_SX300.jpg",
+      "date": "2004",
+      "author": "",
+      "id": 13
+    },
+    {
+      "name": "Harry Potter and the Goblet of Fire",
+      "img": "https://m.media-amazon.com/images/M/MV5BMTI1NDMyMjExOF5BMl5BanBnXkFtZTcwOTc4MjQzMQ@@._V1_SX300.jpg",
+      "date": "2005",
+      "author": "",
+      "id": 14
+    },
+    {
+      "name": "Harry Potter and the Order of the Phoenix",
+      "img": "https://m.media-amazon.com/images/M/MV5BOTA3MmRmZDgtOWU1Ny00ZDc5LWFkN2YtNzNlY2UxZmY0N2IyXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg",
+      "date": "2007",
+      "author": "",
+      "id": 15
+    },
+    {
+      "name": "Harry Potter and the Half-Blood Prince",
+      "img": "https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_SX300.jpg",
+      "date": "2009",
+      "author": "",
+      "id": 16
+    },
+    {
+      "name": "Star Trek",
+      "img": "https://m.media-amazon.com/images/M/MV5BMjE5NDQ5OTE4Ml5BMl5BanBnXkFtZTcwOTE3NDIzMw@@._V1_SX300.jpg",
+      "date": "2009",
+      "author": "",
+      "id": 17
+    },
+    {
+      "name": "Star Trek Beyond",
+      "img": "https://m.media-amazon.com/images/M/MV5BNDc2YThlMTgtN2M3Yi00YzkxLWE4MDQtMWJmYmZiNTNjNjJlXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+      "date": "2016",
+      "author": "",
+      "id": 18
+    },
+    {
+      "name": "Star Trek: First Contact",
+      "img": "https://m.media-amazon.com/images/M/MV5BYzMzZmE3MTItODYzYy00YWI5LWFkNWMtZTY5NmU2MDkxYWI1XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+      "date": "1996",
+      "author": "",
+      "id": 19
+    },
+    {
+      "name": "Star Trek Into Darkness",
+      "img": "https://m.media-amazon.com/images/M/MV5BMTk2NzczOTgxNF5BMl5BanBnXkFtZTcwODQ5ODczOQ@@._V1_SX300.jpg",
+      "date": "2013",
+      "author": "",
+      "id": 20
+    },
+    {
+      "name": "Harry Potter and the Deathly Hallows: Part 2",
+      "img": "https://m.media-amazon.com/images/M/MV5BMGVmMWNiMDktYjQ0Mi00MWIxLTk0N2UtN2ZlYTdkN2IzNDNlXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
+      "date": "2011",
+      "author": "",
+      "id": 21
     }
   ],
   "templates": [
@@ -85,7 +162,9 @@
         8,
         9,
         10
-      ]
+      ],
+      "templateName": "Star Wars",
+      "category": "movie"
     }
   ],
   "played-tournaments": []
