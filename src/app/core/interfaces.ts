@@ -4,16 +4,23 @@ export interface Contestant {
     img?: string;
     date?: string;
     author?: string;
+    tournamentsPlayed?: number;
+    matchesPlayed?: number;
+    matchesWon?: number;
+    tournamentsWon?: number;
 }
 
 export interface Template {
     id?: number;
-    contestantIds: Array<number>;
+    contestants?: Array<Contestant>;
+    contestantIds?: Array<number>;
+    templateName: string;
+    category: string;
 }
 
-export interface PlayedTournament {
+export interface Tournament {
     id?: number;
-    contestants: Array<Contestant> | Array<number>;
+    template: Template;
     rounds: Array<Round>;
 }
 
@@ -23,6 +30,6 @@ export interface Round {
 }
 
 export interface Match {
-    firstContestantId: number;
-    secondContestantId?: number;
+    firstContestant: Contestant;
+    secondContestant?: Contestant;
 }

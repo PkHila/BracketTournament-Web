@@ -1,0 +1,18 @@
+.selected-contestants-list {
+    /*estilo separado de los campos de flexbox*/
+    margin: 0;
+}
+
+#contestant-list{
+    height: 70vh;
+    overflow-y: auto; 
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255,0.50);
+}
+
+#template-title-box{
+    input{
+        background: rgba(255, 255, 255,0.50);
+    }
+}
