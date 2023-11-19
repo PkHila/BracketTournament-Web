@@ -1,11 +1,8 @@
-
-<div class="col h-100">
-    <div class="card text-bg-primary bg-gradient h-100">
-        <img class="card-img-top object-fit-cover"  style="height: 75%;" src={{contestant.img}} alt="Cover Image" (click)="onImageClick()">
-        <div class="card-body">
-            <h6 class="card-title">{{contestant.name}}</h6>
-            <p class="card-text">{{contestant.date}} <br>{{contestant.author}}</p>
-        </div>
+<div class="card text-bg-primary bg-gradient h-100">
+    <img class="card-img-top object-fit-cover" src={{contestant.img}} alt="Cover Image" (click)="onImageClick()">
+    <div class="card-body">
+        <h6 class="card-title">{{contestant.name}}</h6>
+        <p class="card-text">{{contestant.date}} <br>{{contestant.author}}</p>
     </div>
 </div>
 

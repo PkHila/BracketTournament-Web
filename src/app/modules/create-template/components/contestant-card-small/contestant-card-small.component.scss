@@ -1,23 +1,12 @@
-.contestant-card-small{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items:  center;
-    padding: 1rem;
-}
-.cover-img{
-    width: 10rem;
-    max-height: 15rem;
-    margin: auto;
-    border-radius: 1rem;
-    cursor: pointer;
-    overflow: hidden;
-    box-shadow: 0   0.3rem 0.6rem 0 rgba(0, 0, 0, 0.2), 0 0.6rem 2rem 0 rgba(0, 0, 0, 0.19);/*!   Customizar luego    !*/
-}
+
 
 .card{
     cursor: pointer;
+    img{
+        height: 100%;
+    }
 }
+
 
 .card-name{
     margin-top: 0.5rem;

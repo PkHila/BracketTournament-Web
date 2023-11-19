@@ -1,4 +1,4 @@
-<form class="d-flex border rounded-1" role="search" [formGroup]="form" (ngSubmit)="onSearch()">
-    <input type="text" class="form-control" formControlName="searchTerm">
-    <input class="btn btn-primary" type="submit" [disabled]="!form.valid" value="?">
+<form class="input-group" role="search" [formGroup]="form" (ngSubmit)="onSearch()">
+    <input type="text" class="form-control rounded-start-pill" formControlName="searchTerm">
+    <input class="btn btn-primary rounded-end-pill" type="submit" [disabled]="!form.valid" value="Buscar">
 </form>

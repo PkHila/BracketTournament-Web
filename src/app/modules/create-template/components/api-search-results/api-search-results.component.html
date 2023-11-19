@@ -1,12 +1,11 @@
-<div class="container my-3 h-100">
-    <div class="row bg-warning justify-content-center">
-        <div class="col-10">
+<div class="container h-100">
+    <div id="API-search-bar" class="row justify-content-center my-3">
+        <div class="col-md-8 col-lg-6">
             <app-search-bar (search)="onSearch($event)"></app-search-bar>
         </div>
     </div>
 
-    <div class="row row-cols-4 bg-warning overflow-y-scroll gy-3 mt-0">
-        
+    <div id="results-grid" class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 gy-3 pb-3" >
         <app-contestant-card-small *ngFor="let contestant of contestants" [contestant]="contestant"
             (selectContestant)="onContestantSelected($event)">
         </app-contestant-card-small>

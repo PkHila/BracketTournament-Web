@@ -1,19 +1,21 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="selected-contestants-list container">
-        <div class="row mt-2">
-            <input type="text" class="form-control" formControlName="templateName">
-        </div>
-        <div class="row bg-white align-items-start" style="height: 500px; overflow-y: scroll;">
-            <div class="col list-group list-group-flush justify-items-center">
-                <app-contestant-list-item *ngFor="let constestant of selectedContestants" [contestant]="constestant"
-                (selectContestant)="onRemoveContestant($event)">
-                </app-contestant-list-item>
-            </div>
-        </div>
-        
-        <div class="row">
-            <p class="col-4">{{selectedContestants.length}} elementos</p>
-            <input type="submit" class="btn btn-primary col-8" [disabled]="!isSubmitEnabled()" value="Crear">
+<div class="selected-contestants-list container w-100">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div id="template-title-box" class="row mt-3">
+        <input type="text" formControlName="templateName"
+        class="form-control border border-0" placeholder="Titulo del Torneo">
+    </div>
+    <div id="contestant-list"class="row align-items-start rounded-2 ">
+        <div class="col list-group list-group-flush justify-content-center p-0">
+            <app-contestant-list-item *ngFor="let constestant of selectedContestants" [contestant]="constestant"
+            (selectContestant)="onRemoveContestant($event)">
+            </app-contestant-list-item>
         </div>
     </div>
+    
+    <div class="row justify-content-center">
+        <p class="col-7">{{selectedContestants.length}} participantes</p>
+        <input type="submit" class="btn btn-primary col-4 ms-auto" [disabled]="!isSubmitEnabled()" value="Crear">
+    </div>
 </form>
+
+</div>

@@ -1,21 +1,18 @@
 .selected-contestants-list {
-
-    flex-grow: 0.5;
-    display: inline-flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    gap: 10px; /*hacer relativo despues*/
-
     /*estilo separado de los campos de flexbox*/
-    height:95vh; /*creo que esto es efectivo (?*/
-    width: 30vw;
-    background-color:  rgba(154, 185, 163, 0.5);
     margin: 0;
-    
 }
 
+#contestant-list{
+    height: 70vh;
+    overflow-y: auto; 
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255,0.50);
+}
+
+#template-title-box{
+    input{
+        background: rgba(255, 255, 255,0.50);
+    }
+}
