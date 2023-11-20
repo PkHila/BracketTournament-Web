@@ -1,5 +1,15 @@
 <div class="container p-5">
-    <div *ngIf="!winner;else displayWinner">
+    <div *ngIf="winner;else displayVoting">
+        <div class="container justify-content-center text-center border w-25">
+            <img id="crown-icon" src="../../../../../assets/crown-svgrepo-com.svg"><br>
+            <img src="{{winner.img}}" alt="Winner Cover Image"><br>
+            <h3>{{tournament.template.templateName}}</h3><br>
+            <h2>WINNER</h2><br>
+            <h4>{{winner.name}}</h4><br>
+        </div>
+    </div>
+    
+    <ng-template #displayVoting>
         <div class="row justify-content-center align-items-center g-2 mb-5">
             <div class="col">
                 <app-tournament-progress></app-tournament-progress>
@@ -19,9 +29,5 @@
                     (voteContestant)="onVote($event)"></app-contestant-card-big>
             </div>
         </div>
-    </div>
-
-    <ng-template #displayWinner>
-        <app-winner-card></app-winner-card>
     </ng-template>
 </div>
