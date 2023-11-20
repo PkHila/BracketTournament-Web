@@ -4,9 +4,13 @@ import { PlayTournamentComponent } from './main-page-component/play-tournament.c
 
 const routes: Routes = [
   {
+    path: ':templateName/:totalRounds',
+    component: PlayTournamentComponent
+  },
+  {
     path: '',
     component: PlayTournamentComponent
-  }
+  },
 ];
 
 @NgModule({

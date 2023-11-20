@@ -20,7 +20,7 @@ export class TemplateService {
     return this.http.get<Template[]>(`${this.baseUrl}/templates?templateName=${templateName}`).pipe(
       map(response => {
         if (response.length === 1) {
-          return response.at(0)!
+          return response[0];
         }
         else {
           throw new Error('No template with such name');

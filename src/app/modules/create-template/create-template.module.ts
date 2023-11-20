@@ -22,10 +22,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    CreateTemplateRoutingModule,
     HttpClientModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CreateTemplateRoutingModule,
   ]
 })
 export class CreateTemplateModule { }
