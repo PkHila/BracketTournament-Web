@@ -1,23 +1,28 @@
 <app-navbar></app-navbar>
 <div class="container p-5">
-    <div class="row justify-content-center align-items-center g-2 mb-5">
-        <div class="col">
-            <app-tournament-progress></app-tournament-progress>
+    <div *ngIf="!winner;else displayWinner">
+        <div class="row justify-content-center align-items-center g-2 mb-5">
+            <div class="col">
+                <app-tournament-progress></app-tournament-progress>
+            </div>
+        </div>
+        <div class="row justify-content-evenly align-items-center g-2">
+            <div class="col">
+                <app-contestant-card-big *ngIf="leftContestant" [contestant]="leftContestant"
+                    (voteContestant)="onVote($event)"></app-contestant-card-big>
+            </div>
+            <div class="col text-center">
+                <app-matchup-tracker [currentMatch]="currentMatch + 1"
+                    [totalMatches]="totalMatchesForCurrentRound"></app-matchup-tracker>
+            </div>
+            <div class="col">
+                <app-contestant-card-big *ngIf="rightContestant" [contestant]="rightContestant"
+                    (voteContestant)="onVote($event)"></app-contestant-card-big>
+            </div>
         </div>
     </div>
-    <div class="row justify-content-evenly align-items-center g-2">
-        <div class="col">
-            <app-contestant-card-big *ngIf="leftContestant" [contestant]="leftContestant"
-                (voteContestant)="onVote($event)"></app-contestant-card-big>
-        </div>
-        <div class="col text-center">
-            <app-matchup-tracker *ngIf="!winner" [currentMatch]="currentMatch + 1"
-                [totalMatches]="totalMatchesForCurrentRound"></app-matchup-tracker>
-        </div>
-        <div class="col">
-            <app-contestant-card-big *ngIf="rightContestant" [contestant]="rightContestant"
-                (voteContestant)="onVote($event)"></app-contestant-card-big>
-        </div>
-    </div>
+
+    <ng-template #displayWinner>
+        <app-winner-card></app-winner-card>
+    </ng-template>
 </div>
-<app-winner-card></app-winner-card>
