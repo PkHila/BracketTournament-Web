@@ -5,8 +5,9 @@ import { SharedModule } from "../../../shared/shared.module";
 import { MatchupTrackerComponent } from "../components/matchup-tracker/matchup-tracker.component";
 import { TournamentProgressComponent } from "../components/tournament-progress/tournament-progress.component";
 import { WinnerCardComponent } from '../components/winner-card/winner-card.component'; 
-import { Contestant, Round, Tournament } from 'src/app/core/interfaces';
+import { Contestant, Tournament } from 'src/app/core/interfaces';
 import { TournamentService } from 'src/app/core/services/Tournament.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
     selector: 'app-play-tournament',
     standalone: true,
@@ -24,30 +25,35 @@ import { TournamentService } from 'src/app/core/services/Tournament.service';
 })
 export class PlayTournamentComponent implements OnInit {
 
-    @Input() tournament!: Tournament;
-    @Input() totalRounds!: number;
+    private tournament!: Tournament;
+    public totalRounds!: number;
     public leftContestant?: Contestant;
     public rightContestant?: Contestant;
-    private currentRound = 0;
+    public currentRound = 0;
     public currentMatch = 0;
     public totalMatchesForCurrentRound = 0;
-    public winner?: Contestant; // set left & right to undefined, set winner & *ngIF to display winner & endTournament
+    public winner?: Contestant;
 
-    constructor(private tournamentService: TournamentService) { }
+    constructor(
+        private tournamentService: TournamentService,
+        private activatedRoute: ActivatedRoute) { }
 
     ngOnInit(): void {
-        this.totalRounds = 3;
-        this.tournamentService.getTournament("Star Wars").subscribe({
-            next: t => {
-                this.tournament = t;
-                this.tournamentService.initiateFirstRound(this.tournament, this.totalRounds);
-                console.log(this.tournament);
-                this.leftContestant = this.tournament.rounds[0].matches[0].firstContestant;
-                this.rightContestant = this.tournament.rounds[0].matches[0].secondContestant;
-                this.totalMatchesForCurrentRound = this.tournament.rounds[0].matches.length;
-            },
-            error: err => console.log(err)
-        });
+        let templateName = this.activatedRoute.snapshot.paramMap.get('templateName');
+        let roundsParam = this.activatedRoute.snapshot.paramMap.get('totalRounds');
+        if (templateName !== null && roundsParam !== null) {
+            this.totalRounds = parseInt(roundsParam);
+            this.tournamentService.getTournament(templateName).subscribe({
+                next: t => {
+                    this.tournament = t;
+                    this.tournamentService.initiateFirstRound(this.tournament, this.totalRounds);
+                    this.leftContestant = this.tournament.rounds[0].matches[0].firstContestant;
+                    this.rightContestant = this.tournament.rounds[0].matches[0].secondContestant;
+                    this.totalMatchesForCurrentRound = this.tournament.rounds[0].matches.length;
+                },
+                error: err => console.log(err)
+            });
+        }
     }
 
     public onVote(votedContestant: Contestant) {

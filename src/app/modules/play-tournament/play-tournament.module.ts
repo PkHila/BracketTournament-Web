@@ -10,8 +10,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     PlayTournamentRoutingModule,
-    SharedModule
   ]
 })
 export class PlayTournamentModule { }
