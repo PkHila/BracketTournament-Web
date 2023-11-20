@@ -23,7 +23,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PlayTournamentComponent implements OnInit {
 
-    private tournament!: Tournament;
+    public tournament!: Tournament;
     public totalRounds!: number;
     public leftContestant?: Contestant;
     public rightContestant?: Contestant;
