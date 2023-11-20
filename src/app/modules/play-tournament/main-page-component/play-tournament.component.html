@@ -11,7 +11,8 @@
                 (voteContestant)="onVote($event)"></app-contestant-card-big>
         </div>
         <div class="col text-center">
-            <app-matchup-tracker></app-matchup-tracker>
+            <app-matchup-tracker *ngIf="!winner" [currentMatch]="currentMatch + 1"
+                [totalMatches]="totalMatchesForCurrentRound"></app-matchup-tracker>
         </div>
         <div class="col">
             <app-contestant-card-big *ngIf="rightContestant" [contestant]="rightContestant"

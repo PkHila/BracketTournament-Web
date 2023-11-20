@@ -27,7 +27,8 @@ export class PlayTournamentComponent implements OnInit {
     public leftContestant?: Contestant;
     public rightContestant?: Contestant;
     private currentRound = 0;
-    private currentMatch = 0;
+    public currentMatch = 0;
+    public totalMatchesForCurrentRound = 0;
     public winner?: Contestant; // set left & right to undefined, set winner & *ngIF to display winner & endTournament
 
     constructor(private tournamentService: TournamentService) { }
@@ -41,6 +42,7 @@ export class PlayTournamentComponent implements OnInit {
                 console.log(this.tournament);
                 this.leftContestant = this.tournament.rounds[0].matches[0].firstContestant;
                 this.rightContestant = this.tournament.rounds[0].matches[0].secondContestant;
+                this.totalMatchesForCurrentRound = this.tournament.rounds[0].matches.length;
             },
             error: err => console.log(err)
         });
@@ -53,6 +55,7 @@ export class PlayTournamentComponent implements OnInit {
             if (this.currentMatch === this.tournament.rounds[this.currentRound].matches.length) {
                 this.currentMatch = 0;
                 this.currentRound++;
+                this.totalMatchesForCurrentRound = this.tournament.rounds[this.currentRound].matches.length;
             }
             this.leftContestant = this.tournament.rounds[this.currentRound].matches[this.currentMatch].firstContestant;
             this.rightContestant = this.tournament.rounds[this.currentRound].matches[this.currentMatch].secondContestant;

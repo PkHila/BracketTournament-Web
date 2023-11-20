@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-matchup-tracker',
@@ -11,4 +11,8 @@ import { ChangeDetectionStrategy, Component} from '@angular/core';
   styleUrls: ['./matchup-tracker.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MatchupTrackerComponent { }
+export class MatchupTrackerComponent {
+
+  @Input() currentMatch!: number;
+  @Input() totalMatches!: number;
+ }
