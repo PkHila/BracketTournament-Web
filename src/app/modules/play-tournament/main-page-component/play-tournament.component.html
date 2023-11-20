@@ -1,8 +1,16 @@
 <app-navbar></app-navbar>
-<div class="container">
+<div class="container p-5">
+    <div class="row justify-content-center align-items-center g-2 mb-5">
+        <div class="col">
+            <app-tournament-progress></app-tournament-progress>
+        </div>
+    </div>
     <div class="row justify-content-evenly align-items-center g-2">
         <div class="col">
             <app-contestant-card-big></app-contestant-card-big>
+        </div>
+        <div class="col text-center">
+            <app-matchup-tracker></app-matchup-tracker>
         </div>
         <div class="col">
             <app-contestant-card-big></app-contestant-card-big>
