@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Contestant } from 'src/app/core/interfaces';
 
 @Component({
@@ -15,4 +15,9 @@ import { Contestant } from 'src/app/core/interfaces';
 export class ContestantCardBigComponent {
 
   @Input() contestant!: Contestant;
+  @Output() voteContestant = new EventEmitter<Contestant>();
+
+  public onVoteContestant(): void {
+    this.voteContestant.emit(this.contestant);
+  }
  }
