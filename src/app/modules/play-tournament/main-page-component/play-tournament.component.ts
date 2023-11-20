@@ -4,6 +4,7 @@ import { ContestantCardBigComponent } from '../components/contestant-card-big/co
 import { SharedModule } from "../../../shared/shared.module";
 import { MatchupTrackerComponent } from "../components/matchup-tracker/matchup-tracker.component";
 import { TournamentProgressComponent } from "../components/tournament-progress/tournament-progress.component";
+import { WinnerCardComponent } from '../components/winner-card/winner-card.component'; 
 import { Contestant, Round, Tournament } from 'src/app/core/interfaces';
 import { TournamentService } from 'src/app/core/services/Tournament.service';
 @Component({
@@ -17,7 +18,8 @@ import { TournamentService } from 'src/app/core/services/Tournament.service';
         ContestantCardBigComponent,
         SharedModule,
         MatchupTrackerComponent,
-        TournamentProgressComponent
+        TournamentProgressComponent,
+        WinnerCardComponent
     ]
 })
 export class PlayTournamentComponent implements OnInit {
