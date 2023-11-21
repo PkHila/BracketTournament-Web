@@ -10,5 +10,7 @@ export const tournamentGuard: CanActivateFn = (route) => {
       return true;
     }
   }
-  return router.parseUrl('');
+  return router.parseUrl('create-template'); // placeholder route
+  // TODO: idealmente si se llega a este momento es porque el torneo existe y tiene una vista relacionada
+  //       se puede redirigir a la vista de ese torneo para elegir una cantidad de rondas valida
 };
