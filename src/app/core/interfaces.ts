@@ -38,6 +38,7 @@ export interface Match {
 
 export interface PlayedTournament {
     id?: number;
+    winnerId: number;
     temlateId: number;
     rounds: Array<Round>;
 }

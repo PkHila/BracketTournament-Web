@@ -28,4 +28,8 @@ export class TemplateService {
       })
     );
   }
+
+  public putTemplate(template: Template, templateId: number): Observable<Template> {
+    return this.http.put<Template>(`${this.baseUrl}/templates/${templateId}`, template)
+  }
 }

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
-import { Contestant, Match, Round, Tournament } from '../interfaces';
+import { Observable, delay, map, switchMap } from 'rxjs';
+import { Contestant, Match, PlayedTournament, Round, Tournament } from '../interfaces';
 import { TemplateService } from './Template.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,9 @@ export class TournamentService {
 
   private baseUrl: string = "http://localhost:3000";
 
-  constructor(private templateService: TemplateService) { }
+  constructor(
+    private templateService: TemplateService,
+    private http: HttpClient) { }
 
   public getTournament(templateName: string): Observable<Tournament> {
     return this.templateService.getTemplateByName(templateName).pipe<Tournament>(
@@ -24,6 +27,33 @@ export class TournamentService {
     )
   }
 
+  public postTournament(tournament: Tournament, winner: Contestant): Observable<PlayedTournament> {
+    return this.templateService.putTemplate(tournament.template, tournament.template.id!).pipe(
+      switchMap(() => {
+        const playedTournament: PlayedTournament = {
+          temlateId: tournament.template.id!,
+          winnerId: winner.id!,
+          rounds: []
+        }
+        tournament.rounds.forEach(round => {
+          const playedRound: Round = {
+            position: round.position,
+            matches: []
+          }
+          round.matches.forEach(match => {
+            const playedMatch: Match = {
+              firstContestantId: match.firstContestant!.id,
+              secondContestantId: match.secondContestant!.id
+            }
+            playedRound.matches.push(playedMatch);
+          })
+          playedTournament.rounds.push(playedRound);
+        })
+        return this.http.post<PlayedTournament>(`${this.baseUrl}/played-tournaments`, playedTournament);
+      })
+    )
+  }
+
   public initiateFirstRound(tournament: Tournament, totalRounds: number) {
     const shuffle = <T>(array: T[]) => {
       const newArray = [...array];
@@ -33,6 +63,7 @@ export class TournamentService {
       }
       return newArray;
     };
+    this.handleContestantIds(tournament.template.contestants!);
     const shuffledContestants = shuffle(tournament.template.contestants!);
 
     tournament.template.contestants = shuffledContestants;
@@ -68,6 +99,21 @@ export class TournamentService {
       matches: []
     }
     tournament.rounds.push(secondRound);
+  }
+
+  private handleContestantIds(contestants: Contestant[]) {
+    let lastId = 1;
+    contestants.forEach(contestant => {
+      if (contestant.id !== undefined && contestant.id > lastId) {
+        lastId = contestant.id;
+      }
+    })
+    contestants.forEach(contestant => {
+      if (contestant.id === undefined) {
+        contestant.id = lastId;
+        lastId++;
+      }
+    })
   }
 
   private handleTournamentsPlayed(contestant: Contestant): void {
