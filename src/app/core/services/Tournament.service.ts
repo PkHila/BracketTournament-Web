@@ -33,12 +33,10 @@ export class TournamentService {
       }
       return newArray;
     };
-    /* tournament.rounds = [];
-    console.log(tournament); */
     const shuffledContestants = shuffle(tournament.template.contestants!);
-    /* console.log(shuffledContestants); */
 
-    const totalMatchesForFirstRound = 2 ** totalRounds / 2;
+    const totalContestantsToArrange = 2 ** totalRounds
+    const totalMatchesForFirstRound = totalContestantsToArrange / 2;
     const firstRound: Round = {
       position: 0,
       matches: []
@@ -54,14 +52,18 @@ export class TournamentService {
       contestantsPushed++;
     }
     let roundIndex = 0;
-    while (contestantsPushed < shuffledContestants.length) {
+    while (contestantsPushed < shuffledContestants.length && contestantsPushed < totalContestantsToArrange) {
       firstRound.matches[roundIndex].secondContestant = shuffledContestants[contestantIndex];
       roundIndex++;
       contestantIndex++;
       contestantsPushed++;
     }
     tournament.rounds.push(firstRound);
-    this.spawnNewRoundIfNeeded(tournament, 0, totalRounds);
+    const secondRound: Round = {
+      position: 1,
+      matches: []
+    }
+    tournament.rounds.push(secondRound);
   }
 
   public spawnNewRoundIfNeeded(tournament: Tournament, currentRound: number, totalRounds: number): void {
