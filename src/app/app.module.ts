@@ -4,12 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Routes } from '@angular/router';
-import { CreateTemplateModule } from './modules/create-template/create-template.module';
-
-export const routes: Routes = [
-  { path: 'create-template', title: 'Crea un nuevo torneo', component: CreateTemplateModule }
-];
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +14,8 @@ export const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
