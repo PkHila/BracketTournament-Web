@@ -1,6 +1,6 @@
 <section id="createTemplate-view" class="container-fluid">
     <div class="createTemplate-row row justify-content-evenly">
-        <div id="search-result-box" class=" col-sm-6 col-md-7 col-lg-8 h-100">
+        <div id="search-result-box" class=" col-sm-6 col-md-7 col-lg-8 h-100 px-0">
             <app-api-search-results [contestants]="contestants"
             (addContestant)="onContestantSelected($event)" (search)="onSearch($event)">
             </app-api-search-results>
