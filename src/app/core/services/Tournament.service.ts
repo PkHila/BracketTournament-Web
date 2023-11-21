@@ -35,6 +35,8 @@ export class TournamentService {
     };
     const shuffledContestants = shuffle(tournament.template.contestants!);
 
+    tournament.template.contestants = shuffledContestants;
+
     const totalContestantsToArrange = 2 ** totalRounds
     const totalMatchesForFirstRound = totalContestantsToArrange / 2;
     const firstRound: Round = {
@@ -47,6 +49,7 @@ export class TournamentService {
       const match: Match = {
         firstContestant: shuffledContestants[contestantIndex]
       }
+      this.handleTournamentsPlayed(match.firstContestant!);
       firstRound.matches.push(match);
       contestantIndex++
       contestantsPushed++;
@@ -54,6 +57,7 @@ export class TournamentService {
     let roundIndex = 0;
     while (contestantsPushed < shuffledContestants.length && contestantsPushed < totalContestantsToArrange) {
       firstRound.matches[roundIndex].secondContestant = shuffledContestants[contestantIndex];
+      this.handleTournamentsPlayed(firstRound.matches[roundIndex].secondContestant!);
       roundIndex++;
       contestantIndex++;
       contestantsPushed++;
@@ -66,10 +70,17 @@ export class TournamentService {
     tournament.rounds.push(secondRound);
   }
 
+  private handleTournamentsPlayed(contestant: Contestant): void {
+    if (contestant.tournamentsPlayed === undefined) {
+      contestant.tournamentsPlayed = 0;
+    }
+    contestant.tournamentsPlayed++;
+  }
+
   public spawnNewRoundIfNeeded(tournament: Tournament, currentRound: number, totalRounds: number): void {
     if (tournament.rounds[currentRound].matches.length > 1 &&
       tournament.rounds.at(currentRound + 2) === undefined &&
-      currentRound + 1 < totalRounds -1) {
+      currentRound + 1 < totalRounds - 1) {
       const newRound: Round = {
         position: currentRound + 2,
         matches: []
@@ -78,7 +89,7 @@ export class TournamentService {
     }
   }
 
-  public vote(tournament: Tournament, currentRound: number, totalRounds: number, winner: Contestant) {
+  public vote(tournament: Tournament, currentMatch: number, currentRound: number, totalRounds: number, winner: Contestant) {
     if (tournament.rounds[currentRound + 1].matches.length === 0 ||
       tournament.rounds[currentRound + 1].matches.at(-1)!.secondContestant !== undefined) {
       const newMatch: Match = {
@@ -88,7 +99,33 @@ export class TournamentService {
     } else {
       tournament.rounds[currentRound + 1].matches.at(-1)!.secondContestant = winner;
     }
+    this.handleMatchesPlayed(tournament.rounds[currentRound].matches[currentMatch].firstContestant);
+    this.handleMatchesPlayed(tournament.rounds[currentRound].matches[currentMatch].secondContestant);
+    this.handleMatchesWon(winner);
     this.spawnNewRoundIfNeeded(tournament, currentRound, totalRounds);
+  }
+
+  public handleMatchesPlayed(contestant: Contestant | undefined): void {
+    if (contestant !== undefined) {
+      if (contestant.matchesPlayed === undefined) {
+        contestant.matchesPlayed = 0;
+      }
+      contestant.matchesPlayed++;
+    }
+  }
+
+  public handleMatchesWon(contestant: Contestant): void {
+    if (contestant.matchesWon === undefined) {
+      contestant.matchesWon = 0;
+    }
+    contestant.matchesWon++;
+  }
+
+  public handleTournamentsWon(contestant: Contestant): void {
+    if (contestant.tournamentsWon === undefined) {
+      contestant.tournamentsWon = 0;
+    }
+    contestant.tournamentsWon++;
   }
 
   public isNotLastMatch(currentRound: number, totalRounds: number): boolean {

@@ -56,7 +56,7 @@ export class PlayTournamentComponent implements OnInit {
 
     public onVote(votedContestant: Contestant) {
         if (this.tournamentService.isNotLastMatch(this.currentRound, this.totalRounds)) {
-            this.tournamentService.vote(this.tournament, this.currentRound, this.totalRounds, votedContestant);
+            this.tournamentService.vote(this.tournament, this.currentMatch, this.currentRound, this.totalRounds, votedContestant);
             this.currentMatch++;
             if (this.currentMatch === this.tournament.rounds[this.currentRound].matches.length) {
                 this.currentMatch = 0;
@@ -68,6 +68,10 @@ export class PlayTournamentComponent implements OnInit {
             console.log(this.tournament);
 
         } else {
+            this.tournamentService.handleMatchesPlayed(this.leftContestant!);
+            this.tournamentService.handleMatchesPlayed(this.rightContestant!);
+            this.tournamentService.handleMatchesWon(votedContestant);
+            this.tournamentService.handleTournamentsWon(votedContestant);
             this.leftContestant = undefined;
             this.rightContestant = undefined;
             this.winner = votedContestant;
