@@ -1,3 +1,8 @@
 #search-result-box, #template-box{
     background: rgba(255, 255, 255, 0.25);
 }
+
+#createTemplate-view{
+    height: 90vh;
+    overflow-y: auto;
+}
