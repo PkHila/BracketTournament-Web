@@ -39,6 +39,7 @@ export class OMDbApiService {
     return this.httpClient.get<OMDbResponse>(searchUrl)
       .pipe<OMDbSearchResult[]>(
         map(response => {
+          console.log(response);
           if (response.Response === "false") {
             throw new Error('No se encontraron resultados');
           }

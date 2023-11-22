@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { OMDbApiService } from '../services/omdb-api.service';
 import { ContestantService } from '../services/contestant.service';
 import { Contestant, Template } from 'src/app/core/interfaces';
+import { TemplateService } from 'src/app/core/services/Template.service';
 
 @Component({
   selector: 'app-create-template-page',
@@ -11,12 +12,14 @@ import { Contestant, Template } from 'src/app/core/interfaces';
 export class CreateTemplatePageComponent implements OnInit {
 
   public contestants?: Array<Contestant>;
-  public selectedContestants: Array<Contestant> = []; // usar un validador asincronico para validar la no repeticion de nombres de plantillas
+
+  public selectedContestants: Array<Contestant> = [];
   @Input() category!: string;
 
   constructor(
     private omdbApiService: OMDbApiService,
-    private contestantService: ContestantService) { }
+    private contestantService: ContestantService,
+    private templateService: TemplateService) { }
 
   ngOnInit(): void {
     // testing init
@@ -34,9 +37,11 @@ export class CreateTemplatePageComponent implements OnInit {
   public onSearch(searchTerm: string): void {
     this.omdbApiService.getContestants(searchTerm, this.category).subscribe({
       next: (contestants) => {
+        // lower said flag
         this.contestants = contestants;
       },
       error: () => {
+        // raise some flag
         this.contestants = [];
       }
     })
@@ -48,7 +53,7 @@ export class CreateTemplatePageComponent implements OnInit {
       category: this.category,
       contestants: this.selectedContestants 
     }
-    this.contestantService.postTemplate(template).subscribe({
+    this.templateService.postTemplate(template).subscribe({
       next: resp => {
         console.log('agregado con exito');        
       },

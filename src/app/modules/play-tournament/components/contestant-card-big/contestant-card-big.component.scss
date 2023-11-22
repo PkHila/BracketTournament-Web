@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.card{
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover{
+    transform: scale(1.10);
+  }
+  img{
+    max-height: 350px;
+  }
+}

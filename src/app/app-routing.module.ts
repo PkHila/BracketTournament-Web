@@ -8,6 +8,10 @@ const routes: Routes = [
     path: 'create-template', title: 'Crea un nuevo torneo',
     loadChildren: () => import("./modules/create-template/create-template.module").then(m => m.CreateTemplateModule)
   },
+  {
+    path: 'play-tournament',
+    loadChildren: () => import("./modules/play-tournament/play-tournament.module").then(m => m.PlayTournamentModule)
+  },
   { path: '**', component: PageNotFoundComponent }
 ];
 

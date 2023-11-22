@@ -30,6 +30,15 @@ export interface Round {
 }
 
 export interface Match {
-    firstContestant: Contestant;
+    firstContestant?: Contestant;
+    firstContestantId?: number;
     secondContestant?: Contestant;
+    secondContestantId?: number;
+}
+
+export interface PlayedTournament {
+    id?: number;
+    winnerId: number;
+    temlateId: number;
+    rounds: Array<Round>;
 }
