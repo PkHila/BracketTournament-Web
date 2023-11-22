@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="tournament-page row">
+        <div class="left-side col-4 border-end p-4">
+            <div class="cover-img row">
+                <div class="img col">
+                    <img src="https://i1.sndcdn.com/artworks-000313734987-n3xxzh-t500x500.jpg" alt="">
+                </div>
+            </div>
+            <div class="info row">
+                <div class="col">
+                    <h1>{{template.templateName}}</h1>
+                    <h2>Torneo de {{template.category}}</h2>
+                    <p>{{template.contestants}} participantes</p>
+                </div>
+            </div>
+        </div>
+        <div class="right-side col-8">
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+
+              
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Num. de Rondas <!--¿Debería ser Numero de rondas o Numero de Participantes? -->
+                  </button>
+                  <ul class="dropdown-menu">
+                    <!-- Va uno por cada opción de cant de rondas
+                    No agrego lógica para hacerlo en caso de que ya existe un metodo para ello en algún lado -->
+
+                    <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                    <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                  </ul>
+                </div>
+                <button type="button" class="btn btn-primary"> Jugar Torneo</button>
+              </div>
+        </div>
+    </div>
+</div>

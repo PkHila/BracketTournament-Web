@@ -25,6 +25,8 @@ export class OMDbApiService {
     }
   }
 
+
+
   // todo / log: 
   // agregar paginacion para mas de 10 resultados => &page=...
   // considerar que cada consulta va a sumar al daily limit
