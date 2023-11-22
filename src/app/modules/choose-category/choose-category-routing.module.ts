@@ -6,11 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: ChooseCategoryPageComponent,
-    loadChildren: () => import("../create-template/create-template.module").then(m => m.CreateTemplateModule)
   },
   {
     path: ':category',
-    title: 'Crea un nuevo torneo'
+    title: 'Crea un nuevo torneo',
+    loadChildren: () => import("../create-template/create-template.module").then(m => m.CreateTemplateModule)
   },
 ];
 

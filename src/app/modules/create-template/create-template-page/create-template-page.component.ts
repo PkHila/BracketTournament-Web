@@ -3,6 +3,8 @@ import { OMDbApiService } from '../services/omdb-api.service';
 import { ContestantService } from '../services/contestant.service';
 import { Contestant, Template } from 'src/app/core/interfaces';
 import { TemplateService } from 'src/app/core/services/Template.service';
+import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-create-template-page',
@@ -19,12 +21,20 @@ export class CreateTemplatePageComponent implements OnInit {
   constructor(
     private omdbApiService: OMDbApiService,
     private contestantService: ContestantService,
-    private templateService: TemplateService) { }
+    private templateService: TemplateService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    if (this.category === undefined) {
+    this.route.paramMap.subscribe({
+      next: params => {
+        this.category = params.get('category')!;
+        console.log(this.category);
+        
+      }
+    })
+    /* if (this.category === undefined) {
       this.category = 'movie';
-    }
+    } */
   }
 
   public onContestantSelected(selectedContestant: Contestant): void {

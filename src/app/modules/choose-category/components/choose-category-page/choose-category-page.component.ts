@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './choose-category-page.component.html',
@@ -6,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class ChooseCategoryPageComponent {
 
+  constructor(private router: Router) {}
+
+  public gotoMovies() {
+    this.router.navigate(['/create-template/movie']);
+  }
+
+  public gotoSeries() {
+    this.router.navigate(['/create-template/series']);
+  }
 }
