@@ -5,11 +5,12 @@ import { ChooseCategoryPageComponent } from './components/choose-category-page/c
 const routes: Routes = [
   {
     path: '',
-    component: ChooseCategoryPageComponent
+    component: ChooseCategoryPageComponent,
+    loadChildren: () => import("../create-template/create-template.module").then(m => m.CreateTemplateModule)
   },
   {
-    path: ':category', title: 'Crea un nuevo torneo',
-    loadChildren: () => import("../create-template/create-template.module").then(m => m.CreateTemplateModule)
+    path: ':category',
+    title: 'Crea un nuevo torneo'
   },
 ];
 
