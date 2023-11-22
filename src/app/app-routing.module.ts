@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageNotFoundComponent } from './modules/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { LandingPageComponent } from './modules/home-page/landing-page/landing-page.component';
 
 const routes: Routes = [
-  { path: '', loadChildren: () => import("./modules/home-page/home-page.module").then(m => m.HomePageModule) },
   {
-    path: 'choose-category-test', loadChildren: () => import("./modules/choose-category/choose-category.module").then(m => m.ChooseCategoryModule)
-  },
-  { 
-    path: 'view-template-test', loadChildren: () => import("./modules/view-template/view-template.module").then(m => m.ViewTemplateModule)
+    path: '',
+    component: LandingPageComponent
   },
   {
-    path: 'create-template', title: 'Crea un nuevo torneo',
-    loadChildren: () => import("./modules/create-template/create-template.module").then(m => m.CreateTemplateModule)
+    path: 'create-template', loadChildren: () => import("./modules/choose-category/choose-category.module").then(m => m.ChooseCategoryModule)
   },
   {
-    path: 'play-tournament',
-    loadChildren: () => import("./modules/play-tournament/play-tournament.module").then(m => m.PlayTournamentModule)
+    path: ':templateName', loadChildren: () => import("./modules/view-template/view-template.module").then(m => m.ViewTemplateModule)
   },
-  { path: '**', component: PageNotFoundComponent }
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  },
 ];
 
 @NgModule({

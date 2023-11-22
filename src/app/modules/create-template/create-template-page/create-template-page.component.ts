@@ -22,8 +22,9 @@ export class CreateTemplatePageComponent implements OnInit {
     private templateService: TemplateService) { }
 
   ngOnInit(): void {
-    // testing init
-    this.category = 'movie';
+    if (this.category === undefined) {
+      this.category = 'movie';
+    }
   }
 
   public onContestantSelected(selectedContestant: Contestant): void {

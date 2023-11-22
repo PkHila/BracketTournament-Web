@@ -8,10 +8,8 @@ import { ContestantStatComponent } from './components/contestant-stat/contestant
 
 @NgModule({
   declarations: [
-
-  
     ViewTemplatePageComponent,
-          ContestantStatComponent
+    ContestantStatComponent
   ],
   imports: [
     CommonModule,
