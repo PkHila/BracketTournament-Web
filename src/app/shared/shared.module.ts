@@ -3,21 +3,26 @@ import { CommonModule } from '@angular/common';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [
     SearchBarComponent,
-    NavbarComponent
+    NavbarComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     SearchBarComponent,
-    NavbarComponent
+    NavbarComponent,
+    PageNotFoundComponent,
   ]
 })
 export class SharedModule { }

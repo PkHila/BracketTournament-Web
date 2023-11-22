@@ -26,8 +26,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     ReactiveFormsModule,
     CreateTemplateRoutingModule,
-    HttpClientModule,
-    SharedModule
   ]
 })
 export class CreateTemplateModule { }

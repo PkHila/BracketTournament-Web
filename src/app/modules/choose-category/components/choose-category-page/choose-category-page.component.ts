@@ -1,10 +1,19 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-choose-category-page',
   templateUrl: './choose-category-page.component.html',
   styleUrls: ['./choose-category-page.component.scss']
 })
 export class ChooseCategoryPageComponent {
 
+  constructor(private router: Router) {}
+
+  public gotoMovies() {
+    this.router.navigate(['/create-template/movie']);
+  }
+
+  public gotoSeries() {
+    this.router.navigate(['/create-template/series']);
+  }
 }
