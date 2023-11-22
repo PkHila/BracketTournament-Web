@@ -1,40 +1,45 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { OMDbApiService } from '../services/omdb-api.service';
 import { ContestantService } from '../services/contestant.service';
 import { Contestant, Template } from 'src/app/core/interfaces';
 import { TemplateService } from 'src/app/core/services/Template.service';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
+import { RawgIoApiService } from '../services/rawg-io-api.service';
+import { ApiService, QueryParams } from '../services/types/interfaces';
 
 @Component({
   selector: 'app-create-template-page',
   templateUrl: './create-template-page.component.html',
   styleUrls: ['./create-template-page.component.scss']
 })
-export class CreateTemplatePageComponent implements OnInit {
+export class CreateTemplatePageComponent {
 
   public contestants?: Array<Contestant>;
-
   public selectedContestants: Array<Contestant> = [];
   @Input() category!: string;
+  private apiService!: ApiService;
+  private queryParams: QueryParams = {};
 
   constructor(
-    private omdbApiService: OMDbApiService,
     private contestantService: ContestantService,
     private templateService: TemplateService,
-    private route: ActivatedRoute) { }
-
-  ngOnInit(): void {
+    private route: ActivatedRoute) {
     this.route.paramMap.subscribe({
       next: params => {
         this.category = params.get('category')!;
-        console.log(this.category);
-        
+        switch (this.category) {
+          case 'movie':
+          case 'series':
+            this.apiService = inject(OMDbApiService);
+            this.queryParams.category = this.category;
+            break;
+          case 'games':
+            this.apiService = inject(RawgIoApiService);
+            break;
+        }
       }
     })
-    /* if (this.category === undefined) {
-      this.category = 'movie';
-    } */
   }
 
   public onContestantSelected(selectedContestant: Contestant): void {
@@ -46,7 +51,8 @@ export class CreateTemplatePageComponent implements OnInit {
   }
 
   public onSearch(searchTerm: string): void {
-    this.omdbApiService.getContestants(searchTerm, this.category).subscribe({
+    this.queryParams.query = searchTerm;
+    this.apiService.getContestants(this.queryParams).subscribe({
       next: (contestants) => {
         // lower said flag
         this.contestants = contestants;
@@ -62,14 +68,14 @@ export class CreateTemplatePageComponent implements OnInit {
     const template: Template = {
       templateName: templateName,
       category: this.category,
-      contestants: this.selectedContestants 
+      contestants: this.selectedContestants
     }
     this.templateService.postTemplate(template).subscribe({
       next: resp => {
-        console.log('agregado con exito');        
+        console.log('agregado con exito');
       },
       error: () => {
-        console.log('error');        
+        console.log('error');
       }
     });
   }

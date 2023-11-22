@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { OMDbResponse, OMDbSearchResult } from './types/interfaces';
+import { ApiService, OMDbResponse, OMDbSearchResult, QueryParams } from './types/interfaces';
 import { environment } from 'src/environments/environment.development';
 import { Contestant } from 'src/app/core/interfaces';
 import { map, mergeMap, Observable, of } from 'rxjs';
@@ -8,16 +8,14 @@ import { map, mergeMap, Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class OMDbApiService {
+export class OMDbApiService implements ApiService {
 
   private baseUrl: string = "https://www.omdbapi.com";
-  /* "type=series"
-     "type=movie" */
 
   constructor(private httpClient: HttpClient) { }
 
-  private checkIfImgEmpty(source: string):string {
-    if(source!=="N/A"){
+  private checkIfImgEmpty(source: string): string {
+    if (source !== "N/A") {
       return source;
     }
     else {
@@ -25,23 +23,12 @@ export class OMDbApiService {
     }
   }
 
-
-
-  // todo / log: 
-  // agregar paginacion para mas de 10 resultados => &page=...
-  // considerar que cada consulta va a sumar al daily limit
-  // por ejemplo: consumir los 139 resultados de una busqueda de Star Wars Series son 14 consultas
-  // podriamos mostrar un maximo de 20 que son solo 2 paginas
-
-  //JSON.parse(sessionStorage.getItem(searchUrl) || '[]');
-  //sessionStorage.setItem(`${query.toLocaleLowerCase()}&${type}`, JSON.stringify(contestants));
-  public getContestants(query: string, type: string): Observable<Contestant[]> {
-    const searchUrl: string = `${this.baseUrl}/?s=${query.toLocaleLowerCase()}&apikey=${environment.omdbApiKey}&type=${type}`;
+  public getContestants(queryParams: QueryParams): Observable<Contestant[]> {
+    const searchUrl: string = `${this.baseUrl}/?s=${queryParams.query}&apikey=${environment.omdbApiKey}&type=${queryParams.category}`;
 
     return this.httpClient.get<OMDbResponse>(searchUrl)
       .pipe<OMDbSearchResult[]>(
         map(response => {
-          console.log(response);
           if (response.Response === "false") {
             throw new Error('No se encontraron resultados');
           }
