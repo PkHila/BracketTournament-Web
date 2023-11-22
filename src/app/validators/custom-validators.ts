@@ -1,5 +1,5 @@
 import { AbstractControl, AsyncValidatorFn, ValidationErrors } from "@angular/forms";
-import { ContestantService } from "../modules/create-template/services/contestant.service";
+import { ContestantService } from "../core/services/contestant.service";
 import { Observable, catchError, debounceTime, map, of, switchMap } from "rxjs";
 
 export class CustomValidators {

@@ -3,6 +3,7 @@ import { Contestant } from "src/app/core/interfaces";
 
 export interface ApiService {
     getContestants(queryParams: QueryParams): Observable<Contestant[]>;
+    checkIfImgEmpty(source: string): string;
 }
 
 export interface QueryParams {

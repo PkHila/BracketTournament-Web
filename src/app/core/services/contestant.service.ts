@@ -95,4 +95,22 @@ export class ContestantService {
   public removeContestant(contestant: Contestant, selectedContestants: Contestant[]) {
     selectedContestants.splice(selectedContestants.indexOf(contestant), 1);
   }
+
+  public calculateTournamentWinRate(contestant: Contestant): number {
+    if (contestant.tournamentsPlayed != 0 && contestant.tournamentsPlayed && contestant.tournamentsWon) {
+      return contestant.tournamentsWon * 100 / contestant.tournamentsPlayed;
+    }
+    else {
+      return 0;
+    }
+  }
+
+  public calculateMatchWinRate(contestant: Contestant): number {
+    if (contestant.matchesPlayed && contestant.matchesWon && contestant.matchesPlayed != 0) {
+      return contestant.matchesWon * 100 / contestant.matchesPlayed;
+    }
+    else {
+      return 0;
+    }
+  }
 }

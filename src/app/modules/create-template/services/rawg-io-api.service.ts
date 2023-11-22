@@ -13,6 +13,15 @@ export class RawgIoApiService implements ApiService {
   private baseUrl = "https://api.rawg.io/api/games";
 
   constructor(private http: HttpClient) { }
+  
+  checkIfImgEmpty(source: string): string {
+    if (source) {
+      return source;
+    }
+    else {
+      return "/assets/img_not_found.png";
+    }
+  }
 
   public getContestants(queryParams: QueryParams): Observable<Contestant[]> {
     const searchUrl = `${this.baseUrl}?key=${environment.rawgApikey}&search=${queryParams.query}`;
@@ -30,7 +39,7 @@ export class RawgIoApiService implements ApiService {
           const contestants = results.map<Contestant>(result => {
             const contestant: Contestant = {
               name: result.name,
-              img: result.background_image,
+              img: this.checkIfImgEmpty(result.background_image),
               author: ''
             }
             if (result.tba === true) {

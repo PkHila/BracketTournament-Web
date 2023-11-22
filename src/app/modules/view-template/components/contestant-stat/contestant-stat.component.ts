@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Contestant } from 'src/app/core/interfaces';
+import { ContestantService } from 'src/app/core/services/contestant.service';
 
 @Component({
   selector: 'app-contestant-stat',
@@ -8,28 +9,15 @@ import { Contestant } from 'src/app/core/interfaces';
 })
 
 
-export class ContestantStatComponent {
+export class ContestantStatComponent implements OnInit {
   @Input() contestant!: Contestant;
-  public tournamentWinRate: number = this.calculateMatchWinRate();
+  public tournamentWinRate!: number;
+  public matchWinRate!: number
 
-  private calculateTournamentWinRate():number {
-    if(this.contestant.tournamentsPlayed !=0 && this.contestant.tournamentsPlayed && this.contestant.tournamentsWon){   
-      return this.contestant.tournamentsWon * 100 / this.contestant.tournamentsWon;
-    }
-    else{
-      return 0;
-    }
-  
-  }
+  constructor(private contestantService: ContestantService) { }
 
-  private calculateMatchWinRate():number {
-    if(this.contestant.matchesPlayed && this.contestant.matchesWon && this.contestant.matchesPlayed !=0){   
-      return this.contestant.matchesWon * 100 / this.contestant.matchesPlayed;
-    }
-    else{
-      return 0;
-    }
-  
+  ngOnInit(): void {
+    this.tournamentWinRate = this.contestantService.calculateTournamentWinRate(this.contestant);
+    this.matchWinRate = this.contestantService.calculateMatchWinRate(this.contestant);
   }
-  
 }

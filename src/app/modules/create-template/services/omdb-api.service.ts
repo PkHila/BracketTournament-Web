@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { ApiService, OMDbResponse, OMDbSearchResult, QueryParams } from './types/interfaces';
 import { environment } from 'src/environments/environment.development';
 import { Contestant } from 'src/app/core/interfaces';
-import { map, mergeMap, Observable, of } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class OMDbApiService implements ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private checkIfImgEmpty(source: string): string {
+  public checkIfImgEmpty(source: string): string {
     if (source !== "N/A") {
       return source;
     }
