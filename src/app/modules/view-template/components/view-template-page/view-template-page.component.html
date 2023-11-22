@@ -15,23 +15,39 @@
             </div>
         </div>
         <div class="right-side col-8">
-            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-
-              
-                <div class="btn-group" role="group">
-                  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Num. de Rondas <!--¿Debería ser Numero de rondas o Numero de Participantes? -->
-                  </button>
-                  <ul class="dropdown-menu">
-                    <!-- Va uno por cada opción de cant de rondas
-                    No agrego lógica para hacerlo en caso de que ya existe un metodo para ello en algún lado -->
-
-                    <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                    <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                  </ul>
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col">
+                    <div class="form-check form-switch">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Mostrar estadísticas</label>
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                      </div>
                 </div>
-                <button type="button" class="btn btn-primary"> Jugar Torneo</button>
-              </div>
+            </div>
+            <div class="row justify-content-center align-items-center g-2">
+                <app-contestant-minimal *ngFor="let contestant of template.contestants" [contestant]="contestant"></app-contestant-minimal>
+            </div>
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col">
+                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                        <div class="btn-group" role="group">
+                          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Num. de Rondas <!--¿Debería ser Numero de rondas o Numero de Participantes? -->
+                          </button>
+                          <ul class="dropdown-menu">
+                            <!-- Va uno por cada opción de cant de rondas
+                            No agrego lógica para hacerlo en caso de que ya existe un metodo para ello en algún lado -->
+        
+                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                          </ul>
+                        </div>
+                        <button type="button" class="btn btn-primary"> Jugar Torneo</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- <app-contestant-stat [contestant]="testContestant"></app-contestant-stat> -->
+                </div>
+            </div>
         </div>
     </div>
 </div>

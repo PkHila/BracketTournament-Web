@@ -1,1 +1,10 @@
-<p>contestant-stat works!</p>
+<div>
+    <h2 class="fs-2">Torneos</h2>
+<p class="fs-3">{{contestant.tournamentsWon}} de {{contestant.tournamentsPlayed}} ganados</p>
+<div class="progress" role="progressbar" aria-label="Tournaments won percentage"
+[attr.aria-valuenow]="tournamentWinRate" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar" [style.width.%]="tournamentWinRate">{{tournamentWinRate}}%</div>
+</div>
+<h2 class="fs-2">1 VS 1</h2>
+<p class="fs-3">{{contestant.matchesWon}} de {{contestant.matchesPlayed}} ganados</p>
+</div>
