@@ -16,6 +16,14 @@ export class OMDbApiService {
 
   constructor(private httpClient: HttpClient) { }
 
+  private checkIfImgEmpty(source: string):string {
+    if(source!=="N/A"){
+      return source;
+    }
+    else {
+      return "/assets/img_not_found.png";
+    }
+  }
 
   // todo / log: 
   // agregar paginacion para mas de 10 resultados => &page=...
@@ -41,7 +49,7 @@ export class OMDbApiService {
         map(results => {
           const contestants = results.map(result => <Contestant>{
             name: result.Title,
-            img: result.Poster,
+            img: this.checkIfImgEmpty(result.Poster),
             date: result.Year,
             author: ''
           })

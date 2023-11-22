@@ -12,6 +12,7 @@ import { TemplateService } from 'src/app/core/services/Template.service';
 export class CreateTemplatePageComponent implements OnInit {
 
   public contestants?: Array<Contestant>;
+
   public selectedContestants: Array<Contestant> = [];
   @Input() category!: string;
 
