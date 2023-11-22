@@ -7,10 +7,10 @@
                 </div>
             </div>
             <div class="info row">
-                <div class="col">
+                <div class="col" *ngIf="template">
                     <h1>{{template.templateName}}</h1>
                     <h2>Torneo de {{template.category}}</h2>
-                    <p>{{template.contestants}} participantes</p>
+                    <p>{{template.contestants!.length}} participantes</p>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
                       </div>
                 </div>
             </div>
-            <div class="row justify-content-center align-items-center g-2">
+            <div class="row justify-content-center align-items-center g-2" *ngIf="template">
                 <app-contestant-minimal *ngFor="let contestant of template.contestants" [contestant]="contestant"></app-contestant-minimal>
             </div>
             <div class="row justify-content-center align-items-center g-2">
