@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { ApiService, OMDbResponse, OMDbSearchResult, QueryParams } from './types/interfaces';
 import { environment } from 'src/environments/environment.development';
 import { Contestant } from 'src/app/core/interfaces';
-import { map, Observable } from 'rxjs';
+import { concatMap, map, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,16 +24,27 @@ export class OMDbApiService implements ApiService {
   }
 
   public getContestants(queryParams: QueryParams): Observable<Contestant[]> {
-    
+
     const searchUrl: string = `${this.baseUrl}/?s=${queryParams.query}&apikey=${environment.omdbApiKey}&type=${queryParams.category}`;
 
+    return this.searchForContestants(searchUrl);
+  }
+
+  private searchForContestants(searchUrl: string): Observable<Contestant[]> {
     return this.httpClient.get<OMDbResponse>(searchUrl)
       .pipe<OMDbSearchResult[]>(
-        map(response => {
+        concatMap(response => {
           if (response.Response === "false") {
             throw new Error('No se encontraron resultados');
           }
-          return response.Search
+          if (response.totalResults > '10') {
+            return this.httpClient.get<OMDbResponse>(`${searchUrl}&page=2`)
+              .pipe<OMDbSearchResult[]>(
+                map(nextPageResponse =>
+                  response.Search.concat(nextPageResponse.Search)));
+          } else {
+            return of(response.Search)
+          }
         }))
       .pipe<Contestant[]>(
         map(results => {
@@ -47,3 +58,5 @@ export class OMDbApiService implements ApiService {
         }))
   }
 }
+
+

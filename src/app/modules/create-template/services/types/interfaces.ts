@@ -13,7 +13,7 @@ export interface QueryParams {
 
 export interface OMDbResponse {
     Response: string;
-    totalResults: string | number;
+    totalResults: string;
     Search: OMDbSearchResult[];
 }
 
