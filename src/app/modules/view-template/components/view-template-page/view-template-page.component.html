@@ -13,6 +13,9 @@
                     <h1>{{template.templateName}}</h1>
                     <h2>Torneo de {{template.category}}</h2>
                     <p>{{template.contestants!.length}} participantes</p>
+                    <p *ngIf="template.timesPlayed && template.timesPlayed > 1">{{template.timesPlayed}} veces jugado
+                    </p>
+                    <p *ngIf="template.timesPlayed === 1">{{template.timesPlayed}} vez jugado</p>
                 </div>
             </div>
         </div>
