@@ -12,6 +12,9 @@ import { TemplateService } from 'src/app/core/services/Template.service';
 
 export class ViewTemplatePageComponent implements OnInit {
   @Input() template!: Template;
+  public roundsInfo: Array<{
+    round: number, contestantsCount: number
+  }> = []
 
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +27,12 @@ export class ViewTemplatePageComponent implements OnInit {
         this.templatetService.getTemplateByName(templateName!).subscribe({
           next: t => {
             this.template = t;
+            const maxRoundCount = this.templatetService.calculateMaxRoundCount(this.template);
+            console.log(maxRoundCount);
+
+            for (let i = 2; i < maxRoundCount + 1; i++) {
+              this.roundsInfo.push({ round: i, contestantsCount: 2 ** i });
+            }
           },
           error: err => {
             console.log(err);

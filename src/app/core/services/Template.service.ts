@@ -11,7 +11,7 @@ export class TemplateService {
   private baseUrl: string = "http://localhost:3000";
 
   constructor(private http: HttpClient) { }
-  
+
   public postTemplate(template: Template): Observable<Template> {
     return this.http.post<Template>(`${this.baseUrl}/templates`, template);
   }
@@ -31,5 +31,19 @@ export class TemplateService {
 
   public putTemplate(template: Template, templateId: number): Observable<Template> {
     return this.http.put<Template>(`${this.baseUrl}/templates/${templateId}`, template)
+  }
+
+  public calculateMaxRoundCount(template: Template): number {
+    let maxRoundCount = 2;
+    const contestantCount = template.contestants!.length;    
+    while (contestantCount > 2 ** maxRoundCount) {
+      maxRoundCount++;
+    }
+    if (contestantCount > maxRoundCount ** 2) {
+      maxRoundCount--;
+    }
+    console.log(maxRoundCount);
+
+    return maxRoundCount;
   }
 }
