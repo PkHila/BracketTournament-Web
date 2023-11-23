@@ -9,6 +9,7 @@ import { Contestant } from 'src/app/core/interfaces';
 export class ApiSearchResultsComponent {
 
   @Input() contestants?: Array<Contestant>;
+  @Input() noResultsFound?: boolean;
   @Output() addContestant: EventEmitter<Contestant> = new EventEmitter();
   @Output() search: EventEmitter<string> = new EventEmitter();
 
