@@ -46,7 +46,9 @@
                                     <a class="dropdown-item"
                                         routerLink="play-tournament/{{roundInfo.round}}">{{roundInfo.round}}
                                         rondas con
-                                        {{roundInfo.contestantsCount}} participantes</a>
+                                        {{roundInfo.contestantsCount}} participantes <span
+                                            *ngIf="roundInfo.freePasses">y {{roundInfo.freePasses}} pasan
+                                            gratis</span></a>
                                 </li>
                             </ul>
                         </div>

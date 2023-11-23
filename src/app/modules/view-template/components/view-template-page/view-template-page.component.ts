@@ -13,7 +13,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class ViewTemplatePageComponent implements OnInit {
   @Input() template!: Template;
   public roundsInfo: Array<{
-    round: number, contestantsCount: number
+    round: number, contestantsCount: number, freePasses?: number
   }> = [];
   public form!: FormGroup;
 
@@ -38,6 +38,9 @@ export class ViewTemplatePageComponent implements OnInit {
             const maxRoundCount = this.templatetService.calculateMaxRoundCount(this.template);
             for (let i = 2; i < maxRoundCount + 1; i++) {
               this.roundsInfo.push({ round: i, contestantsCount: 2 ** i });
+            }
+            if (this.template.contestants!.length < 2 ** maxRoundCount) {
+              this.roundsInfo.at(-1)!.freePasses = 2 ** maxRoundCount - this.template.contestants!.length;
             }
           },
           error: err => {
