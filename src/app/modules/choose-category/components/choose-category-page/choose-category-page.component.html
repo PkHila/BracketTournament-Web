@@ -24,15 +24,15 @@
         <div class="col">
             <div class="card text-bg-dark">
                 <img src="../../../../../assets/category_icons/headphones-svgrepo-com.svg" class="card-img" alt="Imágen Música">
-                <div class="card-img-overlay">
-                  <h5 class="card-title">Música</h5>
+                <div class="card-img-overlay" (click)="gotoGames()">
+                  <h5 class="card-title">Música (Juegos)</h5>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card text-bg-dark">
                 <img src="../../../../../assets/category_icons/dragon-ball-svgrepo-com.svg" class="card-img" alt="Imágen Anime">
-                <div class="card-img-overlay">
+                <div class="card-img-overlay" (click)="gotoAnime()">
                   <h5 class="card-title">Anime</h5>
                 </div>
             </div>
@@ -40,7 +40,7 @@
         <div class="col">
             <div class="card text-bg-dark">
                 <img src="../../../../../assets/category_icons/kanji-symbol-svgrepo-com.svg" class="card-img" alt="Imágen Manga">
-                <div class="card-img-overlay">
+                <div class="card-img-overlay" (click)="gotoManga()">
                   <h5 class="card-title">Manga</h5>
                 </div>
             </div>

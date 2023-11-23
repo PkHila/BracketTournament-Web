@@ -7,6 +7,8 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { RawgIoApiService } from '../services/rawg-io-api.service';
 import { ApiService, QueryParams } from '../services/types/interfaces';
+import { JikanAnimeApiService } from '../services/jikan-anime-api.service';
+import { JikanMangaApiService } from '../services/jikan-manga-api.service';
 
 @Component({
   selector: 'app-create-template-page',
@@ -20,6 +22,7 @@ export class CreateTemplatePageComponent {
   @Input() category!: string;
   private apiService!: ApiService;
   private queryParams: QueryParams = {};
+  public noResultsFound: boolean = false;
 
   constructor(
     private contestantService: ContestantService,
@@ -37,6 +40,13 @@ export class CreateTemplatePageComponent {
           case 'games':
             this.apiService = inject(RawgIoApiService);
             break;
+          case 'anime':
+            this.apiService = inject(JikanAnimeApiService);
+            this.queryParams.category = this.category;
+            break;
+          case 'manga':
+            this.apiService = inject(JikanMangaApiService);
+            this.queryParams.category = this.category;
         }
       }
     })
@@ -54,11 +64,11 @@ export class CreateTemplatePageComponent {
     this.queryParams.query = searchTerm;
     this.apiService.getContestants(this.queryParams).subscribe({
       next: (contestants) => {
-        // lower said flag
+        this.noResultsFound = false;
         this.contestants = contestants;
       },
       error: () => {
-        // raise some flag
+        this.noResultsFound = true;
         this.contestants = [];
       }
     })

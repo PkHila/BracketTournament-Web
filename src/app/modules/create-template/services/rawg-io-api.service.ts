@@ -24,7 +24,9 @@ export class RawgIoApiService implements ApiService {
   }
 
   public getContestants(queryParams: QueryParams): Observable<Contestant[]> {
+
     const searchUrl = `${this.baseUrl}?key=${environment.rawgApiKey}&search=${queryParams.query}`;
+    
     return this.http.get<RawgIoResponse>(searchUrl)
       .pipe<RawgIoResult[]>(
         map(response => {

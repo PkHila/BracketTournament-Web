@@ -10,7 +10,7 @@ import { map, Observable } from 'rxjs';
 })
 export class OMDbApiService implements ApiService {
 
-  private baseUrl: string = "https://www.omdbapi.com";
+  private baseUrl = "https://www.omdbapi.com";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -24,6 +24,7 @@ export class OMDbApiService implements ApiService {
   }
 
   public getContestants(queryParams: QueryParams): Observable<Contestant[]> {
+    
     const searchUrl: string = `${this.baseUrl}/?s=${queryParams.query}&apikey=${environment.omdbApiKey}&type=${queryParams.category}`;
 
     return this.httpClient.get<OMDbResponse>(searchUrl)

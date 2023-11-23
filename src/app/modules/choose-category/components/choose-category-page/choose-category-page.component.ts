@@ -16,4 +16,16 @@ export class ChooseCategoryPageComponent {
   public gotoSeries() {
     this.router.navigate(['/create-template/series']);
   }
+
+  public gotoGames() {
+    this.router.navigate(['create-template/games']);
+  }
+
+  public gotoAnime() {
+    this.router.navigate(['create-template/anime']);
+  }
+
+  public gotoManga() {
+    this.router.navigate(['create-template/manga']);
+  }
 }
