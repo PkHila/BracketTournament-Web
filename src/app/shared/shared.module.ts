@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RouterModule } from '@angular/router';
+import { TemplateShowcaseListComponent } from './components/template-showcase-list/template-showcase-list.component';
+import { TemplateShowcaseCardComponent } from './components/template-showcase-card/template-showcase-card.component';
 
 
 
@@ -13,6 +15,8 @@ import { RouterModule } from '@angular/router';
     SearchBarComponent,
     NavbarComponent,
     PageNotFoundComponent,
+    TemplateShowcaseListComponent,
+    TemplateShowcaseCardComponent
   ],
   imports: [
     CommonModule,
@@ -23,6 +27,8 @@ import { RouterModule } from '@angular/router';
     SearchBarComponent,
     NavbarComponent,
     PageNotFoundComponent,
+    TemplateShowcaseListComponent,
+    TemplateShowcaseCardComponent
   ]
 })
 export class SharedModule { }

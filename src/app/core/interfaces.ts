@@ -16,6 +16,7 @@ export interface Template {
     contestantIds?: Array<number>;
     templateName: string;
     category: string;
+    coverImg?: string;
 }
 
 export interface Tournament {
