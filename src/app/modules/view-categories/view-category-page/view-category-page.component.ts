@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Categories } from 'src/app/core/categories.enum';
+import { ActivatedRoute } from '@angular/router';
 import { Template } from 'src/app/core/interfaces';
 import { TemplateService } from 'src/app/core/services/Template.service';
 
@@ -10,16 +10,24 @@ import { TemplateService } from 'src/app/core/services/Template.service';
 })
 
 export class ViewCategoryPageComponent {
-  @Input() templates!: Array<Template>;
-  @Input() currentCategory!: Categories;
+  @Input() templates?: Array<Template>;
+  @Input() currentCategory!: string;
 
-  constructor(private templateService: TemplateService) {}
+  constructor(private templateService: TemplateService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.templateService.getTemplatesByCategory(this.currentCategory).subscribe({
-      next: t => {
-        this.templates = t;
+    this.route.paramMap.subscribe({
+      next: params => {
+        this.currentCategory = params.get('category')!;
+        this.templateService.getTemplatesByCategory(this.currentCategory).subscribe({
+          next: t => {
+            this.templates = t;
+          },
+          error: () => {
+            this.templates = undefined;
+          }
+        })
       }
-    })
+    });
   }
 }

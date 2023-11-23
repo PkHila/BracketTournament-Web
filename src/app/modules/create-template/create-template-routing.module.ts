@@ -6,8 +6,7 @@ import { templateGuard } from 'src/app/core/guards/template.guard';
 const routes: Routes = [
   {
     path: '',
-    component: CreateTemplatePageComponent,
-    canActivate: [templateGuard]
+    component: CreateTemplatePageComponent
   }
 ];
 
