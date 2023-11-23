@@ -42,8 +42,10 @@ export class TournamentService {
           }
           round.matches.forEach(match => {
             const playedMatch: Match = {
-              firstContestantId: match.firstContestant!.id,
-              secondContestantId: match.secondContestant!.id
+              firstContestantId: match.firstContestant!.id
+            }
+            if (match.secondContestant) {
+              playedMatch.secondContestantId = match.secondContestant.id;
             }
             playedRound.matches.push(playedMatch);
           })

@@ -6,74 +6,336 @@
       "category": "movie",
       "contestants": [
         {
-          "name": "Star Wars: Episode IV - A New Hope",
-          "img": "https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_SX300.jpg",
-          "date": "1977",
-          "author": ""
-        },
-        {
-          "name": "Star Wars: Episode V - The Empire Strikes Back",
-          "img": "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-          "date": "1980",
-          "author": ""
-        },
-        {
           "name": "Star Wars: Episode VI - Return of the Jedi",
           "img": "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
           "date": "1983",
-          "author": ""
-        },
-        {
-          "name": "Star Wars: Episode VII - The Force Awakens",
-          "img": "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg",
-          "date": "2015",
-          "author": ""
-        },
-        {
-          "name": "Star Wars: Episode I - The Phantom Menace",
-          "img": "https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
-          "date": "1999",
-          "author": ""
-        },
-        {
-          "name": "Star Wars: Episode III - Revenge of the Sith",
-          "img": "https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_SX300.jpg",
-          "date": "2005",
-          "author": ""
+          "author": "",
+          "id": 3,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 8,
+          "matchesWon": 4
         },
         {
           "name": "Star Wars: Episode II - Attack of the Clones",
           "img": "https://m.media-amazon.com/images/M/MV5BMDAzM2M0Y2UtZjRmZi00MzVlLTg4MjEtOTE3NzU5ZDVlMTU5XkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg",
           "date": "2002",
-          "author": ""
+          "author": "",
+          "id": 7,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 10,
+          "matchesWon": 6
         },
         {
           "name": "Rogue One: A Star Wars Story",
           "img": "https://m.media-amazon.com/images/M/MV5BMjEwMzMxODIzOV5BMl5BanBnXkFtZTgwNzg3OTAzMDI@._V1_SX300.jpg",
           "date": "2016",
-          "author": ""
-        },
-        {
-          "name": "Star Wars: Episode VIII - The Last Jedi",
-          "img": "https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg",
-          "date": "2017",
-          "author": ""
-        },
-        {
-          "name": "Star Wars: Episode IX - The Rise of Skywalker",
-          "img": "https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX300.jpg",
-          "date": "2019",
-          "author": ""
+          "author": "",
+          "id": 8,
+          "tournamentsPlayed": 3,
+          "matchesPlayed": 12,
+          "matchesWon": 12,
+          "tournamentsWon": 3
         },
         {
           "name": "Solo: A Star Wars Story",
           "img": "https://m.media-amazon.com/images/M/MV5BOTM2NTI3NTc3Nl5BMl5BanBnXkFtZTgwNzM1OTQyNTM@._V1_SX300.jpg",
           "date": "2018",
-          "author": ""
+          "author": "",
+          "id": 11,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 12,
+          "matchesWon": 9,
+          "tournamentsWon": 1
+        },
+        {
+          "name": "Star Wars: Episode VII - The Force Awakens",
+          "img": "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg",
+          "date": "2015",
+          "author": "",
+          "id": 4,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 6,
+          "matchesWon": 2
+        },
+        {
+          "name": "Star Wars: Episode I - The Phantom Menace",
+          "img": "https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+          "date": "1999",
+          "author": "",
+          "id": 5,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 6,
+          "matchesWon": 2
+        },
+        {
+          "name": "Star Wars: Episode IV - A New Hope",
+          "img": "https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_SX300.jpg",
+          "date": "1977",
+          "author": "",
+          "id": 1,
+          "tournamentsPlayed": 3,
+          "matchesPlayed": 7,
+          "matchesWon": 4
+        },
+        {
+          "name": "Star Wars: Episode IX - The Rise of Skywalker",
+          "img": "https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX300.jpg",
+          "date": "2019",
+          "author": "",
+          "id": 10,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 7,
+          "matchesWon": 3
+        },
+        {
+          "name": "Star Wars: Episode V - The Empire Strikes Back",
+          "img": "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+          "date": "1980",
+          "author": "",
+          "id": 2,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 9,
+          "matchesWon": 5
+        },
+        {
+          "name": "Star Wars: Episode VIII - The Last Jedi",
+          "img": "https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg",
+          "date": "2017",
+          "author": "",
+          "id": 9,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 6,
+          "matchesWon": 2
+        },
+        {
+          "name": "Star Wars: Episode III - Revenge of the Sith",
+          "img": "https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_SX300.jpg",
+          "date": "2005",
+          "author": "",
+          "id": 6,
+          "tournamentsPlayed": 3,
+          "matchesPlayed": 6,
+          "matchesWon": 3
+        }
+      ],
+      "id": 1,
+      "timesPlayed": 4
+    }
+  ],
+  "played-tournaments": [
+    {
+      "temlateId": 1,
+      "winnerId": 11,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 2
+            },
+            {
+              "firstContestantId": 4,
+              "secondContestantId": 3
+            },
+            {
+              "firstContestantId": 10,
+              "secondContestantId": 9
+            },
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 11
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 3
+            },
+            {
+              "firstContestantId": 9,
+              "secondContestantId": 11
+            }
+          ]
+        },
+        {
+          "position": 2,
+          "matches": [
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 11
+            }
+          ]
         }
       ],
       "id": 1
+    },
+    {
+      "temlateId": 1,
+      "winnerId": 8,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 6,
+              "secondContestantId": 3
+            },
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 11
+            },
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 4
+            },
+            {
+              "firstContestantId": 9
+            },
+            {
+              "firstContestantId": 2
+            },
+            {
+              "firstContestantId": 1
+            },
+            {
+              "firstContestantId": 10
+            },
+            {
+              "firstContestantId": 8
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 3,
+              "secondContestantId": 11
+            },
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 9
+            },
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 1
+            },
+            {
+              "firstContestantId": 10,
+              "secondContestantId": 8
+            }
+          ]
+        },
+        {
+          "position": 2,
+          "matches": [
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 7
+            },
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 8
+            }
+          ]
+        },
+        {
+          "position": 3,
+          "matches": [
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 8
+            }
+          ]
+        }
+      ],
+      "id": 2
+    },
+    {
+      "temlateId": 1,
+      "winnerId": 8,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 3,
+              "secondContestantId": 2
+            },
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 9
+            },
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 6
+            },
+            {
+              "firstContestantId": 11
+            },
+            {
+              "firstContestantId": 4
+            },
+            {
+              "firstContestantId": 5
+            },
+            {
+              "firstContestantId": 1
+            },
+            {
+              "firstContestantId": 10
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 3,
+              "secondContestantId": 7
+            },
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 11
+            },
+            {
+              "firstContestantId": 4,
+              "secondContestantId": 5
+            },
+            {
+              "firstContestantId": 1,
+              "secondContestantId": 10
+            }
+          ]
+        },
+        {
+          "position": 2,
+          "matches": [
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 8
+            },
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 1
+            }
+          ]
+        },
+        {
+          "position": 3,
+          "matches": [
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 1
+            }
+          ]
+        }
+      ],
+      "id": 3
     }
-  ],
-  "played-tournaments": []
+  ]
 }

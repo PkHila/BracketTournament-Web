@@ -10,6 +10,6 @@ export class NavbarComponent implements OnInit {
   public randomTournament!: string;
 
   ngOnInit(): void {
-    this.randomTournament = 'Star Wars';
+    this.randomTournament = 'Best Star Wars movie ever!';
   }
 }

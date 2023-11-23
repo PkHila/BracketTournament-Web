@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit } from '@angular/core';
 import { ContestantCardBigComponent } from '../components/contestant-card-big/contestant-card-big.component';
 import { SharedModule } from "../../../shared/shared.module";
 import { MatchupTrackerComponent } from "../components/matchup-tracker/matchup-tracker.component";
 import { TournamentProgressComponent } from "../components/tournament-progress/tournament-progress.component";
 import { Contestant, Tournament } from 'src/app/core/interfaces';
 import { TournamentService } from 'src/app/core/services/Tournament.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
     selector: 'app-play-tournament',
     standalone: true,
@@ -34,7 +34,8 @@ export class PlayTournamentComponent implements OnInit {
 
     constructor(
         private tournamentService: TournamentService,
-        private activatedRoute: ActivatedRoute) { }
+        private activatedRoute: ActivatedRoute,
+        private router: Router) { }
 
     ngOnInit(): void {
         let templateName = this.activatedRoute.snapshot.paramMap.get('templateName');
@@ -66,8 +67,6 @@ export class PlayTournamentComponent implements OnInit {
             }
             this.leftContestant = this.tournament.rounds[this.currentRound].matches[this.currentMatch].firstContestant;
             this.rightContestant = this.tournament.rounds[this.currentRound].matches[this.currentMatch].secondContestant;
-            console.log(this.tournament);
-
         } else {
             this.tournamentService.handleMatchesPlayed(this.leftContestant!);
             this.tournamentService.handleMatchesPlayed(this.rightContestant!);
@@ -76,9 +75,16 @@ export class PlayTournamentComponent implements OnInit {
             this.leftContestant = undefined;
             this.rightContestant = undefined;
             this.winner = votedContestant;
-            console.log("winner");
-            console.log(this.winner);
-            console.log(this.tournament);
+            this.tournamentService.postTournament(this.tournament, votedContestant).subscribe({
+                next: pl => {
+                    console.log(pl);
+                    
+                }
+            })
         }
+    }
+
+    public onTournamentConcluded() {
+        this.router.navigate([`${this.tournament.template.templateName}`])
     }
 }

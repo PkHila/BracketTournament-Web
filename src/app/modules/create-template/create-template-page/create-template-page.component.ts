@@ -1,14 +1,13 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { OMDbApiService } from '../services/omdb-api.service';
-import { ContestantService } from '../../../core/services/Contestant.service';
 import { Contestant, Template } from 'src/app/core/interfaces';
 import { TemplateService } from 'src/app/core/services/Template.service';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs';
 import { RawgIoApiService } from '../services/rawg-io-api.service';
 import { ApiService, QueryParams } from '../services/types/interfaces';
 import { JikanAnimeApiService } from '../services/jikan-anime-api.service';
 import { JikanMangaApiService } from '../services/jikan-manga-api.service';
+import { ContestantService } from 'src/app/core/services/Contestant.service';
 
 @Component({
   selector: 'app-create-template-page',
