@@ -25,6 +25,7 @@ export class ViewTemplatePageComponent implements OnInit {
         const templateName = params.get('templateName');
         this.templatetService.getTemplateByName(templateName!).subscribe({
           next: t => {
+            this.roundsInfo = [];
             this.template = t;
             this.template.coverImg = this.templatetService.searchForCoverImg(this.template);
             const maxRoundCount = this.templatetService.calculateMaxRoundCount(this.template);

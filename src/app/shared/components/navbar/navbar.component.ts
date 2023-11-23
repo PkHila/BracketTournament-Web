@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Categories } from 'src/app/core/categories.enum';
 import { TemplateService } from 'src/app/core/services/Template.service';
 
 @Component({
@@ -9,13 +10,12 @@ import { TemplateService } from 'src/app/core/services/Template.service';
 })
 
 export class NavbarComponent implements OnInit {
-  public randomTournament!: string;
+  public categories!: Array<string>;
 
   constructor(private templateService: TemplateService, private router: Router) { }
 
   ngOnInit(): void {
-
-    this.randomTournament = 'Best Star Wars movie ever!';
+    this.categories = Object.values(Categories) as string[];
   }
 
   public onRandomTournament() {

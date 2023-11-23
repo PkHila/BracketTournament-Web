@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChooseCategoryPageComponent } from './components/choose-category-page/choose-category-page.component';
+import { templateGuard } from 'src/app/core/guards/template.guard';
 
 const routes: Routes = [
   {
@@ -10,7 +11,8 @@ const routes: Routes = [
   {
     path: ':category',
     title: 'Crea un nuevo torneo',
-    loadChildren: () => import("../create-template/create-template.module").then(m => m.CreateTemplateModule)
+    canActivate: [templateGuard],    
+    loadChildren: () => import("../create-template/create-template.module").then(m => m.CreateTemplateModule),
   },
 ];
 

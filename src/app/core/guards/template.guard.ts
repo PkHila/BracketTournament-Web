@@ -6,7 +6,7 @@ export const templateGuard: CanActivateFn = (route, state) => {
   const router = inject(Router)
   const categoryParam = route.paramMap.get('category');
   if (!categoryParam || !isCategory(categoryParam)) {
-    return router.parseUrl('create-template');
+    return router.parseUrl('404');
   }
   return true;
 };
