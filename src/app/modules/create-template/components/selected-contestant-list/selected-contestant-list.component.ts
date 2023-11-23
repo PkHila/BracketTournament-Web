@@ -14,6 +14,7 @@ export class SelectedContestantListComponent {
   @Input() selectedContestants!: Array<Contestant>;
   @Output() removeContestant: EventEmitter<Contestant> = new EventEmitter();
   @Output() createTemplate: EventEmitter<string> = new EventEmitter();
+  public disabledForGood = false;
 
   public form = this.formBuilder.group({
     templateName: ['', [Validators.required], CustomValidators.templateNameExists(this.contestantService)],
@@ -30,6 +31,7 @@ export class SelectedContestantListComponent {
   }
 
   public onSubmit(): void {
+    this.disabledForGood = true;
     this.createTemplate.emit(this.form.controls['templateName'].value!);
     // add confirmation layer as pop up
   }

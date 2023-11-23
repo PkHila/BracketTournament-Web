@@ -3,7 +3,7 @@
         <div class="left-side col-4 border-end p-4">
             <div class="cover-img row">
                 <div class="img col">
-                    <img src={{template.coverImg}} alt="">
+                    <img *ngIf="template" src={{template.coverImg}} alt="">
                 </div>
             </div>
             <div class="info row">

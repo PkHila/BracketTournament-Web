@@ -15,7 +15,7 @@
     </div>
     <div id="bottom-row"class="row justify-content-center mt-3">
         <p class="col-7">{{selectedContestants.length}} participantes</p>
-        <input type="submit" class="btn btn-primary col-4 mb-3 " [disabled]="!isSubmitEnabled()" value="Crear">
+        <input type="submit" class="btn btn-primary col-4 mb-3 " [disabled]="!disabledForGood && !isSubmitEnabled()" value="Crear">
     </div>
 </form>
 

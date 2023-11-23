@@ -2,7 +2,7 @@ import { Component, Input, inject } from '@angular/core';
 import { OMDbApiService } from '../services/omdb-api.service';
 import { Contestant, Template } from 'src/app/core/interfaces';
 import { TemplateService } from 'src/app/core/services/Template.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RawgIoApiService } from '../services/rawg-io-api.service';
 import { ApiService, QueryParams } from '../services/types/interfaces';
 import { JikanAnimeApiService } from '../services/jikan-anime-api.service';
@@ -26,7 +26,8 @@ export class CreateTemplatePageComponent {
   constructor(
     private contestantService: ContestantService,
     private templateService: TemplateService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private router: Router) {
     this.route.paramMap.subscribe({
       next: params => {
         this.category = params.get('category')!;
@@ -83,6 +84,7 @@ export class CreateTemplatePageComponent {
     this.templateService.postTemplate(template).subscribe({
       next: resp => {
         console.log('agregado con exito');
+        this.router.navigate([`${template.templateName}`]);
       },
       error: () => {
         console.log('error');

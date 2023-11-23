@@ -120,6 +120,167 @@
       ],
       "id": 1,
       "timesPlayed": 4
+    },
+    {
+      "templateName": "Completely Unbiased RTS Game List",
+      "category": "games",
+      "contestants": [
+        {
+          "name": "Warhammer 40,000: Dawn of War III",
+          "img": "https://media.rawg.io/media/games/a73/a73e4a34957fe58b505bfef725492778.jpg",
+          "author": "",
+          "date": "2017-04-27",
+          "id": 11,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 1
+        },
+        {
+          "name": "Command & Conquer",
+          "img": "https://media.rawg.io/media/games/c62/c62e21b805e3f4c13e99702d2eca6a65.jpg",
+          "author": "",
+          "date": "1995-08-31",
+          "id": 12,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 2,
+          "matchesWon": 1
+        },
+        {
+          "name": "Age of Empires: Definitive Edition",
+          "img": "https://media.rawg.io/media/screenshots/ee2/ee26304beaa6cda35c53604868164cca.jpg",
+          "author": "",
+          "date": "2018-02-20",
+          "id": 1,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 4,
+          "matchesWon": 3
+        },
+        {
+          "name": "StarCraft II",
+          "img": "https://media.rawg.io/media/games/960/9605c08bf8535c00adbb0a3896f0c484.jpg",
+          "author": "",
+          "date": "2010-07-27",
+          "id": 5,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 2,
+          "matchesWon": 1
+        },
+        {
+          "name": "Warhammer 40,000: Dawn of War II",
+          "img": "https://media.rawg.io/media/screenshots/4d9/4d9afae02fdf2896569b1c7bfeabb8c1.jpg",
+          "author": "",
+          "date": "2009-02-18",
+          "id": 10,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 1
+        },
+        {
+          "name": "Age of Empires II: Definitive Edition",
+          "img": "https://media.rawg.io/media/games/945/9455733af10406794b0c1b8d117bca76.jpg",
+          "author": "",
+          "date": "2019-11-14",
+          "id": 2,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 4,
+          "matchesWon": 4,
+          "tournamentsWon": 1
+        },
+        {
+          "name": "Homeworld Remastered Collection",
+          "img": "https://media.rawg.io/media/screenshots/8fa/8fa13bde20f4a6737145462ec3d0565e.jpg",
+          "author": "",
+          "date": "2015-02-24",
+          "id": 7,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 2,
+          "matchesWon": 1
+        },
+        {
+          "name": "Command & Conquer: Red Alert 2",
+          "img": "https://media.rawg.io/media/games/673/67304bfba37b6a18c50a60ab6ba6cebd.jpg",
+          "author": "",
+          "date": "2000-10-26",
+          "id": 16,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 3,
+          "matchesWon": 2
+        },
+        {
+          "name": "Warhammer 40,000: Dawn of War",
+          "img": "https://media.rawg.io/media/games/16f/16f2f287ad8bbbd654cf76be4da52c04.jpg",
+          "author": "",
+          "date": "2004-09-20",
+          "id": 9,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 3,
+          "matchesWon": 2
+        },
+        {
+          "name": "StarCraft",
+          "img": "https://media.rawg.io/media/games/68a/68a77a21ec04083f3e6af62cdbed9c0a.jpg",
+          "author": "",
+          "date": "1998-03-31",
+          "id": 4,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 1
+        },
+        {
+          "name": "Sins of a Solar Empire: Rebellion",
+          "img": "https://media.rawg.io/media/screenshots/65c/65c9c15e274705b5fe343e424ce76ec8.jpg",
+          "author": "",
+          "date": "2012-06-12",
+          "id": 6,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 1
+        },
+        {
+          "name": "Homeworld: Deserts of Kharak",
+          "img": "https://media.rawg.io/media/games/4e1/4e12434f082fc8f2b965a4c950b8836e.jpg",
+          "author": "",
+          "date": "2016-01-19",
+          "id": 8,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 1
+        },
+        {
+          "name": "Command & Conquer: Red Alert",
+          "img": "https://media.rawg.io/media/games/e87/e87bbd9feb37b226b1b6a4f11e9492a0.jpg",
+          "author": "",
+          "date": "1996-10-31",
+          "id": 15,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 2,
+          "matchesWon": 1
+        },
+        {
+          "name": "Command & Conquer: Tiberian Sun",
+          "img": "https://media.rawg.io/media/games/9ab/9ab65947298e8e73a158c9d1961524f9.jpg",
+          "author": "",
+          "date": "1999-08-27",
+          "id": 13,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 1
+        },
+        {
+          "name": "Age of Empires III: Definitive Edition",
+          "img": "https://media.rawg.io/media/games/f68/f68f04eeeadaa87cf0d2534306f96850.jpg",
+          "author": "",
+          "date": "2020-10-15",
+          "id": 3,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 1
+        },
+        {
+          "name": "Command & Conquer: Generals",
+          "img": "https://media.rawg.io/media/games/b8f/b8fc70ec8d35ae13f9609e1b118aa33c.jpg",
+          "author": "",
+          "date": "2003-02-11",
+          "id": 14,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 1
+        }
+      ],
+      "id": 2,
+      "timesPlayed": 1
     }
   ],
   "played-tournaments": [
@@ -336,6 +497,93 @@
         }
       ],
       "id": 3
+    },
+    {
+      "temlateId": 2,
+      "winnerId": 2,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 9
+            },
+            {
+              "firstContestantId": 12,
+              "secondContestantId": 4
+            },
+            {
+              "firstContestantId": 1,
+              "secondContestantId": 6
+            },
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 8
+            },
+            {
+              "firstContestantId": 10,
+              "secondContestantId": 15
+            },
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 13
+            },
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 3
+            },
+            {
+              "firstContestantId": 16,
+              "secondContestantId": 14
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 9,
+              "secondContestantId": 12
+            },
+            {
+              "firstContestantId": 1,
+              "secondContestantId": 5
+            },
+            {
+              "firstContestantId": 15,
+              "secondContestantId": 2
+            },
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 16
+            }
+          ]
+        },
+        {
+          "position": 2,
+          "matches": [
+            {
+              "firstContestantId": 9,
+              "secondContestantId": 1
+            },
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 16
+            }
+          ]
+        },
+        {
+          "position": 3,
+          "matches": [
+            {
+              "firstContestantId": 1,
+              "secondContestantId": 2
+            }
+          ]
+        }
+      ],
+      "id": 4
     }
   ]
 }
