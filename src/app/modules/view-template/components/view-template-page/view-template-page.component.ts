@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Contestant, Template } from 'src/app/core/interfaces';
-import { ContestantMinimalComponent } from '../contestant-minimal/contestant-minimal.component';
 import { ActivatedRoute } from '@angular/router';
 import { TemplateService } from 'src/app/core/services/Template.service';
 
@@ -27,6 +26,7 @@ export class ViewTemplatePageComponent implements OnInit {
         this.templatetService.getTemplateByName(templateName!).subscribe({
           next: t => {
             this.template = t;
+            this.template.coverImg = this.templatetService.searchForCoverImg(this.template);
             const maxRoundCount = this.templatetService.calculateMaxRoundCount(this.template);
             for (let i = 2; i < maxRoundCount + 1; i++) {
               this.roundsInfo.push({ round: i, contestantsCount: 2 ** i });

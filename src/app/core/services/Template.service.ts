@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Template } from '../interfaces';
+import { Contestant, Template } from '../interfaces';
 import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -47,5 +47,20 @@ export class TemplateService {
       maxRoundCount--;
     }
     return maxRoundCount;
+  }
+
+  public searchForCoverImg(template: Template): string {
+    let mostWins = 0;
+    let contestantWithMostTournamentsWon: Contestant;
+    template.contestants!.forEach(contestant => {
+      if (contestant.tournamentsWon && mostWins < contestant.tournamentsWon) {
+        mostWins = contestant.tournamentsWon;
+        contestantWithMostTournamentsWon = contestant;
+      }
+    })
+    if (mostWins === 0) {
+      return template.contestants!.at(0)!.img!;
+    }
+    return contestantWithMostTournamentsWon!.img!;
   }
 }
