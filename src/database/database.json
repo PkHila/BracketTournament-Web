@@ -2,7 +2,7 @@
   "contestants": [],
   "templates": [
     {
-      "templateName": "Star Wars",
+      "templateName": "Best Star Wars movie ever!",
       "category": "movie",
       "contestants": [
         {
@@ -21,6 +21,12 @@
           "name": "Star Wars: Episode VI - Return of the Jedi",
           "img": "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
           "date": "1983",
+          "author": ""
+        },
+        {
+          "name": "Star Wars: Episode VII - The Force Awakens",
+          "img": "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg",
+          "date": "2015",
           "author": ""
         },
         {
@@ -48,9 +54,21 @@
           "author": ""
         },
         {
-          "name": "Star Wars: Episode VII - The Force Awakens",
-          "img": "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg",
-          "date": "2015",
+          "name": "Star Wars: Episode VIII - The Last Jedi",
+          "img": "https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg",
+          "date": "2017",
+          "author": ""
+        },
+        {
+          "name": "Star Wars: Episode IX - The Rise of Skywalker",
+          "img": "https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX300.jpg",
+          "date": "2019",
+          "author": ""
+        },
+        {
+          "name": "Solo: A Star Wars Story",
+          "img": "https://m.media-amazon.com/images/M/MV5BOTM2NTI3NTc3Nl5BMl5BanBnXkFtZTgwNzM1OTQyNTM@._V1_SX300.jpg",
+          "date": "2018",
           "author": ""
         }
       ],

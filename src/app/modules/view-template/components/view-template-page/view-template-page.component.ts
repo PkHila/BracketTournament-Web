@@ -28,8 +28,6 @@ export class ViewTemplatePageComponent implements OnInit {
           next: t => {
             this.template = t;
             const maxRoundCount = this.templatetService.calculateMaxRoundCount(this.template);
-            console.log(maxRoundCount);
-
             for (let i = 2; i < maxRoundCount + 1; i++) {
               this.roundsInfo.push({ round: i, contestantsCount: 2 ** i });
             }

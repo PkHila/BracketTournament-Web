@@ -44,6 +44,7 @@ export class PlayTournamentComponent implements OnInit {
             this.tournamentService.getTournament(templateName).subscribe({
                 next: t => {
                     this.tournament = t;
+                    this.tournamentService.handleTimesPlayed(this.tournament);
                     this.tournamentService.initiateFirstRound(this.tournament, this.totalRounds);
                     this.leftContestant = this.tournament.rounds[0].matches[0].firstContestant;
                     this.rightContestant = this.tournament.rounds[0].matches[0].secondContestant;

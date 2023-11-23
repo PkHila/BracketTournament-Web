@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Contestant } from 'src/app/core/interfaces';
 import { CustomValidators } from 'src/app/validators/custom-validators';
-import { ContestantService } from '../../../../core/services/contestant.service';
+import { ContestantService } from '../../../../core/services/Contestant.service';
 
 @Component({
   selector: 'app-selected-contestant-list',

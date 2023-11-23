@@ -17,6 +17,7 @@ export interface Template {
     templateName: string;
     category: string;
     coverImg?: string;
+    timesPlayed?: number;
 }
 
 export interface Tournament {

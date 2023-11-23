@@ -46,8 +46,6 @@ export class TemplateService {
     if (contestantCount > maxRoundCount ** 2) {
       maxRoundCount--;
     }
-    console.log(maxRoundCount);
-
     return maxRoundCount;
   }
 }

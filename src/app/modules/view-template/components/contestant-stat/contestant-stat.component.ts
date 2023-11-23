@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Contestant } from 'src/app/core/interfaces';
-import { ContestantService } from 'src/app/core/services/contestant.service';
+import { ContestantService } from 'src/app/core/services/Contestant.service';
 
 @Component({
   selector: 'app-contestant-stat',

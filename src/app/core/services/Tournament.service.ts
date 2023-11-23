@@ -182,4 +182,10 @@ export class TournamentService {
     return ans;
   }
 
+  public handleTimesPlayed(tournament: Tournament): void {
+    if (tournament.template.timesPlayed === undefined) {
+      tournament.template.timesPlayed = 0;
+    }
+    tournament.template.timesPlayed++;
+  }
 }

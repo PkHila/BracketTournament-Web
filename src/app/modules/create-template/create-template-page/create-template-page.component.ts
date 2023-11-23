@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { OMDbApiService } from '../services/omdb-api.service';
-import { ContestantService } from '../../../core/services/contestant.service';
+import { ContestantService } from '../../../core/services/Contestant.service';
 import { Contestant, Template } from 'src/app/core/interfaces';
 import { TemplateService } from 'src/app/core/services/Template.service';
 import { ActivatedRoute } from '@angular/router';
@@ -47,6 +47,7 @@ export class CreateTemplatePageComponent {
           case 'manga':
             this.apiService = inject(JikanMangaApiService);
             this.queryParams.category = this.category;
+            break;
         }
       }
     })
