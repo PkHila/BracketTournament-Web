@@ -39,7 +39,7 @@ export class TemplateService {
 
   public calculateMaxRoundCount(template: Template): number {
     let maxRoundCount = 2;
-    const contestantCount = template.contestants!.length;    
+    const contestantCount = template.contestants!.length;
     while (contestantCount > 2 ** maxRoundCount) {
       maxRoundCount++;
     }
@@ -62,5 +62,14 @@ export class TemplateService {
       return template.contestants!.at(0)!.img!;
     }
     return contestantWithMostTournamentsWon!.img!;
+  }
+
+  public getRandomTemplateName(): Observable<string> {
+    return this.getTemplates().pipe(
+      map(templates => {
+        const randomIndex = Math.floor(Math.random() * templates.length);
+        return templates.at(randomIndex)!.templateName;
+      })
+    )
   }
 }

@@ -85,6 +85,6 @@ export class PlayTournamentComponent implements OnInit {
     }
 
     public onTournamentConcluded() {
-        this.router.navigate([`${this.tournament.template.templateName}`])
+        this.router.navigate([`view-template/${this.tournament.template.templateName}`])
     }
 }

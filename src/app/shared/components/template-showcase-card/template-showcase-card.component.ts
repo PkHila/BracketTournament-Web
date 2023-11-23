@@ -18,6 +18,6 @@ export class TemplateShowcaseCardComponent implements OnInit {
   }
 
   public navigateToTemplateView() {
-    this.router.navigate([`/${this.template.templateName}`]);
+    this.router.navigate([`view-template/${this.template.templateName}`]);
   }
 }

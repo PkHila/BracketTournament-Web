@@ -14,7 +14,7 @@ const routes: Routes = [
     loadChildren: () => import("./modules/choose-category/choose-category.module").then(m => m.ChooseCategoryModule)
   },
   {
-    path: ':templateName',
+    path: 'view-template',
     loadChildren: () => import("./modules/view-template/view-template.module").then(m => m.ViewTemplateModule)
   },
   {

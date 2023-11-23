@@ -84,7 +84,7 @@ export class CreateTemplatePageComponent {
     this.templateService.postTemplate(template).subscribe({
       next: resp => {
         console.log('agregado con exito');
-        this.router.navigate([`${template.templateName}`]);
+        this.router.navigate([`view-template/${template.templateName}`]);
       },
       error: () => {
         console.log('error');

@@ -6,7 +6,7 @@ import { tournamentGuard } from 'src/app/core/guards/tournament.guard';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':templateName',
     component: ViewTemplatePageComponent,
     loadChildren: () => import("../play-tournament/play-tournament.module").then(m => m.PlayTournamentModule)
   },
