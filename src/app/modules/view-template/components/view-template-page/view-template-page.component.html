@@ -1,9 +1,11 @@
 <div class="container">
     <div class="tournament-page row">
         <div class="left-side col-4 border-end p-4">
-            <div class="cover-img row">
-                <div class="img col">
-                    <img *ngIf="template" src={{template.coverImg}} alt="">
+            <div class="row">
+                <div class=" col">
+                    <div class="cover-img card bg-transparent border-0">
+                        <img class="img object-fit-cover" *ngIf="template" src={{template.coverImg}} alt="">
+                    </div>
                 </div>
             </div>
             <div class="info row">
@@ -24,8 +26,11 @@
                 </div>
             </div>
             <div class="row justify-content-center align-items-center g-2" *ngIf="template">
-                <!-- <app-contestant-minimal *ngFor="let contestant of template.contestants"
-                    [contestant]="contestant"></app-contestant-minimal> -->
+                <div class="col">
+                    <app-contestant-minimal *ngFor="let contestant of template.contestants"
+                    [contestant]="contestant"></app-contestant-minimal>
+                </div>
+                
             </div>
             <div class="row justify-content-center align-items-center g-2">
                 <div class="col">
@@ -33,12 +38,9 @@
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Num. de Rondas <!--¿Debería ser Numero de rondas o Numero de Participantes? -->
+                                Num. de Rondas
                             </button>
                             <ul class="dropdown-menu">
-                                <!-- Va uno por cada opción de cant de rondas
-                            No agrego lógica para hacerlo en caso de que ya existe un metodo para ello en algún lado -->
-
                                 <li *ngFor="let roundInfo of roundsInfo">
                                     <a class="dropdown-item"
                                         routerLink="play-tournament/{{roundInfo.round}}">{{roundInfo.round}}

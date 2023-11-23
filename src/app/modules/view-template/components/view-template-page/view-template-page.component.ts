@@ -15,6 +15,7 @@ export class ViewTemplatePageComponent implements OnInit {
     round: number, contestantsCount: number
   }> = []
 
+
   constructor(
     private route: ActivatedRoute,
     private templatetService: TemplateService) { }
