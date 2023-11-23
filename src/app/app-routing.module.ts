@@ -6,13 +6,16 @@ import { LandingPageComponent } from './modules/home-page/landing-page/landing-p
 const routes: Routes = [
   {
     path: '',
+    loadChildren: () => import("./modules/home-page/home-page.module").then(m => m.HomePageModule),
     component: LandingPageComponent
   },
   {
-    path: 'create-template', loadChildren: () => import("./modules/choose-category/choose-category.module").then(m => m.ChooseCategoryModule)
+    path: 'create-template',
+    loadChildren: () => import("./modules/choose-category/choose-category.module").then(m => m.ChooseCategoryModule)
   },
   {
-    path: ':templateName', loadChildren: () => import("./modules/view-template/view-template.module").then(m => m.ViewTemplateModule)
+    path: ':templateName',
+    loadChildren: () => import("./modules/view-template/view-template.module").then(m => m.ViewTemplateModule)
   },
   {
     path: '**',

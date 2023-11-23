@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Template } from 'src/app/core/interfaces';
 
 @Component({
@@ -7,5 +8,11 @@ import { Template } from 'src/app/core/interfaces';
   styleUrls: ['./template-showcase-card.component.scss']
 })
 export class TemplateShowcaseCardComponent {
- @Input() template!: Template;
+  @Input() template!: Template;
+
+  constructor(private router: Router) {}
+
+  public navigateToTemplateView() {
+    this.router.navigate([`/${this.template.templateName}`]);
+  }
 }

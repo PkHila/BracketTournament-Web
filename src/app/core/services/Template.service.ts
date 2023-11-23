@@ -12,6 +12,10 @@ export class TemplateService {
 
   constructor(private http: HttpClient) { }
 
+  public getTemplates(): Observable<Template[]> {
+    return this.http.get<Template[]>(`${this.baseUrl}/templates`);
+  }
+
   public postTemplate(template: Template): Observable<Template> {
     return this.http.post<Template>(`${this.baseUrl}/templates`, template);
   }

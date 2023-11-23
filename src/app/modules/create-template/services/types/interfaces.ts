@@ -71,7 +71,7 @@ export interface RawgIoResult {
     ]
 }
 
-export interface JikanResponse { // si se rompe en algun punto hay que agregar la posibilidad de que sean nulleables
+export interface JikanResponse {
     data: JikanAnimeData[] | JikanMangaData[];
     pagination: {
         last_visible_page: number;

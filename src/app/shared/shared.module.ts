@@ -16,7 +16,7 @@ import { TemplateShowcaseCardComponent } from './components/template-showcase-ca
     NavbarComponent,
     PageNotFoundComponent,
     TemplateShowcaseListComponent,
-    TemplateShowcaseCardComponent
+    TemplateShowcaseCardComponent,
   ],
   imports: [
     CommonModule,
@@ -28,7 +28,7 @@ import { TemplateShowcaseCardComponent } from './components/template-showcase-ca
     NavbarComponent,
     PageNotFoundComponent,
     TemplateShowcaseListComponent,
-    TemplateShowcaseCardComponent
+    TemplateShowcaseCardComponent,
   ]
 })
 export class SharedModule { }
