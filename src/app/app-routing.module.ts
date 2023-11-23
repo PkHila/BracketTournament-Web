@@ -10,6 +10,10 @@ const routes: Routes = [
     component: LandingPageComponent
   },
   {
+    path:'category',
+    loadChildren: () => import("./modules/view-categories/view-categories.module").then(m => m.ViewCategoriesModule)
+  },
+  {
     path: 'create-template',
     loadChildren: () => import("./modules/choose-category/choose-category.module").then(m => m.ChooseCategoryModule)
   },

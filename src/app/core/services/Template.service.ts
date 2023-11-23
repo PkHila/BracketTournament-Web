@@ -33,6 +33,19 @@ export class TemplateService {
     );
   }
 
+  public getTemplatesByCategory(category: string): Observable<Template[]> {
+    return this.http.get<Template[]>(`${this.baseUrl}/templates?category=${category}`).pipe(
+      map(response => {
+        if (response.length === 0) {
+          throw new Error ('No templates created in that category')
+        }
+        else{
+          return response;
+        }
+      })
+    )
+  }
+
   public putTemplate(template: Template, templateId: number): Observable<Template> {
     return this.http.put<Template>(`${this.baseUrl}/templates/${templateId}`, template)
   }
