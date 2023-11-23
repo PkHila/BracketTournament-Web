@@ -5,6 +5,7 @@ import { ViewTemplateRoutingModule } from './view-template-routing.module';
 import { ViewTemplatePageComponent } from './components/view-template-page/view-template-page.component';
 import { ContestantStatComponent } from './components/contestant-stat/contestant-stat.component';
 import { ContestantMinimalComponent } from './components/contestant-minimal/contestant-minimal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { ContestantMinimalComponent } from './components/contestant-minimal/cont
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     ViewTemplateRoutingModule
   ]
 })

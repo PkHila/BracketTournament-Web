@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Contestant, Template } from 'src/app/core/interfaces';
 import { ActivatedRoute } from '@angular/router';
 import { TemplateService } from 'src/app/core/services/Template.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-view-template-page',
@@ -13,12 +14,17 @@ export class ViewTemplatePageComponent implements OnInit {
   @Input() template!: Template;
   public roundsInfo: Array<{
     round: number, contestantsCount: number
-  }> = []
-
+  }> = [];
+  public form!: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
-    private templatetService: TemplateService) { }
+    private templatetService: TemplateService,
+    private fb: FormBuilder) {
+    this.form = this.fb.group({
+      showStatistics: [false],
+    })
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe({

@@ -19,18 +19,19 @@
         <div class="right-side col-8">
             <div class="row justify-content-center align-items-center g-2">
                 <div class="col">
-                    <div class="form-check form-switch">
+                    <form [formGroup]="form" class="form-check form-switch">
                         <label class="form-check-label" for="flexSwitchCheckDefault">Mostrar estadísticas</label>
-                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    </div>
+                        <input class="form-check-input" type="checkbox" role="switch" formControlName="showStatistics">
+                    </form>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center g-2" *ngIf="template">
-                <div class="col">
-                    <app-contestant-minimal *ngFor="let contestant of template.contestants"
-                    [contestant]="contestant"></app-contestant-minimal>
+                <div class="col" *ngFor="let contestant of template.contestants">
+                    <app-contestant-minimal [contestant]="contestant">
+                    </app-contestant-minimal>
+                    <app-contestant-stat *ngIf="form.get('showStatistics')?.value" [contestant]="contestant">
+                    </app-contestant-stat>
                 </div>
-                
             </div>
             <div class="row justify-content-center align-items-center g-2">
                 <div class="col">
@@ -53,7 +54,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <app-contestant-stat [contestant]="testContestant"></app-contestant-stat>
+                    <!-- <app-contestant-stat [contestant]="testContestant"></app-contestant-stat> -->
                 </div>
             </div>
         </div>
