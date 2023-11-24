@@ -16,12 +16,12 @@
             ariaCurrentWhenActive="page">Crear Torneo</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorías
           </a>
           <ul class="dropdown-menu">
-            <li *ngFor="let category of categories"><a class="dropdown-item" routerLink="/category/{{category}}">{{category}}</a></li>
+            <li *ngFor="let category of categories"><a class="dropdown-item"
+                routerLink="/category/{{category.category}}">{{category.translatedCategory}}</a></li>
           </ul>
         </li>
         <li class="nav-item">

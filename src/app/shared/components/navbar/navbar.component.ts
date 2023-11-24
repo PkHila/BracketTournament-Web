@@ -10,12 +10,21 @@ import { TemplateService } from 'src/app/core/services/Template.service';
 })
 
 export class NavbarComponent implements OnInit {
-  public categories!: Array<string>;
+  public categories: Array<{ category: string, translatedCategory: string }> = [];
+
 
   constructor(private templateService: TemplateService, private router: Router) { }
 
   ngOnInit(): void {
-    this.categories = Object.values(Categories) as string[];
+
+    Object.values(Categories).forEach(category => {
+      this.categories.push(
+        {
+          category: category as string,
+          translatedCategory: this.templateService.mapCategoryToLocale(category)! as string
+        })
+    })
+
   }
 
   public onRandomTournament() {

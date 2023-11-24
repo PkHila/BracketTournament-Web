@@ -91,8 +91,14 @@ export class TemplateService {
     switch (category) {
       case Categories.movie:
         return LocaleCategories.movie;
+      case Categories.series:
+        return LocaleCategories.series;
       case Categories.games:
         return LocaleCategories.games;
+      case Categories.anime:
+        return LocaleCategories.anime;
+      case Categories.manga:
+        return LocaleCategories.manga;
       default:
         return undefined;
     }
