@@ -11,8 +11,8 @@ import { ViewCategoryPageComponent } from './view-category-page/view-category-pa
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ViewCategoriesRoutingModule,
-    SharedModule
   ]
 })
 export class ViewCategoriesModule {

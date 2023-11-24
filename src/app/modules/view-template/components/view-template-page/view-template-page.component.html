@@ -24,12 +24,13 @@
             </div>
         </section>
         <section class="right-side col-8 p-4">
-            <section class="contestant-list row row-cols-4 justify-content-center align-items-start g-2" *ngIf="template">
+            <section class="contestant-list row row-cols-4 justify-content-center align-items-start g-2"
+                *ngIf="template">
                 <div class="col card align-content-cente border" *ngFor="let contestant of template.contestants">
                     <div class="card-body align-content-center">
-                        <app-contestant-minimal  [contestant]="contestant">
+                        <app-contestant-minimal [contestant]="contestant">
                         </app-contestant-minimal>
-                        <app-contestant-stat  *ngIf="form.get('showStatistics')?.value" [contestant]="contestant">
+                        <app-contestant-stat *ngIf="form.get('showStatistics')?.value" [contestant]="contestant">
                         </app-contestant-stat>
                     </div>
                 </div>
@@ -38,7 +39,8 @@
                 <div class="col">
                     <form [formGroup]="form" class="form-check form-switch">
                         <label class="form-check-label" for="flexSwitchCheckDefault">Mostrar estadísticas</label>
-                        <input class="form-check-input" type="checkbox" role="switch" formControlName="showStatistics">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                            formControlName="showStatistics">
                     </form>
                 </div>
                 <div class="col">
@@ -52,8 +54,8 @@
                                 <a class="dropdown-item"
                                     routerLink="play-tournament/{{roundInfo.round}}">{{roundInfo.round}}
                                     rondas con
-                                    {{roundInfo.contestantsCount}} participantes <span
-                                        *ngIf="roundInfo.freePasses">y {{roundInfo.freePasses}} pasan
+                                    {{roundInfo.contestantsCount}} participantes <span *ngIf="roundInfo.freePasses">y
+                                        {{roundInfo.freePasses}} pasan
                                         gratis</span></a>
                             </li>
                         </ul>

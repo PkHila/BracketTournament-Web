@@ -11,5 +11,5 @@ export const tournamentGuard: CanActivateFn = (route) => {
       return true;
     }
   }
-  return router.parseUrl(`${templateName}`);
+  return router.parseUrl(`404`);
 };

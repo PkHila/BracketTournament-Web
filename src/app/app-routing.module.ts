@@ -10,16 +10,16 @@ const routes: Routes = [
     component: LandingPageComponent
   },
   {
+    path: 'view-template',
+    loadChildren: () => import("./modules/view-template/view-template.module").then(m => m.ViewTemplateModule)
+  },
+  {
     path:'category',
     loadChildren: () => import("./modules/view-categories/view-categories.module").then(m => m.ViewCategoriesModule)
   },
   {
     path: 'create-template',
     loadChildren: () => import("./modules/choose-category/choose-category.module").then(m => m.ChooseCategoryModule)
-  },
-  {
-    path: 'view-template',
-    loadChildren: () => import("./modules/view-template/view-template.module").then(m => m.ViewTemplateModule)
   },
   {
     path: '**',

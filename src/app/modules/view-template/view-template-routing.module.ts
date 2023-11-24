@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => import("../play-tournament/play-tournament.module").then(m => m.PlayTournamentModule)
   },
   {
-    path: 'play-tournament/:totalRounds',
+    path: ':templateName/play-tournament/:totalRounds',
     component: PlayTournamentComponent,
     canActivate: [tournamentGuard]
   }
