@@ -57,7 +57,7 @@ export class TemplateService {
     while (contestantCount > 2 ** maxRoundCount) {
       maxRoundCount++;
     }
-    if (contestantCount < maxRoundCount ** 2) { // disable free pass feature
+    if (contestantCount < 2 ** maxRoundCount) { // disable free pass feature
       maxRoundCount--;
     }
     return maxRoundCount;
