@@ -7,7 +7,7 @@ export class CustomValidators {
     static templateNameExists(contestantService: ContestantService): AsyncValidatorFn {
         return (control: AbstractControl): Observable<ValidationErrors | null> => {
             const value = control.value;
-            if(!value) {
+            if (!value) {
                 return of(null);
             }
             return of(control.value).pipe(

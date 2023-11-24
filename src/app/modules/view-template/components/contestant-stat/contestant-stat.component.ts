@@ -19,5 +19,6 @@ export class ContestantStatComponent implements OnInit {
   ngOnInit(): void {
     this.tournamentWinRate = this.contestantService.calculateTournamentWinRate(this.contestant);
     this.matchWinRate = this.contestantService.calculateMatchWinRate(this.contestant);
+    this.contestantService.initializeUndefinedStatistics(this.contestant);
   }
 }

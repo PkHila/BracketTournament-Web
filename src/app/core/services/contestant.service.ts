@@ -113,4 +113,19 @@ export class ContestantService {
       return 0;
     }
   }
+
+  public initializeUndefinedStatistics(contestant: Contestant) {
+    if (contestant.matchesPlayed === undefined) {
+      contestant.matchesPlayed = 0;
+    }
+    if (contestant.matchesWon === undefined) {
+      contestant.matchesWon = 0;
+    }
+    if (contestant.tournamentsPlayed === undefined) {
+      contestant.tournamentsPlayed = 0;
+    }
+    if (contestant.tournamentsWon === undefined) {
+      contestant.tournamentsWon = 0;
+    }
+  }
 }

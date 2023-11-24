@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Contestant, Template } from '../interfaces';
 import { Observable, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Categories, LocaleCategories } from '../categories.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -37,9 +38,9 @@ export class TemplateService {
     return this.http.get<Template[]>(`${this.baseUrl}/templates?category=${category}`).pipe(
       map(response => {
         if (response.length === 0) {
-          throw new Error ('No templates created in that category')
+          throw new Error('No templates created in that category')
         }
-        else{
+        else {
           return response;
         }
       })
@@ -84,5 +85,16 @@ export class TemplateService {
         return templates.at(randomIndex)!.templateName;
       })
     )
+  }
+
+  public mapCategoryToLocale(category: Categories): LocaleCategories | undefined {
+    switch (category) {
+      case Categories.movie:
+        return LocaleCategories.movie;
+      case Categories.games:
+        return LocaleCategories.games;
+      default:
+        return undefined;
+    }
   }
 }

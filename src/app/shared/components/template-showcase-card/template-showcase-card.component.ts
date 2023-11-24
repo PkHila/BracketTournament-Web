@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Categories } from 'src/app/core/categories.enum';
 import { Template } from 'src/app/core/interfaces';
 import { TemplateService } from 'src/app/core/services/Template.service';
 
@@ -15,6 +16,10 @@ export class TemplateShowcaseCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.template.coverImg = this.templateService.searchForCoverImg(this.template);
+    const translatedCategory = this.templateService.mapCategoryToLocale(this.template.category as Categories);
+    if (translatedCategory) {
+      this.template.category = translatedCategory as string;
+    }
   }
 
   public navigateToTemplateView() {

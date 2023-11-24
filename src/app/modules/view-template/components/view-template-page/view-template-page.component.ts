@@ -3,6 +3,7 @@ import { Contestant, Template } from 'src/app/core/interfaces';
 import { ActivatedRoute } from '@angular/router';
 import { TemplateService } from 'src/app/core/services/Template.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Categories } from 'src/app/core/categories.enum';
 
 @Component({
   selector: 'app-view-template-page',
@@ -34,6 +35,10 @@ export class ViewTemplatePageComponent implements OnInit {
           next: t => {
             this.roundsInfo = [];
             this.template = t;
+            const translatedCategory = this.templatetService.mapCategoryToLocale(this.template.category as Categories);
+            if (translatedCategory) {
+              this.template.category = translatedCategory;
+            }
             this.template.coverImg = this.templatetService.searchForCoverImg(this.template);
             const maxRoundCount = this.templatetService.calculateMaxRoundCount(this.template);
             for (let i = 2; i < maxRoundCount + 1; i++) {
