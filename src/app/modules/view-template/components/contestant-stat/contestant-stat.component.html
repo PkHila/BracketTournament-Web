@@ -1,14 +1,11 @@
-<div>
-    <h2 class="fs-2">Torneos</h2>
-    <p class="fs-3">{{contestant.tournamentsWon}} de {{contestant.tournamentsPlayed}} ganados</p>
+
+    <p class="fs-6">{{contestant.tournamentsWon}} de {{contestant.tournamentsPlayed}} torneos ganados</p>
     <div class="progress" role="progressbar" aria-label="Tournaments won percentage"
         [attr.aria-valuenow]="contestant.tournamentsWon" aria-valuemin="0" aria-valuemax="100">
         <div class="progress-bar" [style.width.%]="tournamentWinRate">{{tournamentWinRate}}%</div>
-    </div>
-    <h2 class="fs-2">1 VS 1</h2>
-    <p class="fs-3">{{contestant.matchesWon}} de {{contestant.matchesPlayed}} ganados</p>
+    </div><br>
+    <p class="fs-6">{{contestant.matchesWon}} de {{contestant.matchesPlayed}} peleas ganadas</p>
     <div class="progress" role="progressbar" aria-label="Tournaments won percentage"
         [attr.aria-valuenow]="contestant.matchesWon" aria-valuemin="0" aria-valuemax="100">
         <div class="progress-bar" [style.width.%]="matchWinRate">{{matchWinRate}}%</div>
     </div>
-</div>

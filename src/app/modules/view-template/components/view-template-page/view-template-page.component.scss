@@ -1,3 +1,8 @@
+.right-side{
+    height: 90vh;
+    
+}
+
 .cover-img{
     height: 300px;
     width: 300px;
@@ -5,4 +10,13 @@
         height:100%;
         object-position: top;
     }
+}
+
+.contestant-list{
+    height: 90%;
+    overflow-y: auto;
+}
+
+.play-button-area{
+    height: 15%;
 }

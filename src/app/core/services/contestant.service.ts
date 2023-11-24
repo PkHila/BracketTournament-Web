@@ -98,7 +98,7 @@ export class ContestantService {
 
   public calculateTournamentWinRate(contestant: Contestant): number {
     if (contestant.tournamentsPlayed != 0 && contestant.tournamentsPlayed && contestant.tournamentsWon) {
-      return contestant.tournamentsWon * 100 / contestant.tournamentsPlayed;
+      return Math.round(contestant.tournamentsWon * 100 / contestant.tournamentsPlayed);
     }
     else {
       return 0;
@@ -107,7 +107,7 @@ export class ContestantService {
 
   public calculateMatchWinRate(contestant: Contestant): number {
     if (contestant.matchesPlayed && contestant.matchesWon && contestant.matchesPlayed != 0) {
-      return contestant.matchesWon * 100 / contestant.matchesPlayed;
+      return  Math.round(contestant.matchesWon * 100 / contestant.matchesPlayed);
     }
     else {
       return 0;

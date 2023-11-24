@@ -1,10 +1,10 @@
 <div class="container">
-    <div class="tournament-page row">
-        <div class="left-side col-4 border-end p-4">
+    <div class="tournament-page row justify-content-between">
+        <section class="left-side col-4 border-end p-4">
             <div class="row">
                 <div class=" col">
-                    <div class="cover-img card bg-transparent border-0">
-                        <img class="img object-fit-cover" *ngIf="template" src={{template.coverImg}} alt="">
+                    <div class="cover-img card bg-transparent border-0 mb-3">
+                        <img class="img object-fit-cover rounded-2" *ngIf="template" src={{template.coverImg}} alt="">
                     </div>
                 </div>
             </div>
@@ -12,56 +12,54 @@
                 <div class="col" *ngIf="template">
                     <h1>{{template.templateName}}</h1>
                     <h2>Torneo de {{template.category}}</h2>
-                    <p>{{template.contestants!.length}} participantes</p>
-                    <p *ngIf="template.timesPlayed && template.timesPlayed > 1">{{template.timesPlayed}} veces jugado
+                    <p *ngIf="template.timesPlayed && template.timesPlayed > 1">
+                        {{template.contestants!.length}} participantes <br>
+                        {{template.timesPlayed}} veces jugado
                     </p>
-                    <p *ngIf="template.timesPlayed === 1">{{template.timesPlayed}} vez jugado</p>
+                    <p *ngIf="template.timesPlayed === 1">
+                        {{template.contestants!.length}} participantes <br>
+                        {{template.timesPlayed}} vez jugado
+                    </p>
                 </div>
             </div>
-        </div>
-        <div class="right-side col-8">
-            <div class="row justify-content-center align-items-center g-2">
+        </section>
+        <section class="right-side col-8 p-4">
+            <section class="contestant-list row row-cols-4 justify-content-center align-items-start g-2" *ngIf="template">
+                <div class="col card align-content-cente border" *ngFor="let contestant of template.contestants">
+                    <div class="card-body align-content-center">
+                        <app-contestant-minimal  [contestant]="contestant">
+                        </app-contestant-minimal>
+                        <app-contestant-stat  *ngIf="form.get('showStatistics')?.value" [contestant]="contestant">
+                        </app-contestant-stat>
+                    </div>
+                </div>
+            </section>
+            <section class="play-button-area row justify-content-center align-items-center g-2">
                 <div class="col">
                     <form [formGroup]="form" class="form-check form-switch">
                         <label class="form-check-label" for="flexSwitchCheckDefault">Mostrar estadísticas</label>
                         <input class="form-check-input" type="checkbox" role="switch" formControlName="showStatistics">
                     </form>
                 </div>
-            </div>
-            <div class="row justify-content-center align-items-center g-2" *ngIf="template">
-                <div class="col" *ngFor="let contestant of template.contestants">
-                    <app-contestant-minimal [contestant]="contestant">
-                    </app-contestant-minimal>
-                    <app-contestant-stat *ngIf="form.get('showStatistics')?.value" [contestant]="contestant">
-                    </app-contestant-stat>
-                </div>
-            </div>
-            <div class="row justify-content-center align-items-center g-2">
                 <div class="col">
-                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Num. de Rondas
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li *ngFor="let roundInfo of roundsInfo">
-                                    <a class="dropdown-item"
-                                        routerLink="play-tournament/{{roundInfo.round}}">{{roundInfo.round}}
-                                        rondas con
-                                        {{roundInfo.contestantsCount}} participantes <span
-                                            *ngIf="roundInfo.freePasses">y {{roundInfo.freePasses}} pasan
-                                            gratis</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <button type="button" class="btn btn-primary"> Jugar Torneo</button>
+                    <div class="btn-group btn-group-lg" role="group">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Jugar Torneo
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li *ngFor="let roundInfo of roundsInfo">
+                                <a class="dropdown-item"
+                                    routerLink="play-tournament/{{roundInfo.round}}">{{roundInfo.round}}
+                                    rondas con
+                                    {{roundInfo.contestantsCount}} participantes <span
+                                        *ngIf="roundInfo.freePasses">y {{roundInfo.freePasses}} pasan
+                                        gratis</span></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col">
-                    <!-- <app-contestant-stat [contestant]="testContestant"></app-contestant-stat> -->
-                </div>
-            </div>
-        </div>
+            </section>
+        </section>
     </div>
 </div>

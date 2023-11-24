@@ -53,12 +53,4 @@ export class ViewTemplatePageComponent implements OnInit {
       }
     })
   }
-
-  public testContestant: Contestant = {
-    name: "Test Contestant",
-    tournamentsPlayed: 20,
-    tournamentsWon: 2,
-    matchesPlayed: 15,
-    matchesWon: 6
-  };
 }
