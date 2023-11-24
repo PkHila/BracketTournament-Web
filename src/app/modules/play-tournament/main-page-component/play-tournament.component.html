@@ -1,4 +1,4 @@
-<div class="play-area container p-5">
+<div class="play-area container p-4 p-md-5">
     <div class="winner-card text-bg-primary bg-gradient rounded container" *ngIf="winner; else displayVoting" >
         <div class="row justify-content-center align-items-center text-center">
             <div class="col justify-content-center">
@@ -20,21 +20,21 @@
     
     <ng-template #displayVoting>
         <div class="row justify-content-center align-items-center g-2 mb-5">
-            <div class="col ">
+            <div class="col">
                 <app-tournament-progress [totalRounds]="totalRounds"
                 [currentRound]="currentRound"></app-tournament-progress>
             </div>
         </div>
         <div class="row justify-content-center align-items-center g-2">
-            <div class="col-3">
+            <div class="col-md-5">
                 <app-contestant-card-big *ngIf="leftContestant" [contestant]="leftContestant"
                     (voteContestant)="onVote($event)"></app-contestant-card-big>
             </div>
-            <div class="col-2 text-center">
+            <div class="col-md-2 text-center py-4">
                 <app-matchup-tracker [currentMatch]="currentMatch + 1"
                     [totalMatches]="totalMatchesForCurrentRound"></app-matchup-tracker>
             </div>
-            <div class="col-3">
+            <div class="col-md-5">
                 <app-contestant-card-big *ngIf="rightContestant" [contestant]="rightContestant"
                     (voteContestant)="onVote($event)"></app-contestant-card-big>
             </div>

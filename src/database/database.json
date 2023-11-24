@@ -721,72 +721,14 @@
       "category": "series",
       "contestants": [
         {
-          "name": "Parks and Recreation",
-          "img": "https://m.media-amazon.com/images/M/MV5BYWNkOTg0OTMtZTcyNy00MWU1LWJhZDQtYjQzMjU1NjBhYzI2XkEyXkFqcGdeQXVyOTE4NzcwNzI@._V1_SX300.jpg",
-          "date": "2009–2015",
+          "name": "Curb Your Enthusiasm",
+          "img": "https://m.media-amazon.com/images/M/MV5BMzE3ZDA4OWItOGY2ZC00MzVmLTk0Y2QtNzEzMjc5YWI5ZWFiXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
+          "date": "2000–",
           "author": "",
-          "id": 1,
-          "tournamentsPlayed": 1,
-          "matchesPlayed": 2,
+          "id": 10,
+          "tournamentsPlayed": 3,
+          "matchesPlayed": 4,
           "matchesWon": 1
-        },
-        {
-          "name": "Modern Family",
-          "img": "https://m.media-amazon.com/images/M/MV5BNzRhNWIxYTEtYjc2NS00YWFlLWFhOGEtMDZiMWM1M2RkNDkyXkEyXkFqcGdeQXVyNjc0MjkzNjc@._V1_SX300.jpg",
-          "date": "2009–2020",
-          "author": "",
-          "id": 3,
-          "tournamentsPlayed": 1,
-          "matchesPlayed": 3,
-          "matchesWon": 2
-        },
-        {
-          "name": "How I Met Your Mother",
-          "img": "https://m.media-amazon.com/images/M/MV5BNjg1MDQ5MjQ2N15BMl5BanBnXkFtZTYwNjI5NjA3._V1_SX300.jpg",
-          "date": "2005–2014",
-          "author": "",
-          "id": 5,
-          "tournamentsPlayed": 1,
-          "matchesPlayed": 1
-        },
-        {
-          "name": "30 Rock",
-          "img": "https://m.media-amazon.com/images/M/MV5BMTQ4NDQ4OTUzOV5BMl5BanBnXkFtZTcwMjMzMTUyNw@@._V1_SX300.jpg",
-          "date": "2006–2013",
-          "author": "",
-          "id": 7,
-          "tournamentsPlayed": 1,
-          "matchesPlayed": 2,
-          "matchesWon": 1
-        },
-        {
-          "name": "The Big Bang Theory",
-          "img": "https://m.media-amazon.com/images/M/MV5BY2FmZTY5YTktOWRlYy00NmIyLWE0ZmQtZDg2YjlmMzczZDZiXkEyXkFqcGdeQXVyNjg4NzAyOTA@._V1_SX300.jpg",
-          "date": "2007–2019",
-          "author": "",
-          "id": 4,
-          "tournamentsPlayed": 1,
-          "matchesPlayed": 1
-        },
-        {
-          "name": "Malcolm in the Middle",
-          "img": "https://m.media-amazon.com/images/M/MV5BNTc2MzM2N2YtZDdiOS00M2I2LWFjOGItMDM3OTA3YjUwNjAxXkEyXkFqcGdeQXVyNzA5NjUyNjM@._V1_SX300.jpg",
-          "date": "2000–2006",
-          "author": "",
-          "id": 9,
-          "tournamentsPlayed": 1,
-          "matchesPlayed": 1
-        },
-        {
-          "name": "Friends",
-          "img": "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
-          "date": "1994–2004",
-          "author": "",
-          "id": 2,
-          "tournamentsPlayed": 1,
-          "matchesPlayed": 3,
-          "matchesWon": 3,
-          "tournamentsWon": 1
         },
         {
           "name": "That '70s Show",
@@ -794,40 +736,119 @@
           "date": "1998–2006",
           "author": "",
           "id": 12,
-          "tournamentsPlayed": 1,
-          "matchesPlayed": 1
+          "tournamentsPlayed": 5,
+          "matchesPlayed": 7,
+          "matchesWon": 2
         },
         {
           "name": "The Office",
           "img": "https://m.media-amazon.com/images/M/MV5BMDNkOTE4NDQtMTNmYi00MWE0LWE4ZTktYTc0NzhhNWIzNzJiXkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_SX300.jpg",
           "date": "2005–2013",
           "author": "",
-          "id": 6
+          "id": 6,
+          "tournamentsPlayed": 2,
+          "matchesPlayed": 3,
+          "matchesWon": 2,
+          "tournamentsWon": 1
         },
         {
-          "name": "Community",
-          "img": "https://m.media-amazon.com/images/M/MV5BNDQ5NDZiYjktZmFmMy00MjAxLTk1MDktOGZjYTY5YTE1ODdmXkEyXkFqcGdeQXVyNjcwMzEzMTU@._V1_SX300.jpg",
+          "name": "The Big Bang Theory",
+          "img": "https://m.media-amazon.com/images/M/MV5BY2FmZTY5YTktOWRlYy00NmIyLWE0ZmQtZDg2YjlmMzczZDZiXkEyXkFqcGdeQXVyNjg4NzAyOTA@._V1_SX300.jpg",
+          "date": "2007–2019",
+          "author": "",
+          "id": 4,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 4
+        },
+        {
+          "name": "Parks and Recreation",
+          "img": "https://m.media-amazon.com/images/M/MV5BYWNkOTg0OTMtZTcyNy00MWU1LWJhZDQtYjQzMjU1NjBhYzI2XkEyXkFqcGdeQXVyOTE4NzcwNzI@._V1_SX300.jpg",
           "date": "2009–2015",
           "author": "",
-          "id": 8
+          "id": 1,
+          "tournamentsPlayed": 3,
+          "matchesPlayed": 5,
+          "matchesWon": 2
+        },
+        {
+          "name": "30 Rock",
+          "img": "https://m.media-amazon.com/images/M/MV5BMTQ4NDQ4OTUzOV5BMl5BanBnXkFtZTcwMjMzMTUyNw@@._V1_SX300.jpg",
+          "date": "2006–2013",
+          "author": "",
+          "id": 7,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 7,
+          "matchesWon": 3
         },
         {
           "name": "Two and a Half Men",
           "img": "https://m.media-amazon.com/images/M/MV5BOTI2MjIzN2ItZDg0OS00MTlhLWIzMTMtYWI4ZTA0NGE4NDJlXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
           "date": "2003–2015",
           "author": "",
-          "id": 11
+          "id": 11,
+          "tournamentsPlayed": 5,
+          "matchesPlayed": 6,
+          "matchesWon": 2,
+          "tournamentsWon": 1
         },
         {
-          "name": "Curb Your Enthusiasm",
-          "img": "https://m.media-amazon.com/images/M/MV5BMzE3ZDA4OWItOGY2ZC00MzVmLTk0Y2QtNzEzMjc5YWI5ZWFiXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX300.jpg",
-          "date": "2000–",
+          "name": "Friends",
+          "img": "https://m.media-amazon.com/images/M/MV5BNDVkYjU0MzctMWRmZi00NTkxLTgwZWEtOWVhYjZlYjllYmU4XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
+          "date": "1994–2004",
           "author": "",
-          "id": 10
+          "id": 2,
+          "tournamentsPlayed": 2,
+          "matchesPlayed": 5,
+          "matchesWon": 5,
+          "tournamentsWon": 2
+        },
+        {
+          "name": "How I Met Your Mother",
+          "img": "https://m.media-amazon.com/images/M/MV5BNjg1MDQ5MjQ2N15BMl5BanBnXkFtZTYwNjI5NjA3._V1_SX300.jpg",
+          "date": "2005–2014",
+          "author": "",
+          "id": 5,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 6,
+          "matchesWon": 3,
+          "tournamentsWon": 1
+        },
+        {
+          "name": "Community",
+          "img": "https://m.media-amazon.com/images/M/MV5BNDQ5NDZiYjktZmFmMy00MjAxLTk1MDktOGZjYTY5YTE1ODdmXkEyXkFqcGdeQXVyNjcwMzEzMTU@._V1_SX300.jpg",
+          "date": "2009–2015",
+          "author": "",
+          "id": 8,
+          "tournamentsPlayed": 3,
+          "matchesPlayed": 5,
+          "matchesWon": 4,
+          "tournamentsWon": 2
+        },
+        {
+          "name": "Modern Family",
+          "img": "https://m.media-amazon.com/images/M/MV5BNzRhNWIxYTEtYjc2NS00YWFlLWFhOGEtMDZiMWM1M2RkNDkyXkEyXkFqcGdeQXVyNjc0MjkzNjc@._V1_SX300.jpg",
+          "date": "2009–2020",
+          "author": "",
+          "id": 3,
+          "tournamentsPlayed": 2,
+          "matchesPlayed": 5,
+          "matchesWon": 4,
+          "tournamentsWon": 1
+        },
+        {
+          "name": "Malcolm in the Middle",
+          "img": "https://m.media-amazon.com/images/M/MV5BNTc2MzM2N2YtZDdiOS00M2I2LWFjOGItMDM3OTA3YjUwNjAxXkEyXkFqcGdeQXVyNzA5NjUyNjM@._V1_SX300.jpg",
+          "date": "2000–2006",
+          "author": "",
+          "id": 9,
+          "tournamentsPlayed": 3,
+          "matchesPlayed": 5,
+          "matchesWon": 3,
+          "tournamentsWon": 1
         }
       ],
       "id": 5,
-      "timesPlayed": 1
+      "timesPlayed": 9
     }
   ],
   "played-tournaments": [
@@ -2457,6 +2478,238 @@
         }
       ],
       "id": 33
+    },
+    {
+      "temlateId": 5,
+      "winnerId": 2,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 1,
+              "secondContestantId": 7
+            },
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 2
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 2
+            }
+          ]
+        }
+      ],
+      "id": 34
+    },
+    {
+      "temlateId": 5,
+      "winnerId": 8,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 11
+            },
+            {
+              "firstContestantId": 10,
+              "secondContestantId": 4
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 10
+            }
+          ]
+        }
+      ],
+      "id": 35
+    },
+    {
+      "temlateId": 5,
+      "winnerId": 9,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 9,
+              "secondContestantId": 5
+            },
+            {
+              "firstContestantId": 12,
+              "secondContestantId": 11
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 9,
+              "secondContestantId": 12
+            }
+          ]
+        }
+      ],
+      "id": 36
+    },
+    {
+      "temlateId": 5,
+      "winnerId": 5,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 10
+            },
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 1
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 1
+            }
+          ]
+        }
+      ],
+      "id": 37
+    },
+    {
+      "temlateId": 5,
+      "winnerId": 3,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 3,
+              "secondContestantId": 11
+            },
+            {
+              "firstContestantId": 12,
+              "secondContestantId": 9
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 3,
+              "secondContestantId": 9
+            }
+          ]
+        }
+      ],
+      "id": 38
+    },
+    {
+      "temlateId": 5,
+      "winnerId": 11,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 6
+            },
+            {
+              "firstContestantId": 4,
+              "secondContestantId": 7
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 7
+            }
+          ]
+        }
+      ],
+      "id": 39
+    },
+    {
+      "temlateId": 5,
+      "winnerId": 8,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 8
+            },
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 12
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 5
+            }
+          ]
+        }
+      ],
+      "id": 40
+    },
+    {
+      "temlateId": 5,
+      "winnerId": 6,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 10,
+              "secondContestantId": 6
+            },
+            {
+              "firstContestantId": 12,
+              "secondContestantId": 4
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 6,
+              "secondContestantId": 12
+            }
+          ]
+        }
+      ],
+      "id": 41
     }
   ]
 }
