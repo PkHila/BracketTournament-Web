@@ -2,7 +2,7 @@
     <div class="tournament-page row justify-content-between">
         <section class="left-side col-4 border-end p-4 mt-3">
             <div class="row">
-                <div class=" col">
+                <div class="col">
                     <div class="cover-img card bg-transparent border-0 mb-3">
                         <img class="img object-fit-cover rounded-2" *ngIf="template" src={{template.coverImg}} alt="">
                     </div>
@@ -11,12 +11,12 @@
             <div class="info row">
                 <div class="col" *ngIf="template">
                     <h1>{{template.templateName}}</h1>
-                    <h2>Torneo de {{template.category}}</h2>
-                    <p>{{template.contestants!.length}} participantes</p>
-                    <p *ngIf="template.timesPlayed && template.timesPlayed > 1">
+                    <h2 class="fs-4 text-white">Torneo de {{template.category}}</h2>
+                    <p class="fw-semibold mt-3 mb-0">{{template.contestants!.length}} participantes</p>
+                    <p class="fw-semibold" *ngIf="template.timesPlayed && template.timesPlayed > 1">
                         {{template.timesPlayed}} veces jugado
                     </p>
-                    <p *ngIf="template.timesPlayed === 1">
+                    <p class="fw-semibold" *ngIf="template.timesPlayed === 1">
                         {{template.timesPlayed}} vez jugado
                     </p>
                 </div>

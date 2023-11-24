@@ -6,14 +6,15 @@
       "category": "movie",
       "contestants": [
         {
-          "name": "Star Wars: Episode VI - Return of the Jedi",
-          "img": "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
-          "date": "1983",
+          "name": "Star Wars: Episode III - Revenge of the Sith",
+          "img": "https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_SX300.jpg",
+          "date": "2005",
           "author": "",
-          "id": 3,
-          "tournamentsPlayed": 5,
-          "matchesPlayed": 10,
-          "matchesWon": 5
+          "id": 6,
+          "tournamentsPlayed": 8,
+          "matchesPlayed": 14,
+          "matchesWon": 8,
+          "tournamentsWon": 2
         },
         {
           "name": "Star Wars: Episode VIII - The Last Jedi",
@@ -21,19 +22,9 @@
           "date": "2017",
           "author": "",
           "id": 9,
-          "tournamentsPlayed": 5,
-          "matchesPlayed": 7,
-          "matchesWon": 2
-        },
-        {
-          "name": "Star Wars: Episode IV - A New Hope",
-          "img": "https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_SX300.jpg",
-          "date": "1977",
-          "author": "",
-          "id": 1,
-          "tournamentsPlayed": 4,
-          "matchesPlayed": 8,
-          "matchesWon": 4
+          "tournamentsPlayed": 7,
+          "matchesPlayed": 10,
+          "matchesWon": 3
         },
         {
           "name": "Solo: A Star Wars Story",
@@ -41,10 +32,31 @@
           "date": "2018",
           "author": "",
           "id": 11,
-          "tournamentsPlayed": 5,
-          "matchesPlayed": 14,
-          "matchesWon": 11,
-          "tournamentsWon": 2
+          "tournamentsPlayed": 7,
+          "matchesPlayed": 17,
+          "matchesWon": 13,
+          "tournamentsWon": 3
+        },
+        {
+          "name": "Star Wars: Episode VI - Return of the Jedi",
+          "img": "https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+          "date": "1983",
+          "author": "",
+          "id": 3,
+          "tournamentsPlayed": 9,
+          "matchesPlayed": 17,
+          "matchesWon": 8
+        },
+        {
+          "name": "Star Wars: Episode I - The Phantom Menace",
+          "img": "https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+          "date": "1999",
+          "author": "",
+          "id": 5,
+          "tournamentsPlayed": 6,
+          "matchesPlayed": 10,
+          "matchesWon": 5,
+          "tournamentsWon": 1
         },
         {
           "name": "Star Wars: Episode IX - The Rise of Skywalker",
@@ -52,18 +64,8 @@
           "date": "2019",
           "author": "",
           "id": 10,
-          "tournamentsPlayed": 4,
-          "matchesPlayed": 7,
-          "matchesWon": 3
-        },
-        {
-          "name": "Star Wars: Episode III - Revenge of the Sith",
-          "img": "https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_SX300.jpg",
-          "date": "2005",
-          "author": "",
-          "id": 6,
-          "tournamentsPlayed": 3,
-          "matchesPlayed": 6,
+          "tournamentsPlayed": 6,
+          "matchesPlayed": 9,
           "matchesWon": 3
         },
         {
@@ -77,34 +79,26 @@
           "matchesWon": 2
         },
         {
-          "name": "Star Wars: Episode I - The Phantom Menace",
-          "img": "https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
-          "date": "1999",
-          "author": "",
-          "id": 5,
-          "tournamentsPlayed": 4,
-          "matchesPlayed": 6,
-          "matchesWon": 2
-        },
-        {
-          "name": "Star Wars: Episode II - Attack of the Clones",
-          "img": "https://m.media-amazon.com/images/M/MV5BMDAzM2M0Y2UtZjRmZi00MzVlLTg4MjEtOTE3NzU5ZDVlMTU5XkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg",
-          "date": "2002",
-          "author": "",
-          "id": 7,
-          "tournamentsPlayed": 4,
-          "matchesPlayed": 10,
-          "matchesWon": 6
-        },
-        {
           "name": "Star Wars: Episode V - The Empire Strikes Back",
           "img": "https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
           "date": "1980",
           "author": "",
           "id": 2,
-          "tournamentsPlayed": 4,
-          "matchesPlayed": 9,
-          "matchesWon": 5
+          "tournamentsPlayed": 8,
+          "matchesPlayed": 15,
+          "matchesWon": 8,
+          "tournamentsWon": 1
+        },
+        {
+          "name": "Star Wars: Episode IV - A New Hope",
+          "img": "https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_SX300.jpg",
+          "date": "1977",
+          "author": "",
+          "id": 1,
+          "tournamentsPlayed": 8,
+          "matchesPlayed": 13,
+          "matchesWon": 6,
+          "tournamentsWon": 1
         },
         {
           "name": "Rogue One: A Star Wars Story",
@@ -116,10 +110,21 @@
           "matchesPlayed": 12,
           "matchesWon": 12,
           "tournamentsWon": 3
+        },
+        {
+          "name": "Star Wars: Episode II - Attack of the Clones",
+          "img": "https://m.media-amazon.com/images/M/MV5BMDAzM2M0Y2UtZjRmZi00MzVlLTg4MjEtOTE3NzU5ZDVlMTU5XkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg",
+          "date": "2002",
+          "author": "",
+          "id": 7,
+          "tournamentsPlayed": 7,
+          "matchesPlayed": 14,
+          "matchesWon": 8,
+          "tournamentsWon": 1
         }
       ],
       "id": 1,
-      "timesPlayed": 5
+      "timesPlayed": 12
     },
     {
       "templateName": "Completely Unbiased RTS Game List",
@@ -290,64 +295,15 @@
       "category": "games",
       "contestants": [
         {
-          "name": "Super Mario 3D World + Bowser’s Fury",
-          "img": "https://media.rawg.io/media/games/cd2/cd22f0dcf8f080086c60f77eed7a8a93.jpg",
-          "author": "",
-          "date": "2021-02-12",
-          "id": 5,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 3,
-          "matchesWon": 1
-        },
-        {
-          "name": "Super Mario Sunshine",
-          "img": "https://media.rawg.io/media/games/0b7/0b746092287560e4ff5a6ceb5faaed8e.jpg",
-          "author": "",
-          "date": "2002-08-25",
-          "id": 2,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 4,
-          "matchesWon": 2
-        },
-        {
-          "name": "Super Mario Galaxy 2",
-          "img": "https://media.rawg.io/media/games/4e9/4e928ff4b4e3c3f5acfda38b98a4cf65.jpg",
-          "author": "",
-          "date": "2010-05-23",
-          "id": 4,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 5,
-          "matchesWon": 3
-        },
-        {
           "name": "Super Mario Bros.",
           "img": "https://media.rawg.io/media/games/154/154fea9689109f26c49c6a2db6263ef9.jpg",
           "author": "",
           "date": "1985-09-13",
           "id": 7,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 2
-        },
-        {
-          "name": "Super Mario Odyssey",
-          "img": "https://media.rawg.io/media/games/267/267bd0dbc496f52692487d07d014c061.jpg",
-          "author": "",
-          "date": "2017-10-27",
-          "id": 6,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 8,
-          "matchesWon": 7,
+          "tournamentsPlayed": 9,
+          "matchesPlayed": 12,
+          "matchesWon": 4,
           "tournamentsWon": 1
-        },
-        {
-          "name": "Super Mario Bros. Wonder",
-          "img": "https://media.rawg.io/media/games/1fd/1fd3f030bee73452d46a0678084a7ed9.jpg",
-          "author": "",
-          "date": "2023-10-20",
-          "id": 15,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 3,
-          "matchesWon": 1
         },
         {
           "name": "Super Mario Bros. 3",
@@ -355,47 +311,10 @@
           "author": "",
           "date": "1988-10-23",
           "id": 9,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 2
-        },
-        {
-          "name": "New Super Mario Bros. U",
-          "img": "https://media.rawg.io/media/games/5f7/5f74872bea96cb395a0514bbe54e7b5a.jpg",
-          "author": "",
-          "date": "2012-11-18",
-          "id": 13,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 2
-        },
-        {
-          "name": "Super Mario 64",
-          "img": "https://media.rawg.io/media/games/1d5/1d565b99cad46c44b534d9803e27bd49.jpg",
-          "author": "",
-          "date": "1996-06-23",
-          "id": 1,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 7,
-          "matchesWon": 6,
+          "tournamentsPlayed": 7,
+          "matchesPlayed": 9,
+          "matchesWon": 3,
           "tournamentsWon": 1
-        },
-        {
-          "name": "New Super Mario Bros. 2",
-          "img": "https://media.rawg.io/media/games/785/785b3279c7849b56e5055232fe94d5eb.jpg",
-          "author": "",
-          "date": "2012-07-28",
-          "id": 14,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 2
-        },
-        {
-          "name": "Super Mario Galaxy",
-          "img": "https://media.rawg.io/media/games/936/936f0ffac0b3c9f5c8d185f610ed2631.jpg",
-          "author": "",
-          "date": "2007-11-01",
-          "id": 3,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 4,
-          "matchesWon": 2
         },
         {
           "name": "Super Mario World 2: Yoshi's Island",
@@ -403,9 +322,21 @@
           "author": "",
           "date": "1995-08-05",
           "id": 11,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 3,
-          "matchesWon": 1
+          "tournamentsPlayed": 10,
+          "matchesPlayed": 15,
+          "matchesWon": 6,
+          "tournamentsWon": 1
+        },
+        {
+          "name": "New Super Mario Bros. U",
+          "img": "https://media.rawg.io/media/games/5f7/5f74872bea96cb395a0514bbe54e7b5a.jpg",
+          "author": "",
+          "date": "2012-11-18",
+          "id": 13,
+          "tournamentsPlayed": 7,
+          "matchesPlayed": 10,
+          "matchesWon": 4,
+          "tournamentsWon": 1
         },
         {
           "name": "Super Mario Bros. 2",
@@ -413,18 +344,63 @@
           "author": "",
           "date": "1988-10-09",
           "id": 8,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 3,
-          "matchesWon": 1
+          "tournamentsPlayed": 6,
+          "matchesPlayed": 10,
+          "matchesWon": 4
         },
         {
-          "name": "New Super Mario Bros. Wii",
-          "img": "https://media.rawg.io/media/games/19a/19a1814d28ea396b3fd46404b1638a98.jpg",
+          "name": "New Super Mario Bros. 2",
+          "img": "https://media.rawg.io/media/games/785/785b3279c7849b56e5055232fe94d5eb.jpg",
           "author": "",
-          "date": "2009-11-12",
-          "id": 12,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 2
+          "date": "2012-07-28",
+          "id": 14,
+          "tournamentsPlayed": 9,
+          "matchesPlayed": 13,
+          "matchesWon": 4
+        },
+        {
+          "name": "Super Mario Bros. Wonder",
+          "img": "https://media.rawg.io/media/games/1fd/1fd3f030bee73452d46a0678084a7ed9.jpg",
+          "author": "",
+          "date": "2023-10-20",
+          "id": 15,
+          "tournamentsPlayed": 5,
+          "matchesPlayed": 10,
+          "matchesWon": 6,
+          "tournamentsWon": 1
+        },
+        {
+          "name": "Super Mario 64",
+          "img": "https://media.rawg.io/media/games/1d5/1d565b99cad46c44b534d9803e27bd49.jpg",
+          "author": "",
+          "date": "1996-06-23",
+          "id": 1,
+          "tournamentsPlayed": 8,
+          "matchesPlayed": 15,
+          "matchesWon": 9,
+          "tournamentsWon": 2
+        },
+        {
+          "name": "Super Mario Galaxy 2",
+          "img": "https://media.rawg.io/media/games/4e9/4e928ff4b4e3c3f5acfda38b98a4cf65.jpg",
+          "author": "",
+          "date": "2010-05-23",
+          "id": 4,
+          "tournamentsPlayed": 5,
+          "matchesPlayed": 13,
+          "matchesWon": 9,
+          "tournamentsWon": 1
+        },
+        {
+          "name": "Super Mario 3D World + Bowser’s Fury",
+          "img": "https://media.rawg.io/media/games/cd2/cd22f0dcf8f080086c60f77eed7a8a93.jpg",
+          "author": "",
+          "date": "2021-02-12",
+          "id": 5,
+          "tournamentsPlayed": 6,
+          "matchesPlayed": 11,
+          "matchesWon": 7,
+          "tournamentsWon": 2
         },
         {
           "name": "Super Mario World",
@@ -432,9 +408,20 @@
           "author": "",
           "date": "1990-11-21",
           "id": 10,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 4,
-          "matchesWon": 2
+          "tournamentsPlayed": 6,
+          "matchesPlayed": 10,
+          "matchesWon": 4
+        },
+        {
+          "name": "Super Mario Sunshine",
+          "img": "https://media.rawg.io/media/games/0b7/0b746092287560e4ff5a6ceb5faaed8e.jpg",
+          "author": "",
+          "date": "2002-08-25",
+          "id": 2,
+          "tournamentsPlayed": 6,
+          "matchesPlayed": 12,
+          "matchesWon": 7,
+          "tournamentsWon": 1
         },
         {
           "name": "Super Mario 3D Land",
@@ -442,13 +429,46 @@
           "author": "",
           "date": "2011-11-03",
           "id": 16,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 6,
-          "matchesWon": 4
+          "tournamentsPlayed": 6,
+          "matchesPlayed": 11,
+          "matchesWon": 5
+        },
+        {
+          "name": "New Super Mario Bros. Wii",
+          "img": "https://media.rawg.io/media/games/19a/19a1814d28ea396b3fd46404b1638a98.jpg",
+          "author": "",
+          "date": "2009-11-12",
+          "id": 12,
+          "tournamentsPlayed": 9,
+          "matchesPlayed": 12,
+          "matchesWon": 4,
+          "tournamentsWon": 1
+        },
+        {
+          "name": "Super Mario Galaxy",
+          "img": "https://media.rawg.io/media/games/936/936f0ffac0b3c9f5c8d185f610ed2631.jpg",
+          "author": "",
+          "date": "2007-11-01",
+          "id": 3,
+          "tournamentsPlayed": 7,
+          "matchesPlayed": 13,
+          "matchesWon": 7,
+          "tournamentsWon": 1
+        },
+        {
+          "name": "Super Mario Odyssey",
+          "img": "https://media.rawg.io/media/games/267/267bd0dbc496f52692487d07d014c061.jpg",
+          "author": "",
+          "date": "2017-10-27",
+          "id": 6,
+          "tournamentsPlayed": 6,
+          "matchesPlayed": 16,
+          "matchesWon": 13,
+          "tournamentsWon": 3
         }
       ],
       "id": 3,
-      "timesPlayed": 2
+      "timesPlayed": 16
     },
     {
       "templateName": "Manga favorito",
@@ -1712,6 +1732,731 @@
         }
       ],
       "id": 12
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 12,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 13,
+              "secondContestantId": 12
+            },
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 1
+            },
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 4
+            },
+            {
+              "firstContestantId": 9,
+              "secondContestantId": 5
+            },
+            {
+              "firstContestantId": 14,
+              "secondContestantId": 15
+            },
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 16
+            },
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 10
+            },
+            {
+              "firstContestantId": 3,
+              "secondContestantId": 6
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 12,
+              "secondContestantId": 2
+            },
+            {
+              "firstContestantId": 4,
+              "secondContestantId": 5
+            },
+            {
+              "firstContestantId": 14,
+              "secondContestantId": 16
+            },
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 6
+            }
+          ]
+        },
+        {
+          "position": 2,
+          "matches": [
+            {
+              "firstContestantId": 12,
+              "secondContestantId": 5
+            },
+            {
+              "firstContestantId": 14,
+              "secondContestantId": 6
+            }
+          ]
+        },
+        {
+          "position": 3,
+          "matches": [
+            {
+              "firstContestantId": 12,
+              "secondContestantId": 14
+            }
+          ]
+        }
+      ],
+      "id": 13
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 4,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 15,
+              "secondContestantId": 16
+            },
+            {
+              "firstContestantId": 6,
+              "secondContestantId": 13
+            },
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 7
+            },
+            {
+              "firstContestantId": 9,
+              "secondContestantId": 3
+            },
+            {
+              "firstContestantId": 10,
+              "secondContestantId": 14
+            },
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 1
+            },
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 4
+            },
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 12
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 15,
+              "secondContestantId": 13
+            },
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 3
+            },
+            {
+              "firstContestantId": 14,
+              "secondContestantId": 2
+            },
+            {
+              "firstContestantId": 4,
+              "secondContestantId": 8
+            }
+          ]
+        },
+        {
+          "position": 2,
+          "matches": [
+            {
+              "firstContestantId": 15,
+              "secondContestantId": 3
+            },
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 4
+            }
+          ]
+        },
+        {
+          "position": 3,
+          "matches": [
+            {
+              "firstContestantId": 15,
+              "secondContestantId": 4
+            }
+          ]
+        }
+      ],
+      "id": 14
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 1,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 1,
+              "secondContestantId": 14
+            },
+            {
+              "firstContestantId": 12,
+              "secondContestantId": 7
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 1,
+              "secondContestantId": 7
+            }
+          ]
+        }
+      ],
+      "id": 15
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 5,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 9,
+              "secondContestantId": 2
+            },
+            {
+              "firstContestantId": 14,
+              "secondContestantId": 5
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 9,
+              "secondContestantId": 5
+            }
+          ]
+        }
+      ],
+      "id": 16
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 6,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 6,
+              "secondContestantId": 14
+            },
+            {
+              "firstContestantId": 10,
+              "secondContestantId": 11
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 6,
+              "secondContestantId": 10
+            }
+          ]
+        }
+      ],
+      "id": 17
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 15,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 16,
+              "secondContestantId": 15
+            },
+            {
+              "firstContestantId": 10,
+              "secondContestantId": 11
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 15,
+              "secondContestantId": 10
+            }
+          ]
+        }
+      ],
+      "id": 18
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 3,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 12,
+              "secondContestantId": 3
+            },
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 7
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 3,
+              "secondContestantId": 11
+            }
+          ]
+        }
+      ],
+      "id": 19
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 5,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 3
+            },
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 1
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 1
+            }
+          ]
+        }
+      ],
+      "id": 20
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 7,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 7
+            },
+            {
+              "firstContestantId": 3,
+              "secondContestantId": 1
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 3
+            }
+          ]
+        }
+      ],
+      "id": 21
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 6,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 6,
+              "secondContestantId": 9
+            },
+            {
+              "firstContestantId": 4,
+              "secondContestantId": 1
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 6,
+              "secondContestantId": 4
+            }
+          ]
+        }
+      ],
+      "id": 22
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 13,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 13,
+              "secondContestantId": 14
+            },
+            {
+              "firstContestantId": 12,
+              "secondContestantId": 7
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 13,
+              "secondContestantId": 7
+            }
+          ]
+        }
+      ],
+      "id": 23
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 11,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 12
+            },
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 14
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 11
+            }
+          ]
+        }
+      ],
+      "id": 24
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 2,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 16
+            },
+            {
+              "firstContestantId": 13,
+              "secondContestantId": 12
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 13
+            }
+          ]
+        }
+      ],
+      "id": 25
+    },
+    {
+      "temlateId": 3,
+      "winnerId": 9,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 11
+            },
+            {
+              "firstContestantId": 9,
+              "secondContestantId": 13
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 9
+            }
+          ]
+        }
+      ],
+      "id": 26
+    },
+    {
+      "temlateId": 1,
+      "winnerId": 1,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 1,
+              "secondContestantId": 2
+            },
+            {
+              "firstContestantId": 3,
+              "secondContestantId": 10
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 1,
+              "secondContestantId": 3
+            }
+          ]
+        }
+      ],
+      "id": 27
+    },
+    {
+      "temlateId": 1,
+      "winnerId": 11,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 10,
+              "secondContestantId": 11
+            },
+            {
+              "firstContestantId": 3,
+              "secondContestantId": 7
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 11,
+              "secondContestantId": 3
+            }
+          ]
+        }
+      ],
+      "id": 28
+    },
+    {
+      "temlateId": 1,
+      "winnerId": 6,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 3
+            },
+            {
+              "firstContestantId": 6,
+              "secondContestantId": 1
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 3,
+              "secondContestantId": 6
+            }
+          ]
+        }
+      ],
+      "id": 29
+    },
+    {
+      "temlateId": 1,
+      "winnerId": 2,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 9,
+              "secondContestantId": 5
+            },
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 6
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 2
+            }
+          ]
+        }
+      ],
+      "id": 30
+    },
+    {
+      "temlateId": 1,
+      "winnerId": 5,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 1
+            },
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 6
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 6
+            }
+          ]
+        }
+      ],
+      "id": 31
+    },
+    {
+      "temlateId": 1,
+      "winnerId": 7,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 1
+            },
+            {
+              "firstContestantId": 6,
+              "secondContestantId": 2
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 7,
+              "secondContestantId": 2
+            }
+          ]
+        }
+      ],
+      "id": 32
+    },
+    {
+      "temlateId": 1,
+      "winnerId": 6,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 6,
+              "secondContestantId": 11
+            },
+            {
+              "firstContestantId": 9,
+              "secondContestantId": 3
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 6,
+              "secondContestantId": 9
+            }
+          ]
+        }
+      ],
+      "id": 33
     }
   ]
 }
