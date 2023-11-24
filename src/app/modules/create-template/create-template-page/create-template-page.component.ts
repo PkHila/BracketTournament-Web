@@ -77,7 +77,7 @@ export class CreateTemplatePageComponent {
 
   public createTemplate(templateName: string) {
     const template: Template = {
-      templateName: templateName,
+      templateName: templateName.trim(),
       category: this.category,
       contestants: this.selectedContestants
     }
