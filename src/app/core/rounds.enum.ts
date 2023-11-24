@@ -1,9 +1,9 @@
 export enum Rounds {
-    finales = 1,
-    semifinales = 2,
-    octavos = 3,
-    top16 = 4,
-    top32 = 5,
-    top64 = 6,
+    Finales = 1,
+    Semifinales = 2,
+    Cuartos = 3,
+    Octavos = 4,
+    Top_32 = 5,
+    Top_64 = 6,
 }
 

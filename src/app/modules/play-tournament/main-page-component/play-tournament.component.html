@@ -17,7 +17,8 @@
     <ng-template #displayVoting>
         <div class="row justify-content-center align-items-center g-2 mb-5">
             <div class="col">
-                <app-tournament-progress></app-tournament-progress>
+                <app-tournament-progress [totalRounds]="totalRounds"
+                [currentRound]="currentRound"></app-tournament-progress>
             </div>
         </div>
         <div class="row justify-content-center align-items-center g-2">

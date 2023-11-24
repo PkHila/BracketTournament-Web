@@ -12,12 +12,11 @@
                 <div class="col" *ngIf="template">
                     <h1>{{template.templateName}}</h1>
                     <h2>Torneo de {{template.category}}</h2>
+                    <p>{{template.contestants!.length}} participantes</p>
                     <p *ngIf="template.timesPlayed && template.timesPlayed > 1">
-                        {{template.contestants!.length}} participantes <br>
                         {{template.timesPlayed}} veces jugado
                     </p>
                     <p *ngIf="template.timesPlayed === 1">
-                        {{template.contestants!.length}} participantes <br>
                         {{template.timesPlayed}} vez jugado
                     </p>
                 </div>
@@ -26,7 +25,7 @@
         <section class="right-side col-8 p-4">
             <section class="contestant-list row row-cols-4 justify-content-center align-items-start g-2"
                 *ngIf="template">
-                <div class="col card align-content-cente border" *ngFor="let contestant of template.contestants">
+                <div class="col card bg-transparent border-0 align-content-cente border" *ngFor="let contestant of template.contestants">
                     <div class="card-body align-content-center">
                         <app-contestant-minimal [contestant]="contestant">
                         </app-contestant-minimal>

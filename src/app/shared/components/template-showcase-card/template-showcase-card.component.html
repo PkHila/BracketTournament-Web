@@ -1,12 +1,17 @@
-<div class="card" (click)="navigateToTemplateView()">
-    <img src={{template.coverImg}} class="card-img-top" alt="Cover Image {{template.templateName}}" />
-    <div class="card-body">
-        <h5 class="card-title">{{template.templateName}}</h5>
+<div class="showcase card" (click)="navigateToTemplateView()">
+    <div class="card contain-image">
+        <img src={{template.coverImg}} class="object-fit-cover" alt="Cover Image {{template.templateName}}" />
     </div>
-    <div class="card-footer">
-        <small class="text-muted"> {{template.category}} </small>
-        <small *ngIf="template.timesPlayed && template.timesPlayed > 1">{{template.timesPlayed}} veces jugado
-        </small>
-        <small *ngIf="template.timesPlayed === 1">{{template.timesPlayed}} vez jugado</small>
+    <div class="showcase-text">
+        <div class="card-body">
+            <h5 class="card-title text-wrap">{{template.templateName}}</h5>
+        </div>
+        <div class="card-footer align-content-center">
+            <small> {{template.category}} </small>
+            <small class="float-end" *ngIf="template.timesPlayed && template.timesPlayed > 1">{{template.timesPlayed}} veces jugado
+            </small>
+            <small class="float-end" *ngIf="template.timesPlayed === 1">{{template.timesPlayed}} vez jugado</small>
+        </div>
     </div>
+    
 </div>
