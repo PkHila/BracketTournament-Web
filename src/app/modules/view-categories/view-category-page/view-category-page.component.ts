@@ -16,6 +16,7 @@ export class ViewCategoryPageComponent {
   constructor(private templateService: TemplateService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    
     this.route.paramMap.subscribe({
       next: params => {
         this.currentCategory = params.get('category')!;
