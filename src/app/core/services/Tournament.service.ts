@@ -3,6 +3,7 @@ import { Observable, delay, map, switchMap } from 'rxjs';
 import { Contestant, Match, PlayedTournament, Round, Tournament } from '../interfaces';
 import { TemplateService } from './Template.service';
 import { HttpClient } from '@angular/common/http';
+import { Rounds } from '../rounds.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -189,5 +190,14 @@ export class TournamentService {
       tournament.template.timesPlayed = 0;
     }
     tournament.template.timesPlayed++;
+  }
+
+  public getRoundName(currentRound:number, totalRounds: number): string | undefined {
+    const roundDifference = totalRounds - currentRound;
+    if (roundDifference > 0 && roundDifference <= Object.keys(Rounds).length / 2) {
+      const roundName = Rounds[roundDifference] as keyof typeof Rounds;
+      return roundName
+    }
+    return undefined;
   }
 }
