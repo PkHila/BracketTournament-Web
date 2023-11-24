@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+.play-area{
+  height: 90vh;
+}
+
+.winner-card{
+  max-width: 600px;
+}
+
+.crown-icon{
+  width: 50px;
+}
+
+.winner-cover{
+  height: 250px;
+  width: 250px;
+  img{
+    height: 100%;
+  }
+}
+

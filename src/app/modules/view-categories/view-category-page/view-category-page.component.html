@@ -1,0 +1,7 @@
+<h1 class="mx-1 mx-md-5 my-5 px-5">Torneos populares</h1>
+
+<app-template-showcase-list *ngIf="templates; else noTemplatesYet"
+    [templateList]="templates"></app-template-showcase-list>
+<ng-template #noTemplatesYet>
+    <p>Whoops, aun no hay plantillas de torneos para mostrar</p>
+</ng-template>

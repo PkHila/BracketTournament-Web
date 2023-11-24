@@ -1,0 +1,12 @@
+img{ 
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.card{
+    transition: all 200ms ease-out;
+    &:hover {       
+        background-color: rgb(233, 102, 102);
+    }
+}

@@ -1,0 +1,48 @@
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+/* You can add global styles to this file, and also import other style files */
+body{
+    overflow-y: hidden; 
+    background: rgb(140,83,255);
+    background: linear-gradient(90deg, rgba(140,83,255,1) 0%, rgba(92,224,230,1) 100%);
+    background-blend-mode: normal;
+}
+
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #842CE8 #DFE9EB;
+  }
+  
+  /* Chrome, Edge and Safari */
+  *::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: #DFE9EB;
+  }
+  
+  *::-webkit-scrollbar-track:hover {
+    background-color: #B8C0C2;
+  }
+  
+  *::-webkit-scrollbar-track:active {
+    background-color: #B8C0C2;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #842CE8;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #9564E7;
+  }
+  
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #9379F7;
+  }

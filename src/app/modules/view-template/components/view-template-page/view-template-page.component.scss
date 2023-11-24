@@ -1,0 +1,27 @@
+.viewpage{
+    height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.right-side{
+    height: 90vh;
+    
+}
+
+.cover-img{
+    height: 250px;
+    width: 250px;
+    img{
+        height:100%;
+        object-position: top;
+    }
+}
+
+.contestant-list{
+    height: 90%;
+    overflow-y: auto;
+}
+
+.play-button-area{
+    height: 15%;
+}

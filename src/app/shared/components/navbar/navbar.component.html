@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand ms-3" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <img src="../../../../assets/logo.svg" alt="Logo" width="25" height="28" class="d-inline-block align-text-top">
+      Bracket Tournament
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end column-gap-3" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link active text-white" routerLink="/create-template" routerLinkActive="active"
+            ariaCurrentWhenActive="page">Crear Torneo</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorías
+          </a>
+          <ul class="dropdown-menu">
+            <li *ngFor="let category of categories"><a class="dropdown-item"
+                routerLink="/category/{{category.category}}">{{category.translatedCategory}}</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link text-white" (click)="onRandomTournament()">Torneo Aleatorio</button>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
