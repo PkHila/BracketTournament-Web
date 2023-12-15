@@ -475,14 +475,23 @@
       "category": "manga",
       "contestants": [
         {
-          "name": "Kishibe Rohan Louvre e Iku",
-          "date": "2010",
-          "img": "https://cdn.myanimelist.net/images/manga/2/175983.jpg",
+          "name": "JoJo no Kimyou na Bouken Part 2: Sentou Chouryuu",
+          "date": "1987",
+          "img": "https://cdn.myanimelist.net/images/manga/2/269908.jpg",
           "author": "Araki, Hirohiko",
-          "id": 20,
-          "tournamentsPlayed": 3,
-          "matchesPlayed": 6,
+          "id": 8,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 7,
           "matchesWon": 3
+        },
+        {
+          "name": "Black Paradox",
+          "date": "2007",
+          "img": "https://cdn.myanimelist.net/images/manga/2/260342.jpg",
+          "author": "Itou, Junji",
+          "id": 6,
+          "tournamentsPlayed": 2,
+          "matchesPlayed": 2
         },
         {
           "name": "Bakuman.",
@@ -490,10 +499,149 @@
           "img": "https://cdn.myanimelist.net/images/manga/1/208974.jpg",
           "author": "Obata, Takeshi",
           "id": 1,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 15,
+          "matchesWon": 12,
+          "tournamentsWon": 1
+        },
+        {
+          "name": "JoJo no Kimyou na Bouken Part 5: Ougon no Kaze",
+          "date": "1995",
+          "img": "https://cdn.myanimelist.net/images/manga/1/269912.jpg",
+          "author": "Araki, Hirohiko",
+          "id": 10,
+          "tournamentsPlayed": 3,
+          "matchesPlayed": 6,
+          "matchesWon": 3
+        },
+        {
+          "name": "One Piece",
+          "date": "1997",
+          "img": "https://cdn.myanimelist.net/images/manga/2/253146.jpg",
+          "author": "Oda, Eiichiro",
+          "id": 4,
           "tournamentsPlayed": 3,
           "matchesPlayed": 11,
-          "matchesWon": 9,
+          "matchesWon": 10,
+          "tournamentsWon": 2
+        },
+        {
+          "name": "Jumyou wo Kaitotte Moratta. Ichinen ni Tsuki, Ichimanen de.",
+          "date": "2016",
+          "img": "https://cdn.myanimelist.net/images/manga/5/260043.jpg",
+          "author": "Taguchi, Shouichi",
+          "id": 21,
+          "tournamentsPlayed": 3,
+          "matchesPlayed": 6,
+          "matchesWon": 3
+        },
+        {
+          "name": "JoJo no Kimyou na Bouken Part 8: JoJolion",
+          "date": "2011",
+          "img": "https://cdn.myanimelist.net/images/manga/1/179885.jpg",
+          "author": "Araki, Hirohiko",
+          "id": 13,
+          "tournamentsPlayed": 3,
+          "matchesPlayed": 5,
+          "matchesWon": 2
+        },
+        {
+          "name": "Chainsaw Man",
+          "date": "2018",
+          "img": "https://cdn.myanimelist.net/images/manga/3/216464.jpg",
+          "author": "Fujimoto, Tatsuki",
+          "id": 2,
+          "tournamentsPlayed": 2,
+          "matchesPlayed": 6,
+          "matchesWon": 4
+        },
+        {
+          "name": "Otouto no Otto",
+          "date": "2014",
+          "img": "https://cdn.myanimelist.net/images/manga/2/158104.jpg",
+          "author": "Tagame, Gengorou",
+          "id": 17,
+          "tournamentsPlayed": 3,
+          "matchesPlayed": 5,
+          "matchesWon": 2
+        },
+        {
+          "name": "Bastard",
+          "date": "2014",
+          "img": "https://cdn.myanimelist.net/images/manga/1/205549.jpg",
+          "author": "Kim, Carnby",
+          "id": 5,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 12,
+          "matchesWon": 8
+        },
+        {
+          "name": "JoJo no Kimyou na Bouken Part 9: The JoJoLands",
+          "date": "2023",
+          "img": "https://cdn.myanimelist.net/images/manga/1/286969.jpg",
+          "author": "Araki, Hirohiko",
+          "id": 14,
+          "tournamentsPlayed": 3,
+          "matchesPlayed": 3
+        },
+        {
+          "name": "Dandadan",
+          "date": "2021",
+          "img": "https://cdn.myanimelist.net/images/manga/2/248746.jpg",
+          "author": "Tatsu, Yukinobu",
+          "id": 3,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 6,
+          "matchesWon": 2
+        },
+        {
+          "name": "JoJo no Kimyou na Bouken Part 7: Steel Ball Run",
+          "date": "2004",
+          "img": "https://cdn.myanimelist.net/images/manga/3/179882.jpg",
+          "author": "Araki, Hirohiko",
+          "id": 12,
+          "tournamentsPlayed": 2,
+          "matchesPlayed": 5,
+          "matchesWon": 4,
           "tournamentsWon": 1
+        },
+        {
+          "name": "Kishibe Rohan Louvre e Iku",
+          "date": "2010",
+          "img": "https://cdn.myanimelist.net/images/manga/2/175983.jpg",
+          "author": "Araki, Hirohiko",
+          "id": 20,
+          "tournamentsPlayed": 4,
+          "matchesPlayed": 8,
+          "matchesWon": 4
+        },
+        {
+          "name": "JoJo no Kimyou na Bouken Part 3: Stardust Crusaders",
+          "date": "1989",
+          "img": "https://cdn.myanimelist.net/images/manga/3/269909.jpg",
+          "author": "Araki, Hirohiko",
+          "id": 9,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 2,
+          "matchesWon": 1
+        },
+        {
+          "name": "Pluto",
+          "date": "2003",
+          "img": "https://cdn.myanimelist.net/images/manga/1/264496.jpg",
+          "author": "Urasawa, Naoki",
+          "id": 25,
+          "tournamentsPlayed": 3,
+          "matchesPlayed": 3
+        },
+        {
+          "name": "Uzumaki",
+          "date": "1998",
+          "img": "https://cdn.myanimelist.net/images/manga/3/185972.jpg",
+          "author": "Itou, Junji",
+          "id": 22,
+          "tournamentsPlayed": 1,
+          "matchesPlayed": 1
         },
         {
           "name": "Metroid",
@@ -505,35 +653,13 @@
           "matchesPlayed": 3
         },
         {
-          "name": "Otouto no Otto",
-          "date": "2014",
-          "img": "https://cdn.myanimelist.net/images/manga/2/158104.jpg",
-          "author": "Tagame, Gengorou",
-          "id": 17,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 3,
-          "matchesWon": 1
-        },
-        {
-          "name": "Bastard",
-          "date": "2014",
-          "img": "https://cdn.myanimelist.net/images/manga/1/205549.jpg",
-          "author": "Kim, Carnby",
-          "id": 5,
-          "tournamentsPlayed": 3,
-          "matchesPlayed": 9,
-          "matchesWon": 6
-        },
-        {
-          "name": "One Piece",
+          "name": "Kishibe Rohan wa Ugokanai",
           "date": "1997",
-          "img": "https://cdn.myanimelist.net/images/manga/2/253146.jpg",
-          "author": "Oda, Eiichiro",
-          "id": 4,
+          "img": "https://cdn.myanimelist.net/images/manga/3/210302.jpg",
+          "author": "Araki, Hirohiko",
+          "id": 19,
           "tournamentsPlayed": 2,
-          "matchesPlayed": 7,
-          "matchesWon": 6,
-          "tournamentsWon": 1
+          "matchesPlayed": 2
         },
         {
           "name": "Homunculus",
@@ -546,16 +672,6 @@
           "matchesWon": 1
         },
         {
-          "name": "Jumyou wo Kaitotte Moratta. Ichinen ni Tsuki, Ichimanen de.",
-          "date": "2016",
-          "img": "https://cdn.myanimelist.net/images/manga/5/260043.jpg",
-          "author": "Taguchi, Shouichi",
-          "id": 21,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 5,
-          "matchesWon": 3
-        },
-        {
           "name": "JoJo no Kimyou na Bouken Part 1: Phantom Blood",
           "date": "1986",
           "img": "https://cdn.myanimelist.net/images/manga/2/269907.jpg",
@@ -563,126 +679,6 @@
           "id": 7,
           "tournamentsPlayed": 2,
           "matchesPlayed": 2
-        },
-        {
-          "name": "Pluto",
-          "date": "2003",
-          "img": "https://cdn.myanimelist.net/images/manga/1/264496.jpg",
-          "author": "Urasawa, Naoki",
-          "id": 25,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 2
-        },
-        {
-          "name": "JoJo no Kimyou na Bouken Part 2: Sentou Chouryuu",
-          "date": "1987",
-          "img": "https://cdn.myanimelist.net/images/manga/2/269908.jpg",
-          "author": "Araki, Hirohiko",
-          "id": 8,
-          "tournamentsPlayed": 3,
-          "matchesPlayed": 6,
-          "matchesWon": 3
-        },
-        {
-          "name": "JoJo no Kimyou na Bouken Part 5: Ougon no Kaze",
-          "date": "1995",
-          "img": "https://cdn.myanimelist.net/images/manga/1/269912.jpg",
-          "author": "Araki, Hirohiko",
-          "id": 10,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 4,
-          "matchesWon": 2
-        },
-        {
-          "name": "Fire Punch",
-          "date": "2016",
-          "img": "https://cdn.myanimelist.net/images/manga/2/180430.jpg",
-          "author": "Fujimoto, Tatsuki",
-          "id": 23,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 3,
-          "matchesWon": 1
-        },
-        {
-          "name": "Dandadan",
-          "date": "2021",
-          "img": "https://cdn.myanimelist.net/images/manga/2/248746.jpg",
-          "author": "Tatsu, Yukinobu",
-          "id": 3,
-          "tournamentsPlayed": 3,
-          "matchesPlayed": 5,
-          "matchesWon": 2
-        },
-        {
-          "name": "Sabishisugite Lesbian Fuuzoku ni Ikimashita Report",
-          "date": "2016",
-          "img": "https://cdn.myanimelist.net/images/manga/2/180846.jpg",
-          "author": "Nagata, Kabi",
-          "id": 18,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 2
-        },
-        {
-          "name": "Kishibe Rohan wa Ugokanai",
-          "date": "1997",
-          "img": "https://cdn.myanimelist.net/images/manga/3/210302.jpg",
-          "author": "Araki, Hirohiko",
-          "id": 19,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 2
-        },
-        {
-          "name": "Chainsaw Man",
-          "date": "2018",
-          "img": "https://cdn.myanimelist.net/images/manga/3/216464.jpg",
-          "author": "Fujimoto, Tatsuki",
-          "id": 2,
-          "tournamentsPlayed": 1,
-          "matchesPlayed": 3,
-          "matchesWon": 2
-        },
-        {
-          "name": "JoJo no Kimyou na Bouken Part 3: Stardust Crusaders",
-          "date": "1989",
-          "img": "https://cdn.myanimelist.net/images/manga/3/269909.jpg",
-          "author": "Araki, Hirohiko",
-          "id": 9
-        },
-        {
-          "name": "JoJo no Kimyou na Bouken Part 9: The JoJoLands",
-          "date": "2023",
-          "img": "https://cdn.myanimelist.net/images/manga/1/286969.jpg",
-          "author": "Araki, Hirohiko",
-          "id": 14,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 2
-        },
-        {
-          "name": "Black Paradox",
-          "date": "2007",
-          "img": "https://cdn.myanimelist.net/images/manga/2/260342.jpg",
-          "author": "Itou, Junji",
-          "id": 6,
-          "tournamentsPlayed": 1,
-          "matchesPlayed": 1
-        },
-        {
-          "name": "JoJo no Kimyou na Bouken Part 6: Stone Ocean",
-          "date": "1999",
-          "img": "https://cdn.myanimelist.net/images/manga/2/255379.jpg",
-          "author": "Araki, Hirohiko",
-          "id": 11
-        },
-        {
-          "name": "JoJo no Kimyou na Bouken Part 7: Steel Ball Run",
-          "date": "2004",
-          "img": "https://cdn.myanimelist.net/images/manga/3/179882.jpg",
-          "author": "Araki, Hirohiko",
-          "id": 12,
-          "tournamentsPlayed": 1,
-          "matchesPlayed": 4,
-          "matchesWon": 4,
-          "tournamentsWon": 1
         },
         {
           "name": "Itou Junji no Neko Nikki: Yon & Muu",
@@ -694,27 +690,34 @@
           "matchesPlayed": 2
         },
         {
-          "name": "JoJo no Kimyou na Bouken Part 8: JoJolion",
-          "date": "2011",
-          "img": "https://cdn.myanimelist.net/images/manga/1/179885.jpg",
+          "name": "JoJo no Kimyou na Bouken Part 6: Stone Ocean",
+          "date": "1999",
+          "img": "https://cdn.myanimelist.net/images/manga/2/255379.jpg",
           "author": "Araki, Hirohiko",
-          "id": 13,
-          "tournamentsPlayed": 2,
-          "matchesPlayed": 4,
-          "matchesWon": 2
+          "id": 11
         },
         {
-          "name": "Uzumaki",
-          "date": "1998",
-          "img": "https://cdn.myanimelist.net/images/manga/3/185972.jpg",
-          "author": "Itou, Junji",
-          "id": 22,
-          "tournamentsPlayed": 1,
-          "matchesPlayed": 1
+          "name": "Sabishisugite Lesbian Fuuzoku ni Ikimashita Report",
+          "date": "2016",
+          "img": "https://cdn.myanimelist.net/images/manga/2/180846.jpg",
+          "author": "Nagata, Kabi",
+          "id": 18,
+          "tournamentsPlayed": 2,
+          "matchesPlayed": 2
+        },
+        {
+          "name": "Fire Punch",
+          "date": "2016",
+          "img": "https://cdn.myanimelist.net/images/manga/2/180430.jpg",
+          "author": "Fujimoto, Tatsuki",
+          "id": 23,
+          "tournamentsPlayed": 2,
+          "matchesPlayed": 3,
+          "matchesWon": 1
         }
       ],
       "id": 4,
-      "timesPlayed": 3
+      "timesPlayed": 4
     },
     {
       "templateName": "Sitcoms",
@@ -2710,6 +2713,93 @@
         }
       ],
       "id": 41
+    },
+    {
+      "temlateId": 4,
+      "winnerId": 4,
+      "rounds": [
+        {
+          "position": 0,
+          "matches": [
+            {
+              "firstContestantId": 8,
+              "secondContestantId": 17
+            },
+            {
+              "firstContestantId": 6,
+              "secondContestantId": 5
+            },
+            {
+              "firstContestantId": 1,
+              "secondContestantId": 14
+            },
+            {
+              "firstContestantId": 10,
+              "secondContestantId": 3
+            },
+            {
+              "firstContestantId": 4,
+              "secondContestantId": 12
+            },
+            {
+              "firstContestantId": 21,
+              "secondContestantId": 20
+            },
+            {
+              "firstContestantId": 13,
+              "secondContestantId": 9
+            },
+            {
+              "firstContestantId": 2,
+              "secondContestantId": 25
+            }
+          ]
+        },
+        {
+          "position": 1,
+          "matches": [
+            {
+              "firstContestantId": 17,
+              "secondContestantId": 5
+            },
+            {
+              "firstContestantId": 1,
+              "secondContestantId": 10
+            },
+            {
+              "firstContestantId": 4,
+              "secondContestantId": 20
+            },
+            {
+              "firstContestantId": 9,
+              "secondContestantId": 2
+            }
+          ]
+        },
+        {
+          "position": 2,
+          "matches": [
+            {
+              "firstContestantId": 5,
+              "secondContestantId": 1
+            },
+            {
+              "firstContestantId": 4,
+              "secondContestantId": 2
+            }
+          ]
+        },
+        {
+          "position": 3,
+          "matches": [
+            {
+              "firstContestantId": 1,
+              "secondContestantId": 4
+            }
+          ]
+        }
+      ],
+      "id": 42
     }
   ]
 }
