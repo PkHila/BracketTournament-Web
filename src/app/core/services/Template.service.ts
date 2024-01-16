@@ -51,16 +51,19 @@ export class TemplateService {
     return this.http.put<Template>(`${this.baseUrl}/templates/${templateId}`, template)
   }
 
-  public calculateMaxRoundCount(template: Template): number {
+  public calculateMaxRoundCount(contestantCount: number): number {
     let maxRoundCount = 2;
-    const contestantCount = template.contestants!.length;
     while (contestantCount > 2 ** maxRoundCount) {
       maxRoundCount++;
     }
-    if (contestantCount < 2 ** maxRoundCount) { // disable free pass feature
+    if (contestantCount < 2 ** maxRoundCount) { // disables free pass feature
       maxRoundCount--;
     }
     return maxRoundCount;
+  }
+
+  public calculateFreebies(contestantCount: number): number {
+    return contestantCount - 2 ** this.calculateMaxRoundCount(contestantCount);
   }
 
   public searchForCoverImg(template: Template): string {
