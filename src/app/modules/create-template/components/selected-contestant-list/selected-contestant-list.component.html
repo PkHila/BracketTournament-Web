@@ -15,23 +15,28 @@
     </div>
     <div id="bottom-row"class="row justify-content-center mt-3" >
         <p class="col-7">{{selectedContestants.length}} participantes</p>
-        <button type="button"input class="btn btn-primary col-4 mb-3" data-bs-toggle="modal"  data-bs-target="#confirmModal" [disabled]="!isSubmitEnabled()">Crear</button>
+        <button (click)="isContestantsPowerOfTwo()"type="button"input class="btn btn-primary col-4 mb-3" data-bs-toggle="modal"
+        data-bs-target="#confirmModal" [disabled]="!isSubmitEnabled()">Crear</button>
     </div>
 </form>
 <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Aviso</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Potencia de 2 = {{powerOfTwo}}</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-            Con el numero actual de participantes tu torneo va a jugarse con {{calculatePosibleRounds()}} ronda/s o con {{calculatePosibleFreebies()}} enfrentamientos impares.
+        <div *ngIf="powerOfTwo; else freebiesMessage" class="modal-body">
             ¿Desea continuar?
         </div>
+        <ng-template #freebiesMessage><div class="modal-body">
+          Con el numero actual de participantes tu torneo va a jugarse con {{calculatePosibleRounds()}} ronda/s o con {{calculatePosibleFreebies()}} enfrentamientos impares.
+          ¿Desea continuar?</div>
+        </ng-template>
+        
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Modificar</button>
-          <input type="submit" class="btn btn-" data-bs-toggle="modal"  data-bs-target="#confirmModal"
+          <input type="submit" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#confirmModal"
           [disabled]="!disabledForGood && !isSubmitEnabled()" value="Continuar con impares">
         </div>
       </div>

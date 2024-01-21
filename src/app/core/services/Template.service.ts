@@ -66,6 +66,10 @@ export class TemplateService {
     return contestantCount - 2 ** this.calculateMaxRoundCount(contestantCount);
   }
 
+  public isPowerOfTwo(contestantCount: number): boolean{
+    return this.calculateFreebies(contestantCount) === 0;
+  }
+
   public searchForCoverImg(template: Template): string {
     let mostWins = 0;
     let contestantWithMostTournamentsWon: Contestant;

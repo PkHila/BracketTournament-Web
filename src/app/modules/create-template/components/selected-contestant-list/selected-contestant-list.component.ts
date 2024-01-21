@@ -18,7 +18,7 @@ export class SelectedContestantListComponent{
   @Output() createTemplate: EventEmitter<string> = new EventEmitter();
   public disabledForGood = false;
   public posibleFreebiesCount = -1;
-
+  public powerOfTwo: boolean = true;
 
   public calculatePosibleRounds(): number{
     return this.templateService.calculateMaxRoundCount(this.selectedContestants.length);
@@ -26,6 +26,10 @@ export class SelectedContestantListComponent{
 
   public calculatePosibleFreebies(): number{
     return  this.posibleFreebiesCount = this.templateService.calculateFreebies(this.selectedContestants.length);
+  }
+
+  public isContestantsPowerOfTwo(): void{
+     this.powerOfTwo= this.templateService.isPowerOfTwo(this.selectedContestants.length);
   }
 
   public form = this.formBuilder.group({
@@ -45,6 +49,5 @@ export class SelectedContestantListComponent{
   public onSubmit(): void {
     this.disabledForGood = true;
     this.createTemplate.emit(this.form.controls['templateName'].value!);
-    // add confirmation layer as pop up
   }
 }
