@@ -1,4 +1,4 @@
-<form [formGroup]="form" class="selected-contestants-list align-items-end container w-100 h-100" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" class="selected-contestants-list align-items-end container w-100 h-100" (keydown.enter)="$event.preventDefault()" (ngSubmit)="onSubmit()">
     <div id="template-title-box" class="row my-2">
         <input type="text" formControlName="templateName"
         class="form-control border border-0" placeholder="Titulo del Torneo">
@@ -23,21 +23,25 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Potencia de 2 = {{powerOfTwo}}</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmación</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div *ngIf="powerOfTwo; else freebiesMessage" class="modal-body">
-            ¿Desea continuar?
+          Cantidad de participantes: {{selectedContestants.length}} <br>
+          Máxima cantida de rondas: {{calculatePosibleRounds()}} <br>
+          ¿Desea continuar?
         </div>
         <ng-template #freebiesMessage><div class="modal-body">
-          Con el numero actual de participantes tu torneo va a jugarse con {{calculatePosibleRounds()}} ronda/s o con {{calculatePosibleFreebies()}} enfrentamientos impares.
+          Con el numero actual de participantes, tu torneo podrá jugarse con un máximo de <strong>
+          {{calculatePosibleRounds()}} rondas </strong> compuestas de <strong>{{calculatePosibleFreebies()}} enfrentamiento/s impares </strong>.
           ¿Desea continuar?</div>
         </ng-template>
         
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Modificar</button>
           <input type="submit" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#confirmModal"
-          [disabled]="!disabledForGood && !isSubmitEnabled()" value="Continuar con impares">
+          (click)="onSubmit()"
+          [disabled]="!disabledForGood && !isSubmitEnabled()" value="Continuar">
         </div>
       </div>
     </div>
