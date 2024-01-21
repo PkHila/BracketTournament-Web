@@ -40,7 +40,7 @@ export class ViewTemplatePageComponent implements OnInit {
               this.template.category = translatedCategory;
             }
             this.template.coverImg = this.templatetService.searchForCoverImg(this.template);
-            const maxRoundCount = this.templatetService.calculateMaxRoundCount(this.template);
+            const maxRoundCount = this.templatetService.calculateMaxRoundCount(this.template.contestants!.length);
             for (let i = 2; i < maxRoundCount + 1; i++) {
               this.roundsInfo.push({ round: i, contestantsCount: 2 ** i });
             }
