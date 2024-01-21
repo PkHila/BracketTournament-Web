@@ -320,3 +320,28 @@ export interface JikanMangaData {
     ];
 }
 
+export interface twitchAuthResponse {
+    access_token: string;
+    expires_in: number;
+    token_type: string;
+}
+
+export interface IGDBResults {
+    cover: {
+        image_id: string;
+    };
+    involved_companies: [
+        {
+            developer: boolean;
+            company: {
+                name: string;
+            };
+        }
+    ];
+    name: string;
+    release_dates: [
+        {
+            y: number;
+        }
+    ];
+}
