@@ -8,6 +8,7 @@ import { ApiService, QueryParams } from '../services/types/interfaces';
 import { JikanAnimeApiService } from '../services/jikan-anime-api.service';
 import { JikanMangaApiService } from '../services/jikan-manga-api.service';
 import { ContestantService } from 'src/app/core/services/Contestant.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-create-template-page',
@@ -90,5 +91,10 @@ export class CreateTemplatePageComponent {
         console.log('error');
       }
     });
+  }
+
+  public showConfirmationDialog(message?: string): Observable<boolean> {
+    const confirmation = window.confirm(message || "Desea salir sin guardar?")
+    return of(confirmation);
   }
 }
