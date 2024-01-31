@@ -9,14 +9,14 @@ import { TemplateService } from 'src/app/core/services/Template.service';
 })
 export class LandingPageComponent implements OnInit {
 
-  @Input() templates?: Array<Template>;
+  @Input() popularTemplates?: Array<Template>;
 
   constructor(private templateService: TemplateService) {}
 
   ngOnInit(): void {
-    this.templateService.getTemplates().subscribe({
+    this.templateService.getPopularTemplates().subscribe({
       next: t => {
-        this.templates = t;
+        this.popularTemplates = t;
       }
     })
   }

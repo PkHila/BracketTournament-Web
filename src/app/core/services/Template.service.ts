@@ -17,6 +17,15 @@ export class TemplateService {
     return this.http.get<Template[]>(`${this.baseUrl}/templates`);
   }
 
+  public getPopularTemplates(): Observable<Template[]> {
+    return this.http.get<Template[]>(`${this.baseUrl}/templates`).pipe(
+      map(templates => {
+        templates.sort((a, b) => b.timesPlayed! - a.timesPlayed!);
+        return templates.slice(0, 3);
+      })
+    );
+  }
+
   public postTemplate(template: Template): Observable<Template> {
     return this.http.post<Template>(`${this.baseUrl}/templates`, template);
   }
