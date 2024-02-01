@@ -3,7 +3,7 @@ import { CreateTemplatePageComponent } from '../create-template-page/create-temp
 
 export const canDeactivateGuard: CanDeactivateFn<CreateTemplatePageComponent> = (component, currentRoute, currentState, nextState) => {
 
-  if (component.selectedContestants.length === 0) {
+  if (component.selectedContestants.length === 0 || component.validTemplate) {
     return true;
   }
   return component.showConfirmationDialog();
