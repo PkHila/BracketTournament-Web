@@ -1,48 +1,59 @@
-<form [formGroup]="form" class="selected-contestants-list align-items-end container w-100 h-100" (keydown.enter)="$event.preventDefault()" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" class="selected-contestants-list align-items-end container w-100 h-100"
+    (keydown.enter)="$event.preventDefault()" (ngSubmit)="onSubmit()">
     <div id="template-title-box" class="row my-2">
-        <input type="text" formControlName="templateName"
-        class="form-control border border-0" placeholder="Titulo del Torneo">
+        <input type="text" formControlName="templateName" class="form-control border border-0"
+            placeholder="Titulo del Torneo">
     </div>
-    <div *ngIf="form.invalid && form.dirty && form.touched" class="alert p-0 my-0 border-0 text-start text-danger fw-semibold" role="alert">
-        Titulo invalido o vacío
-      </div>
-    <div id="contestant-list"class="row align-items-start rounded-2 mt-2">
+    <div *ngIf="form.controls['templateName'].errors?.['templateNameExists'] else allInvalid"
+        class="alert p-0 my-0 border-0 text-start text-danger fw-semibold" role="alert">
+        Titulo repetido
+    </div>
+    <ng-template #allInvalid>
+        <div *ngIf="form.invalid && form.dirty && form.touched"
+            class="alert p-0 my-0 border-0 text-start text-danger fw-semibold" role="alert">
+            El título no puede permanecer vacío
+        </div>
+    </ng-template>
+    <div id="contestant-list" class="row align-items-start rounded-2 mt-2">
         <div class="col list-group list-group-flush justify-content-center p-0 ">
             <app-contestant-list-item *ngFor="let constestant of selectedContestants" [contestant]="constestant"
-            (selectContestant)="onRemoveContestant($event)">
+                (selectContestant)="onRemoveContestant($event)">
             </app-contestant-list-item>
         </div>
     </div>
-    <div id="bottom-row"class="row justify-content-center mt-3" >
+    <div id="bottom-row" class="row justify-content-center mt-3">
         <p class="col-7">{{selectedContestants.length}} participantes</p>
-        <button (click)="isContestantsPowerOfTwo()"type="button"input class="btn btn-primary col-4 mb-3" data-bs-toggle="modal"
-        data-bs-target="#confirmModal" [disabled]="!isSubmitEnabled()">Crear</button>
+        <button (click)="isContestantsPowerOfTwo()" type="button" input class="btn btn-primary col-4 mb-3"
+            data-bs-toggle="modal" data-bs-target="#confirmModal" [disabled]="!isSubmitEnabled()">Crear</button>
     </div>
 </form>
 <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmación</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmación</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div *ngIf="powerOfTwo; else freebiesMessage" class="modal-body">
+                Cantidad de participantes: {{selectedContestants.length}} <br>
+                Máxima cantida de rondas: {{calculatePosibleRounds()}} <br>
+                ¿Desea continuar?
+            </div>
+            <ng-template #freebiesMessage>
+                <div class="modal-body">
+                    Con el numero actual de participantes, tu torneo podrá jugarse con un máximo de <strong>
+                        {{calculatePosibleRounds()}} rondas </strong> compuestas de
+                    <strong>{{calculatePosibleFreebies()}}
+                        enfrentamiento/s impares </strong>.
+                    ¿Desea continuar?
+                </div>
+            </ng-template>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Modificar</button>
+                <input type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmModal"
+                    (click)="onSubmit()" [disabled]="!disabledForGood && !isSubmitEnabled()" value="Continuar">
+            </div>
         </div>
-        <div *ngIf="powerOfTwo; else freebiesMessage" class="modal-body">
-          Cantidad de participantes: {{selectedContestants.length}} <br>
-          Máxima cantida de rondas: {{calculatePosibleRounds()}} <br>
-          ¿Desea continuar?
-        </div>
-        <ng-template #freebiesMessage><div class="modal-body">
-          Con el numero actual de participantes, tu torneo podrá jugarse con un máximo de <strong>
-          {{calculatePosibleRounds()}} rondas </strong> compuestas de <strong>{{calculatePosibleFreebies()}} enfrentamiento/s impares </strong>.
-          ¿Desea continuar?</div>
-        </ng-template>
-        
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Modificar</button>
-          <input type="submit" class="btn btn-primary" data-bs-toggle="modal"  data-bs-target="#confirmModal"
-          (click)="onSubmit()"
-          [disabled]="!disabledForGood && !isSubmitEnabled()" value="Continuar">
-        </div>
-      </div>
     </div>
-  </div>
+</div>
