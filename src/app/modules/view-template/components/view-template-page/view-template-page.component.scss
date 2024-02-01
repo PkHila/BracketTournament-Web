@@ -1,11 +1,21 @@
 .viewpage{
-    height: 90vh;
+
     overflow-y: auto;
     overflow-x: hidden;
 }
 .right-side{
-    height: 90vh;
-    
+    height: 85vh;   
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.left-side{
+    height: 85vh;
+    background: rgba(16, 0, 56, 0.385)
+}
+
+.tournament-page{
+    height: 85vh;
+    border-radius: 0.375rem;
 }
 
 .cover-img{
