@@ -1,7 +1,7 @@
 <div class="container">
     <div id="API-search-bar" class="row justify-content-center py-3 rounded-top shadow-sm">
         <div class="col-md-8 col-lg-6">
-            <app-search-bar (search)="onSearch($event)"></app-search-bar>
+            <app-search-bar [placeholderText]="searchbarPlaceholderText" (search)="onSearch($event)"></app-search-bar>
         </div>
     </div>
 
