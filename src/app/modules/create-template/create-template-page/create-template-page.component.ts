@@ -23,6 +23,7 @@ export class CreateTemplatePageComponent {
   private apiService!: ApiService;
   private queryParams: QueryParams = {};
   public noResultsFound: boolean = false;
+  public validTemplate = false;
 
   constructor(
     private contestantService: ContestantService,
@@ -77,14 +78,15 @@ export class CreateTemplatePageComponent {
   }
 
   public createTemplate(templateName: string) {
+    this.validTemplate = true;
     const template: Template = {
-      templateName: templateName.trim(),
+      templateName: templateName.trim().replace(/\s+/g, ' '),
       category: this.category,
       contestants: this.selectedContestants
     }
     this.templateService.postTemplate(template).subscribe({
       next: resp => {
-        console.log('agregado con exito');
+        //console.log('agregado con exito');
         this.router.navigate([`view-template/${template.templateName}`]);
       },
       error: () => {

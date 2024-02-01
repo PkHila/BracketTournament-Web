@@ -35,7 +35,8 @@ export class ContestantService {
   }
 
   public checkTemplateNameExists(templateName: string): Observable<boolean> {
-    return of(this.templateNamesInDatabase.value.includes(templateName.toLocaleLowerCase()));
+    const normalizedTemplateName = templateName.trim().toLocaleLowerCase().replace(/\s+/g, ' ');
+    return of(this.templateNamesInDatabase.value.includes(normalizedTemplateName));
   }
 
   public postTemplateLegacy(template: Template): Observable<Template> {
