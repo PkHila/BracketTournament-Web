@@ -1,6 +1,8 @@
-<div class="viewpage container">
-    <div class="tournament-page row justify-content-between">
-        <section class="left-side col-lg-4 border-end p-4 mt-3">
+<div class="viewpage container-fluid py-3">
+    <div class="tournament-page row mx-3 mb-2 justify-content-between rounded shadow ">
+
+        
+        <section class="left-side col-md-4 col-lg-3 p-4 border-end rounded-start">
             <div class="row">
                 <div class="col">
                     <div class="cover-img card bg-transparent border-0 mb-3">
@@ -9,9 +11,9 @@
                 </div>
             </div>
             <div class="info row">
-                <div class="col" *ngIf="template">
-                    <h1>{{template.templateName}}</h1>
-                    <h2 class="fs-4 text-white">Torneo de {{template.category}}</h2>
+                <div class="col text-white" *ngIf="template">
+                    <h2>{{template.templateName}}</h2>
+                    <h3 class="fs-4 text-white">Torneo de {{template.category}}</h3>
                     <p class="fw-semibold mt-3 mb-0">{{template.contestants!.length}} participantes</p>
                     <p class="fw-semibold" *ngIf="template.timesPlayed && template.timesPlayed > 1">
                         {{template.timesPlayed}} veces jugado
@@ -22,11 +24,13 @@
                 </div>
             </div>
         </section>
-        <section class="right-side col-lg-8 p-4">
-            <section class="contestant-list row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4  justify-content-center align-items-start g-2 gy-4"
+
+
+        <section class="right-side col-md-8 col-lg-9 p-4 rounded-end"> 
+            <section class="contestant-list row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6  justify-content-start align-items-start g-2 gy-4"
                 *ngIf="template">
-                <div class="col card bg-transparent border-0 align-content-cente border" *ngFor="let contestant of template.contestants">
-                    <div class="card-body align-content-center">
+                <div class="col card bg-transparent border-0 align-content-center border" *ngFor="let contestant of template.contestants">
+                    <div class="card-body p-0 align-content-center">
                         <app-contestant-minimal [contestant]="contestant">
                         </app-contestant-minimal>
                         <app-contestant-stat *ngIf="form.get('showStatistics')?.value" [contestant]="contestant">
@@ -34,15 +38,15 @@
                     </div>
                 </div>
             </section>
-            <section class="play-button-area row justify-content-center align-items-center g-2">
-                <div class="col">
+            <section class="play-button-area row justify-content-between align-items-center g-2 mt-1 border-top">
+                <div class="col-3 ms-5">
                     <form [formGroup]="form" class="form-check form-switch">
                         <label class="form-check-label" for="flexSwitchCheckDefault">Mostrar estadísticas</label>
                         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
                             formControlName="showStatistics">
                     </form>
                 </div>
-                <div class="col">
+                <div class="col-3 ms-5">
                     <div class="btn-group btn-group-lg" role="group">
                         <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
                             aria-expanded="false">
