@@ -78,7 +78,7 @@ export class CreateTemplatePageComponent {
 
   public createTemplate(templateName: string) {
     const template: Template = {
-      templateName: templateName.trim(),
+      templateName: templateName.trim().replace(/\s+/g, ' '),
       category: this.category,
       contestants: this.selectedContestants
     }

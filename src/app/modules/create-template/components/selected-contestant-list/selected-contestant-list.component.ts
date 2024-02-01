@@ -33,7 +33,7 @@ export class SelectedContestantListComponent{
   }
 
   public form = this.formBuilder.group({
-    templateName: ['', [Validators.required], CustomValidators.templateNameExists(this.contestantService)],
+    templateName: ['', [Validators.required], [CustomValidators.templateNameExists(this.contestantService)]],
   })
 
   constructor(private formBuilder: FormBuilder, private contestantService: ContestantService, private templateService: TemplateService) { }
