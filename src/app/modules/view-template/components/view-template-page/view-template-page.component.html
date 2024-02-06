@@ -27,17 +27,23 @@
 
 
         <section class="right-side col-md-8 col-lg-9 p-4 rounded-end"> 
-            <section class="contestant-list row row-cols-3 row-cols-sm-3 row-cols-md-4 row-cols-lg-6  justify-content-start align-items-start g-2 gy-4"
-                *ngIf="template">
-                <div class="col card bg-transparent border-0 align-content-center border" *ngFor="let contestant of template.contestants">
+            <section class="contestant-list row justify-content-start align-items-start g-2 gy-4"
+                *ngIf="template && !form.get('showStatistics')?.value"> <!-- aplicar else luego --> 
+                <div class="col-4 col-sm-4 col-md-3 col-lg-2 card bg-transparent border-0 align-content-center border"  *ngFor="let contestant of template.contestants">
                     <div class="card-body p-0 align-content-center">
                         <app-contestant-minimal [contestant]="contestant">
                         </app-contestant-minimal>
-                        <app-contestant-stat *ngIf="form.get('showStatistics')?.value" [contestant]="contestant">
-                        </app-contestant-stat>
                     </div>
                 </div>
             </section>
+            <section class="stat-list container" *ngIf="template && form.get('showStatistics')?.value"> <!-- reemplazar por un else luego --> 
+                <app-contestant-stat *ngFor="let contestant of template.contestants" [contestant]="contestant">
+                </app-contestant-stat>
+            </section>
+
+
+
+
             <section class="play-button-area row justify-content-between align-items-center g-2 mt-1 border-top">
                 <div class="col-3 ms-5">
                     <form [formGroup]="form" class="form-check form-switch">
