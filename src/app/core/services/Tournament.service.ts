@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, delay, map, switchMap } from 'rxjs';
-import { Contestant, Match, PlayedTournament, Round, Tournament } from '../interfaces';
+import { Observable, map, of, } from 'rxjs';
+import { Contestant, Loser, Match, PlayedTournament, Round, Tournament } from '../interfaces';
 import { TemplateService } from './Template.service';
-import { HttpClient } from '@angular/common/http';
 import { Rounds } from '../rounds.enum';
 
 @Injectable({
@@ -10,11 +9,7 @@ import { Rounds } from '../rounds.enum';
 })
 export class TournamentService {
 
-  private baseUrl: string = "http://localhost:3000";
-
-  constructor(
-    private templateService: TemplateService,
-    private http: HttpClient) { }
+  constructor(private templateService: TemplateService) { }
 
   public getTournament(templateName: string): Observable<Tournament> {
     return this.templateService.getTemplateByName(templateName).pipe<Tournament>(
@@ -28,31 +23,10 @@ export class TournamentService {
     )
   }
 
-  public postTournament(tournament: Tournament, winner: Contestant): Observable<PlayedTournament> {
+  public postTournament(tournament: Tournament): Observable<boolean> {
     return this.templateService.putTemplate(tournament.template, tournament.template.id!).pipe(
-      switchMap(() => {
-        const playedTournament: PlayedTournament = {
-          temlateId: tournament.template.id!,
-          winnerId: winner.id!,
-          rounds: []
-        }
-        tournament.rounds.forEach(round => {
-          const playedRound: Round = {
-            position: round.position,
-            matches: []
-          }
-          round.matches.forEach(match => {
-            const playedMatch: Match = {
-              firstContestantId: match.firstContestant!.id
-            }
-            if (match.secondContestant) {
-              playedMatch.secondContestantId = match.secondContestant.id;
-            }
-            playedRound.matches.push(playedMatch);
-          })
-          playedTournament.rounds.push(playedRound);
-        })
-        return this.http.post<PlayedTournament>(`${this.baseUrl}/played-tournaments`, playedTournament);
+      map(() => {
+        return true
       })
     )
   }
@@ -138,7 +112,7 @@ export class TournamentService {
     }
   }
 
-  public vote(tournament: Tournament, currentMatch: number, currentRound: number, totalRounds: number, winner: Contestant) {
+  public vote(tournament: Tournament, currentMatch: number, currentRound: number, totalRounds: number, winner: Contestant, playedTournament: PlayedTournament) {
     if (tournament.rounds[currentRound + 1].matches.length === 0 ||
       tournament.rounds[currentRound + 1].matches.at(-1)!.secondContestant !== undefined) {
       const newMatch: Match = {
@@ -148,10 +122,29 @@ export class TournamentService {
     } else {
       tournament.rounds[currentRound + 1].matches.at(-1)!.secondContestant = winner;
     }
-    this.handleMatchesPlayed(tournament.rounds[currentRound].matches[currentMatch].firstContestant);
-    this.handleMatchesPlayed(tournament.rounds[currentRound].matches[currentMatch].secondContestant);
+    const firstContestant = tournament.rounds[currentRound].matches[currentMatch].firstContestant;
+    const secondContestant = tournament.rounds[currentRound].matches[currentMatch].secondContestant;
+    this.handleMatchesPlayed(firstContestant);
+    this.handleMatchesPlayed(secondContestant);
     this.handleMatchesWon(winner);
+    this.handleTournamentResults(winner, firstContestant!, secondContestant, currentRound, totalRounds, playedTournament)
     this.spawnNewRoundIfNeeded(tournament, currentRound, totalRounds);
+  }
+
+  public handleTournamentResults(winner: Contestant, firstContestant: Contestant, secondContestant: Contestant | undefined, currentRound: number, totalRounds: number, playedTournament: PlayedTournament) {
+    if (secondContestant) {
+      const loser: Loser = {
+        contestantName: "",
+        lostInRound: this.getRoundName(currentRound, totalRounds),
+        lostToContestant: winner.name
+      };
+      if (firstContestant === winner) {
+        loser.contestantName = secondContestant.name;
+      } else {
+        loser.contestantName = firstContestant.name;
+      }
+      playedTournament.losers.push(loser)
+    }
   }
 
   public handleMatchesPlayed(contestant: Contestant | undefined): void {
@@ -192,12 +185,12 @@ export class TournamentService {
     tournament.template.timesPlayed++;
   }
 
-  public getRoundName(currentRound:number, totalRounds: number): string | undefined {
+  public getRoundName(currentRound: number, totalRounds: number): string {
     const roundDifference = totalRounds - currentRound;
     if (roundDifference > 0 && roundDifference <= Object.keys(Rounds).length / 2) {
       const roundName = Rounds[roundDifference] as keyof typeof Rounds;
       return roundName
     }
-    return undefined;
+    return "undefined";
   }
 }

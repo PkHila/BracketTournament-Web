@@ -38,9 +38,15 @@ export interface Match {
     secondContestantId?: number;
 }
 
+export interface Loser {
+    contestantName: string;
+    lostInRound: string;
+    lostToContestant: string;
+}
+
 export interface PlayedTournament {
-    id?: number;
-    winnerId: number;
-    temlateId: number;
-    rounds: Array<Round>;
+    firstPlaceName: string;
+    secondPlaceName: string;
+    thirdPlaceNames: Array<string>;
+    losers: Array<Loser>;
 }

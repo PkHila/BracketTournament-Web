@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ContestantCardBigComponent } from '../components/contestant-card-big/contestant-card-big.component';
 import { SharedModule } from "../../../shared/shared.module";
 import { MatchupTrackerComponent } from "../components/matchup-tracker/matchup-tracker.component";
 import { TournamentProgressComponent } from "../components/tournament-progress/tournament-progress.component";
-import { Contestant, Tournament } from 'src/app/core/interfaces';
+import { Contestant, Loser, PlayedTournament, Tournament } from 'src/app/core/interfaces';
 import { TournamentService } from 'src/app/core/services/Tournament.service';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
@@ -12,7 +12,6 @@ import { ActivatedRoute, Router } from '@angular/router';
     standalone: true,
     templateUrl: './play-tournament.component.html',
     styleUrls: ['./play-tournament.component.scss'],
-    /* changeDetection: ChangeDetectionStrategy.OnPush, */
     imports: [
         CommonModule,
         ContestantCardBigComponent,
@@ -31,11 +30,19 @@ export class PlayTournamentComponent implements OnInit {
     public currentMatch = 0;
     public totalMatchesForCurrentRound = 0;
     public winner?: Contestant;
+    public playedTournament: PlayedTournament;
 
     constructor(
         private tournamentService: TournamentService,
         private activatedRoute: ActivatedRoute,
-        private router: Router) { }
+        private router: Router) {
+        this.playedTournament = {
+            firstPlaceName: "",
+            secondPlaceName: "",
+            thirdPlaceNames: ["", ""],
+            losers: new Array<Loser>
+        }
+    }
 
     ngOnInit(): void {
         let templateName = this.activatedRoute.snapshot.paramMap.get('templateName');
@@ -58,7 +65,7 @@ export class PlayTournamentComponent implements OnInit {
 
     public onVote(votedContestant: Contestant) {
         if (this.tournamentService.isNotLastMatch(this.currentRound, this.totalRounds)) {
-            this.tournamentService.vote(this.tournament, this.currentMatch, this.currentRound, this.totalRounds, votedContestant);
+            this.tournamentService.vote(this.tournament, this.currentMatch, this.currentRound, this.totalRounds, votedContestant, this.playedTournament);
             this.currentMatch++;
             if (this.currentMatch === this.tournament.rounds[this.currentRound].matches.length) {
                 this.currentMatch = 0;
@@ -72,15 +79,23 @@ export class PlayTournamentComponent implements OnInit {
             this.tournamentService.handleMatchesPlayed(this.rightContestant!);
             this.tournamentService.handleMatchesWon(votedContestant);
             this.tournamentService.handleTournamentsWon(votedContestant);
+            this.tournamentService.handleTournamentResults(votedContestant, this.leftContestant!, this.rightContestant, this.currentRound, this.currentMatch, this.playedTournament)
             this.leftContestant = undefined;
             this.rightContestant = undefined;
+            this.playedTournament.firstPlaceName = votedContestant.name;
+            let loser = this.playedTournament.losers.pop();
+            this.playedTournament.secondPlaceName = loser!.contestantName;
+            loser = this.playedTournament.losers.pop();
+            this.playedTournament.thirdPlaceNames[0] = loser!.contestantName;
+            loser = this.playedTournament.losers.pop();
+            this.playedTournament.thirdPlaceNames[1] = loser!.contestantName;
+            this.playedTournament.losers.reverse();
             this.winner = votedContestant;
-            this.tournamentService.postTournament(this.tournament, votedContestant).subscribe({
+            this.tournamentService.postTournament(this.tournament).subscribe({
                 next: pl => {
                     console.log(pl);
-                    
                 }
-            })
+            });
         }
     }
 

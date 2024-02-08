@@ -1,15 +1,22 @@
 <div class="play-area container p-4 p-md-5">
-    <div class="winner-card text-bg-primary bg-gradient rounded container" *ngIf="winner; else displayVoting" >
+    <div class="winner-card text-bg-primary bg-gradient rounded container" *ngIf="winner; else displayVoting">
         <div class="row justify-content-center align-items-center text-center">
             <div class="col justify-content-center">
                 <img class="crown-icon m-1" src="../../../../../assets/crown-svgrepo-com.svg">
                 <div class="card winner-cover contain-image m-auto">
                     <img class="rounded object-fit-cover" src="{{winner.img}}" alt="Winner Cover Image">
                 </div>
-                
             </div>
         </div>
-        <div class="row justify-content-center align-items-center text-center" >
+        <div>
+            <p>Segundo lugar: {{playedTournament.secondPlaceName}}</p>
+            <p>Terceros:</p>
+            <p>{{playedTournament.thirdPlaceNames[0]}}</p>
+            <p>{{playedTournament.thirdPlaceNames[1]}}</p>
+            <p *ngFor="let loser of playedTournament.losers">{{loser.contestantName}} perdió en ronda
+                {{loser.lostInRound}} contra {{loser.lostToContestant}}</p>
+        </div>
+        <div class="row justify-content-center align-items-center text-center">
             <div class="col g-3">
                 <p class="fs-3">{{winner.name}}</p>
                 <p class="fs-5">Campeón de {{tournament.template.templateName}}</p>
@@ -17,12 +24,12 @@
             </div>
         </div>
     </div>
-    
+
     <ng-template #displayVoting>
         <div class="row justify-content-center align-items-center g-2 mb-5">
             <div class="col">
                 <app-tournament-progress [totalRounds]="totalRounds"
-                [currentRound]="currentRound"></app-tournament-progress>
+                    [currentRound]="currentRound"></app-tournament-progress>
             </div>
         </div>
         <div class="row justify-content-center align-items-center g-2">
