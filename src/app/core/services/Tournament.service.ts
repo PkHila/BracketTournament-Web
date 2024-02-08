@@ -135,13 +135,16 @@ export class TournamentService {
     if (secondContestant) {
       const loser: Loser = {
         contestantName: "",
+        contestantCoverImg: "",
         lostInRound: this.getRoundName(currentRound, totalRounds),
         lostToContestant: winner.name
       };
       if (firstContestant === winner) {
         loser.contestantName = secondContestant.name;
+        loser.contestantCoverImg = secondContestant.img!;
       } else {
         loser.contestantName = firstContestant.name;
+        loser.contestantCoverImg = firstContestant.img!;
       }
       playedTournament.losers.push(loser)
     }

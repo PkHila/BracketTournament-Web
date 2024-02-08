@@ -36,10 +36,17 @@ export class PlayTournamentComponent implements OnInit {
         private tournamentService: TournamentService,
         private activatedRoute: ActivatedRoute,
         private router: Router) {
+        const emptyLoser: Loser = {
+            contestantName: "",
+            contestantCoverImg: "",
+            lostInRound: "",
+            lostToContestant: ""
+        }
         this.playedTournament = {
             firstPlaceName: "",
-            secondPlaceName: "",
-            thirdPlaceNames: ["", ""],
+            firstPlaceCoverImg: "",
+            secondPlace: emptyLoser,
+            thirdPlaces: [emptyLoser, emptyLoser],
             losers: new Array<Loser>
         }
     }
@@ -84,18 +91,14 @@ export class PlayTournamentComponent implements OnInit {
             this.rightContestant = undefined;
             this.playedTournament.firstPlaceName = votedContestant.name;
             let loser = this.playedTournament.losers.pop();
-            this.playedTournament.secondPlaceName = loser!.contestantName;
+            this.playedTournament.secondPlace = JSON.parse(JSON.stringify(loser));
             loser = this.playedTournament.losers.pop();
-            this.playedTournament.thirdPlaceNames[0] = loser!.contestantName;
+            this.playedTournament.thirdPlaces[0] = JSON.parse(JSON.stringify(loser));
             loser = this.playedTournament.losers.pop();
-            this.playedTournament.thirdPlaceNames[1] = loser!.contestantName;
+            this.playedTournament.thirdPlaces[1] = JSON.parse(JSON.stringify(loser));
             this.playedTournament.losers.reverse();
             this.winner = votedContestant;
-            this.tournamentService.postTournament(this.tournament).subscribe({
-                next: pl => {
-                    console.log(pl);
-                }
-            });
+            this.tournamentService.postTournament(this.tournament).subscribe();
         }
     }
 
