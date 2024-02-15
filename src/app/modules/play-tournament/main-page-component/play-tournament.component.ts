@@ -29,7 +29,7 @@ export class PlayTournamentComponent implements OnInit {
     public currentRound = 0;
     public currentMatch = 0;
     public totalMatchesForCurrentRound = 0;
-    public winner?: Contestant;
+    public tournamentEnded = false;
     public playedTournament: PlayedTournament;
 
     constructor(
@@ -90,6 +90,7 @@ export class PlayTournamentComponent implements OnInit {
             this.leftContestant = undefined;
             this.rightContestant = undefined;
             this.playedTournament.firstPlaceName = votedContestant.name;
+            this.playedTournament.firstPlaceCoverImg = votedContestant.img!;
             let loser = this.playedTournament.losers.pop();
             this.playedTournament.secondPlace = JSON.parse(JSON.stringify(loser));
             loser = this.playedTournament.losers.pop();
@@ -97,7 +98,7 @@ export class PlayTournamentComponent implements OnInit {
             loser = this.playedTournament.losers.pop();
             this.playedTournament.thirdPlaces[1] = JSON.parse(JSON.stringify(loser));
             this.playedTournament.losers.reverse();
-            this.winner = votedContestant;
+            this.tournamentEnded = true;
             this.tournamentService.postTournament(this.tournament).subscribe();
         }
     }
