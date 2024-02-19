@@ -8,12 +8,13 @@ import { Contestant } from 'src/app/core/interfaces';
 })
 export class LastFMApiService implements ApiService {
 
-  private baseUrl = "";
+  private baseUrl = "http://ws.audioscrobbler.com/2.0";
 
   constructor() { }
 
   getContestants(queryParams: QueryParams): Observable<Contestant[]> {
     throw new Error('Method not implemented.');
+    const searchUrl = `${this.baseUrl}/?method=album.search&album=${queryParams.query}&api_key=${environment.lastFMApiKey}&format=json&limit=20`;
   }
   checkIfImgEmpty(source: string): string {
     if (source) {
