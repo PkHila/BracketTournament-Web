@@ -8,13 +8,19 @@ import { Contestant } from 'src/app/core/interfaces';
 })
 export class LastFMApiService implements ApiService {
 
+  private baseUrl = "";
+
   constructor() { }
-  
+
   getContestants(queryParams: QueryParams): Observable<Contestant[]> {
     throw new Error('Method not implemented.');
   }
   checkIfImgEmpty(source: string): string {
-    throw new Error('Method not implemented.');
+    if (source) {
+      return "/assets/img_not_found.png";
+    } else {
+      return "/assets/img_not_found.png";
+    }
   }
 
 }
