@@ -1,27 +1,50 @@
 <div class="play-area container p-4 p-md-5">
-    <div class="winner-card text-bg-primary bg-gradient rounded container" *ngIf="tournamentEnded; else displayVoting">
-        <div class="row justify-content-center align-items-center text-center">
-            <div class="col justify-content-center">
-                <img class="crown-icon m-1" src="../../../../../assets/crown-svgrepo-com.svg">
-                <div class="card winner-cover contain-image m-auto">
-                    <img class="rounded object-fit-cover" src="{{playedTournament.firstPlaceCoverImg}}" alt="Winner Cover Image">
+    <div class="results rounded container" *ngIf="tournamentEnded; else displayVoting">
+        <div class="row justify-content-center align-items-end text-center">
+            <div class="col-3 justify-content-center">
+                <div class="card winner-card rounded p-2">
+                    <div class="card top-result-cover shadow-lg contain-image m-auto">
+                        <img class="object-fit-cover border-0" src="{{playedTournament.firstPlaceCoverImg}}" alt="Winner Cover Image">
+                    </div>
+                    <p class="fs-3">{{playedTournament.firstPlaceName}}</p>
+                    <img src="../../../../assets/number-1-square-svgrepo-com.svg" alt="">
+                </div>
+            </div>
+            <div class="col-3 justify-content-center">
+                <div class="card second-place rounded p-2">
+                    <div class="card top-result-cover shadow-lg contain-image m-auto">
+                        <img class="object-fit-cover border-0" src="{{playedTournament.secondPlace.contestantCoverImg}}">
+                    </div>
+                    <p class="fs-3">{{playedTournament.secondPlace.contestantName}}</p>
+                    <img src="../../../../assets/number-2-square-svgrepo-com.svg" alt="">
+                </div>
+            </div>
+            <div class="col-3 justify-content-center">
+                <div class="card third-place rounded p-2">
+                    <div class="card top-result-cover shadow-lg contain-image m-auto">
+                        <img class="object-fit-cover border-0" src="{{playedTournament.thirdPlaces[0].contestantCoverImg}}" alt="">
+                    </div>
+                    <p class="fs-3">{{playedTournament.thirdPlaces[0].contestantName}}</p>
+                    <img class="object-fit-cover border-0" src="../../../../assets/number-3-square-svgrepo-com.svg" alt="">
+                </div>
+            </div>
+            <div class="col-3 justify-content-center">
+                <div class="card third-place rounded p-2">
+                    <div class="card top-result-cover shadow-lg contain-image m-auto">
+                        <img class="object-fit-cover border-0" src="{{playedTournament.thirdPlaces[1].contestantCoverImg}}" alt="">
+                    </div>
+                    <p class="fs-3">{{playedTournament.thirdPlaces[1].contestantName}}</p>
+                    <img src="../../../../assets/number-3-square-svgrepo-com.svg" alt="">
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center align-items-center text-center">
-            <div class="col g-3">
-                <p class="fs-3">{{playedTournament.firstPlaceName}}</p>
-                <p class="fs-5">Campeón de {{tournament.template.templateName}}</p>
-                <button class="btn bg-warning mb-3" (click)="onTournamentConcluded()">Volver al torneo</button>
+        <div class="row">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-grouop-item fs-4" *ngFor="let loser of playedTournament.losers"><b>{{loser.contestantName}}</b> perdió en ronda
+                        {{loser.lostInRound}} contra <a href="#">{{loser.lostToContestant}}</a></li>
+                </ul>
             </div>
-        </div>
-        <div>
-            <p>Segundo lugar: {{playedTournament.secondPlace.contestantName}}</p>
-            <p>Terceros:</p>
-            <p>{{playedTournament.thirdPlaces[0].contestantName}}</p>
-            <p>{{playedTournament.thirdPlaces[1].contestantName}}</p>
-            <p *ngFor="let loser of playedTournament.losers">{{loser.contestantName}} perdió en ronda
-                {{loser.lostInRound}} contra {{loser.lostToContestant}}</p>
         </div>
     </div>
 

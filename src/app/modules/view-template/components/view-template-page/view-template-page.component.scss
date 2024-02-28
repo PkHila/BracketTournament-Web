@@ -19,16 +19,21 @@
 }
 
 .cover-img{
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     img{
         height:100%;
         object-position: top;
     }
 }
 
-.contestant-list, .stat-list{
+.contestant-list{
     height: 90%;
+    overflow-y: auto;
+}
+
+.stat-list{
+    height: 85%;
     overflow-y: auto;
 }
 
