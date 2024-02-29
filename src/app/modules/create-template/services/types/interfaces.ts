@@ -126,3 +126,19 @@ export interface JikanMangaData {
     ];
 }
 
+export interface Album {
+    name: string;
+    artist: string;
+    image: Array<{
+        '#text': string,
+        size: string,
+    }>
+}
+
+export interface LastFMResponse {
+    results: {
+        albummatches: {
+            album: Array<Album>;
+        }
+    }
+}

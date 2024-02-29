@@ -28,4 +28,8 @@ export class ChooseCategoryPageComponent {
   public gotoManga() {
     this.router.navigate(['create-template/manga']);
   }
+
+  public gotoAlbums() {
+    this.router.navigate(['create-template/albums']);
+  }
 }

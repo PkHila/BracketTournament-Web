@@ -115,6 +115,8 @@ export class TemplateService {
         return LocaleCategories.anime;
       case Categories.manga:
         return LocaleCategories.manga;
+      case Categories.albums:
+        return LocaleCategories.albums;
       default:
         return undefined;
     }

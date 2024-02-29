@@ -7,6 +7,7 @@ import { RawgIoApiService } from '../services/rawg-io-api.service';
 import { ApiService, QueryParams } from '../services/types/interfaces';
 import { JikanAnimeApiService } from '../services/jikan-anime-api.service';
 import { JikanMangaApiService } from '../services/jikan-manga-api.service';
+import { LastFMApiService } from '../services/last-fm-api.service';
 import { ContestantService } from 'src/app/core/services/Contestant.service';
 import { Observable, of } from 'rxjs';
 
@@ -48,6 +49,10 @@ export class CreateTemplatePageComponent {
             break;
           case 'manga':
             this.apiService = inject(JikanMangaApiService);
+            this.queryParams.category = this.category;
+            break;
+          case 'albums':
+            this.apiService = inject(LastFMApiService);
             this.queryParams.category = this.category;
             break;
         }

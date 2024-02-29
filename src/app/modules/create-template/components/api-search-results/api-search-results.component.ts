@@ -36,6 +36,8 @@ export class ApiSearchResultsComponent implements OnInit {
         case 'manga':
           this.searchbarPlaceholderText = 'Pruebe buscar "Naruto"...';
           break;
+        case 'albums':
+          this.searchbarPlaceholderText = 'Pruebe buscar "The Beatles"...';
       }
     })
   }
