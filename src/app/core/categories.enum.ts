@@ -13,7 +13,7 @@ export enum LocaleCategories {
     games = 'juegos',
     anime = 'anime',
     manga = 'manga',
-    albums = 'albums',
+    albums = 'discos',
 }
 
 export const isCategory = (value: string): value is Categories => Object.values(Categories).includes(value as Categories);
