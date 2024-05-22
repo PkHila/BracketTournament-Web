@@ -22,12 +22,13 @@
 }
 .second-place{
   height: 70%;  /*not working rn*/
-  background: silver;
+  background: radial-gradient(ellipse farthest-corner at right bottom, #E3e3e3  0%, #D7d7d8 8%,  #C0c0c3 30%,  #A8a9ad 40%, transparent 80%),
+  radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #E3e3e3 8%, #D7d7d8 25%, #Cbcccd 62.5%, #B4b5b8 100%);
 }
 .third-place{
   height: 60%;  /*not working rn*/
-  background: chocolate;
- 
+  background: radial-gradient(ellipse farthest-corner at right bottom, #d6873a 0%, #cc7e32 8%, #b86e20 30%,  #ad6416 40%, transparent 80%),
+  radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #d6873a 8%, #cc7e32 25%, #cd7f32 62.5%, #b86d20 100%);
 }
 
 .top-result-cover{
