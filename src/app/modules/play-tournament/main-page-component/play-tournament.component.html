@@ -1,40 +1,40 @@
 <div class="play-area container p-4 p-md-5">
-    <div class="results rounded container" *ngIf="tournamentEnded; else displayVoting">
-        <div class="row justify-content-center align-items-end text-center">
+    <div class="results rounded container pt-2" *ngIf="tournamentEnded; else displayVoting">
+        <div class="row justify-content-center align-items-start text-center">
             <div class="col-3 justify-content-center">
-                <div class="card winner-card rounded p-2">
-                    <div class="card top-result-cover shadow-lg contain-image m-auto">
+                <div class="card result-card winner-card rounded-4 p-2">
+                    <div class="card result-cover shadow-lg contain-image m-auto">
                         <img class="object-fit-cover border-0" src="{{playedTournament.firstPlaceCoverImg}}" alt="Winner Cover Image">
                     </div>
-                    <p class="fs-3">{{playedTournament.firstPlaceName}}</p>
-                    <img src="../../../../assets/number-1-square-svgrepo-com.svg" alt="">
+                    <p class="podium-title fs-4 fw-bold m-2">{{playedTournament.firstPlaceName}}</p>
+                    <img class="placement" src="../../../../assets/number-1-square-svgrepo-com.svg" alt="">
                 </div>
             </div>
             <div class="col-3 justify-content-center">
-                <div class="card second-place rounded p-2">
-                    <div class="card top-result-cover shadow-lg contain-image m-auto">
+                <div class="card result-card second-place rounded-4 p-2">      
+                    <div class="card result-cover shadow-lg contain-image m-auto">
                         <img class="object-fit-cover border-0" src="{{playedTournament.secondPlace.contestantCoverImg}}">
                     </div>
-                    <p class="fs-3">{{playedTournament.secondPlace.contestantName}}</p>
-                    <img src="../../../../assets/number-2-square-svgrepo-com.svg" alt="">
+                    <p class="podium-title fs-4 fw-bold m-2">{{playedTournament.secondPlace.contestantName}}</p>
+                    <img class="placement" src="../../../../assets/number-2-square-svgrepo-com.svg" alt="">
                 </div>
             </div>
             <div class="col-3 justify-content-center">
-                <div class="card third-place rounded p-2">
-                    <div class="card top-result-cover shadow-lg contain-image m-auto">
+                <div class="card result-card third-place rounded-4 p-2">
+                    <div class="card result-cover shadow-lg contain-image m-auto">
                         <img class="object-fit-cover border-0" src="{{playedTournament.thirdPlaces[0].contestantCoverImg}}" alt="">
                     </div>
-                    <p class="fs-3">{{playedTournament.thirdPlaces[0].contestantName}}</p>
-                    <img class="object-fit-cover border-0" src="../../../../assets/number-3-square-svgrepo-com.svg" alt="">
+                    <p class="podium-title fs-4 fw-bold m-2">{{playedTournament.thirdPlaces[0].contestantName}}</p>
+                    <img class="placement" src="../../../../assets/number-3-square-svgrepo-com.svg" alt="">
                 </div>
             </div>
             <div class="col-3 justify-content-center">
-                <div class="card third-place rounded p-2">
-                    <div class="card top-result-cover shadow-lg contain-image m-auto">
+                <div class="card result-card third-place rounded-4 p-2">
+                    <div class="card result-cover shadow-lg contain-image m-auto">
                         <img class="object-fit-cover border-0" src="{{playedTournament.thirdPlaces[1].contestantCoverImg}}" alt="">
                     </div>
-                    <p class="fs-3">{{playedTournament.thirdPlaces[1].contestantName}}</p>
-                    <img src="../../../../assets/number-3-square-svgrepo-com.svg" alt="">
+                    <p class="podium-title fs-4 fw-bold m-2">{{playedTournament.thirdPlaces[1].contestantName}}</p>
+                    <img class="placement" src="../../../../assets/number-3-square-svgrepo-com.svg" alt="">
                 </div>
             </div>
         </div>

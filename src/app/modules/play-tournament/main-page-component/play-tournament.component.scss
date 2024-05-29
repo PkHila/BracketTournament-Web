@@ -9,33 +9,58 @@
 .play-area{
   height: 90vh;
 }
+.result-card{
+
+
+  .result-cover{
+    height: 200px;
+    width: 200px;
+    img{
+      height: 100%;
+    }
+  }
+
+  .podium-title{
+    font-size: x-large;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .placement{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &:hover{
+    .podium-title{
+      max-height: max-content;
+      overflow:auto;
+      white-space: normal;
+    }
+  }
+
+}
+
+.winner-card{
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+  radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+.second-place{
+  background: radial-gradient(ellipse farthest-corner at right bottom, #E3e3e3  0%, #D7d7d8 8%,  #C0c0c3 30%,  #A8a9ad 40%, transparent 80%),
+  radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #E3e3e3 8%, #D7d7d8 25%, #Cbcccd 62.5%, #B4b5b8 100%);
+}
+.third-place{
+  background: radial-gradient(ellipse farthest-corner at right bottom, #d6873a 0%, #cc7e32 8%, #b86e20 30%,  #ad6416 40%, transparent 80%),
+  radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #d6873a 8%, #cc7e32 25%, #cd7f32 62.5%, #b86d20 100%);
+}
+
 
 .results{
   overflow-y: auto;
   background: rgba(255, 255, 255,0.25);
 }
 
-.winner-card{
-  height: 80%; /*not working rn*/
-  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-  radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-}
-.second-place{
-  height: 70%;  /*not working rn*/
-  background: radial-gradient(ellipse farthest-corner at right bottom, #E3e3e3  0%, #D7d7d8 8%,  #C0c0c3 30%,  #A8a9ad 40%, transparent 80%),
-  radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #E3e3e3 8%, #D7d7d8 25%, #Cbcccd 62.5%, #B4b5b8 100%);
-}
-.third-place{
-  height: 60%;  /*not working rn*/
-  background: radial-gradient(ellipse farthest-corner at right bottom, #d6873a 0%, #cc7e32 8%, #b86e20 30%,  #ad6416 40%, transparent 80%),
-  radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #d6873a 8%, #cc7e32 25%, #cd7f32 62.5%, #b86d20 100%);
-}
 
-.top-result-cover{
-  height: 250px;
-  width: 250px;
-  img{
-    height: 100%;
-  }
-}
 
