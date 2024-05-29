@@ -21,7 +21,7 @@ export class TemplateService {
     return this.http.get<Template[]>(`${this.baseUrl}/templates`).pipe(
       map(templates => {
         templates.sort((a, b) => b.timesPlayed! - a.timesPlayed!);
-        return templates.slice(0, 3);
+        return templates.slice(0, 6);
       })
     );
   }
