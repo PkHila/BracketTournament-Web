@@ -8,6 +8,7 @@
 
 .play-area{
   height: 90vh;
+  overflow-y: hidden;
 }
 .result-card{
 
@@ -56,11 +57,14 @@
   radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #d6873a 8%, #cc7e32 25%, #cd7f32 62.5%, #b86d20 100%);
 }
 
-
-.results{
-  overflow-y: auto;
-  background: rgba(255, 255, 255,0.25);
+.result-screen{
+  .results{
+    height: 80vh;
+    overflow-y: scroll;
+    background: rgba(255, 255, 255,0.25);
+  }
 }
+
 
 
 
