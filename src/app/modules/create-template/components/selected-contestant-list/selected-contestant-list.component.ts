@@ -28,6 +28,10 @@ export class SelectedContestantListComponent{
     return  this.posibleFreebiesCount = this.templateService.calculateFreebies(this.selectedContestants.length);
   }
 
+  public calculatePosibleMaxContestants(): number{
+    return this.templateService.calculateMaxContestants(this.selectedContestants.length);
+  }
+
   public isContestantsPowerOfTwo(): void{
      this.powerOfTwo= this.templateService.isPowerOfTwo(this.selectedContestants.length);
   }

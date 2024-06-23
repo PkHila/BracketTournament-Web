@@ -71,8 +71,12 @@ export class TemplateService {
     return maxRoundCount;
   }
 
+  public calculateMaxContestants(contestantCount: number): number {
+    return 2 ** this.calculateMaxRoundCount(contestantCount);
+  }
+
   public calculateFreebies(contestantCount: number): number {
-    return contestantCount - 2 ** this.calculateMaxRoundCount(contestantCount);
+    return contestantCount - this.calculateMaxContestants(contestantCount);
   }
 
   public isPowerOfTwo(contestantCount: number): boolean{
