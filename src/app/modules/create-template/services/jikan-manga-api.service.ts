@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { JikanMangaData, JikanResponse, QueryParams } from './types/interfaces';
+import { ApiService, JikanMangaData, JikanResponse, QueryParams } from './types/interfaces';
 import { Observable, map } from 'rxjs';
 import { Contestant } from 'src/app/core/interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
-export class JikanMangaApiService {
+export class JikanMangaApiService implements ApiService {
   private baseUrl = "https://api.jikan.moe/v4";
 
   constructor(private http: HttpClient) { }
