@@ -471,7 +471,7 @@
       "timesPlayed": 16
     },
     {
-      "templateName": "Manga favorito",
+      "templateName": "Los manga favoritos de Hilario",
       "category": "manga",
       "contestants": [
         {
@@ -1775,7 +1775,7 @@
       "id": 12
     },
     {
-      "templateName": "¿Cuál es el mejor Shonen de batalla?",
+      "templateName": "Cuál es el mejor Shonen de batalla?",
       "category": "anime",
       "contestants": [
         {
@@ -1878,7 +1878,7 @@
       "id": 13
     },
     {
-      "templateName": "El mejor disco de hip-hop de todos los tiempos (Clásicos y modernos)",
+      "templateName": "El mejor disco de hip-hop (Clásicos y modernos)",
       "category": "albums",
       "contestants": [
         {
