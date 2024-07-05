@@ -1,3 +1,13 @@
 .stats{
-    background: rgba(255, 255, 255,0.25)
+    color: black;
+    background: rgba(255, 255, 255,0.25);
+    height:5rem;
+    overflow:hidden;
+}
+
+img{
+    height: 5rem;
+    object-fit: cover;
+    background-color: red;
+    background-blend-mode: multiply;
 }

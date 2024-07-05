@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class SearchBarComponent {
 
   @Output() search = new EventEmitter<string>;
-
+  @Input() placeholderText = "Pruebe buscar algo que conozca...";
   public form = this.formBuilder.group({
     searchTerm: ['', [Validators.required]] // otros validadores?
   })

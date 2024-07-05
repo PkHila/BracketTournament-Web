@@ -16,12 +16,19 @@ export class RawgIoApiService implements ApiService {
   
   checkIfImgEmpty(source: string): string {
     if (source) {
-      return source;
+      return this.cropImageSize(source); //si existe, ya se retorna con la url modificada
     }
     else {
       return "/assets/img_not_found.png";
     }
   }
+
+  cropImageSize(originalUrl: string): string{ //modifica la URL de la imágen para que la llamada a la API sea de una imágen más pequeña
+    let mediaIndex: number = originalUrl.indexOf("media/");
+    let indexToInsert: number = mediaIndex + "media/".length;
+    return originalUrl.slice(0, indexToInsert) + "crop/600/400/" + originalUrl.slice(indexToInsert);
+  }
+
 
   public getContestants(queryParams: QueryParams): Observable<Contestant[]> {
 

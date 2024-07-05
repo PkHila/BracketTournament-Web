@@ -1,13 +1,20 @@
-<div class="stats rounded px-1 py-3">
-    <p class="fs-6">{{contestant.tournamentsWon}} de {{contestant.tournamentsPlayed}} torneos ganados</p>
-    <div class="progress" role="progressbar" aria-label="Tournaments won percentage"
-        [attr.aria-valuenow]="contestant.tournamentsWon" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar" [style.width.%]="tournamentWinRate">{{tournamentWinRate}}%</div>
-    </div><br>
-    <p class="fs-6">{{contestant.matchesWon}} de {{contestant.matchesPlayed}} peleas ganadas</p>
-    <div class="progress" role="progressbar" aria-label="Tournaments won percentage"
-        [attr.aria-valuenow]="contestant.matchesWon" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar" [style.width.%]="matchWinRate">{{matchWinRate}}%</div>
+<div class="stats row m-1 rounded">
+
+    <img class="col d-none d-lg-block d-xl-block rounded-start p-0" src={{contestant.img}} alt="{{contestant.name}} Imagen">
+    <p class="col col-md mt-2">{{contestant.name}} ({{contestant.date}})</p>
+    <div class="col-3 col-md">
+        <p class="fs-6 my-2">{{contestant.tournamentsWon}} de {{contestant.tournamentsPlayed}} torneos ganados</p>
+        <div class="progress" role="progressbar" aria-label="Tournaments won percentage"
+            [attr.aria-valuenow]="contestant.tournamentsWon" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" [style.width.%]="tournamentWinRate">{{tournamentWinRate}}%</div>
+        </div>
+    </div>
+    <div class="col-3 col-md">
+        <p class="fs-6 my-2">{{contestant.matchesWon}} de {{contestant.matchesPlayed}} peleas ganadas</p>
+        <div class="progress" role="progressbar" aria-label="Tournaments won percentage"
+            [attr.aria-valuenow]="contestant.matchesWon" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" [style.width.%]="matchWinRate">{{matchWinRate}}%</div>
+        </div>
     </div>
 
 </div>

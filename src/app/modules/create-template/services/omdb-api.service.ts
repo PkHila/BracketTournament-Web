@@ -37,7 +37,8 @@ export class OMDbApiService implements ApiService {
           if (response.Response === "false") {
             throw new Error('No se encontraron resultados');
           }
-          if (response.totalResults > '10') {
+          const totalResults = Number.parseInt(response.totalResults);
+          if (totalResults > 10) {
             return this.httpClient.get<OMDbResponse>(`${searchUrl}&page=2`)
               .pipe<OMDbSearchResult[]>(
                 map(nextPageResponse =>

@@ -35,7 +35,8 @@ export class ContestantService {
   }
 
   public checkTemplateNameExists(templateName: string): Observable<boolean> {
-    return of(this.templateNamesInDatabase.value.includes(templateName.toLocaleLowerCase()));
+    const normalizedTemplateName = templateName.trim().toLocaleLowerCase().replace(/\s+/g, ' ');
+    return of(this.templateNamesInDatabase.value.includes(normalizedTemplateName));
   }
 
   public postTemplateLegacy(template: Template): Observable<Template> {
@@ -87,7 +88,13 @@ export class ContestantService {
   }
 
   public addContestant(contestant: Contestant, selectedContestants: Contestant[]) {
-    if (!selectedContestants.includes(contestant)) {
+
+    if (selectedContestants.find(c =>
+      c.name == contestant.name &&
+      c.author == contestant.author &&
+      c.date == contestant.date &&
+      c.img == contestant.img
+    ) === undefined) {
       selectedContestants.push(contestant);
     }
   }
@@ -107,7 +114,7 @@ export class ContestantService {
 
   public calculateMatchWinRate(contestant: Contestant): number {
     if (contestant.matchesPlayed && contestant.matchesWon && contestant.matchesPlayed != 0) {
-      return  Math.round(contestant.matchesWon * 100 / contestant.matchesPlayed);
+      return Math.round(contestant.matchesWon * 100 / contestant.matchesPlayed);
     }
     else {
       return 0;

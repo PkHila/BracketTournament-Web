@@ -7,7 +7,9 @@ import { RawgIoApiService } from '../services/rawg-io-api.service';
 import { ApiService, QueryParams } from '../services/types/interfaces';
 import { JikanAnimeApiService } from '../services/jikan-anime-api.service';
 import { JikanMangaApiService } from '../services/jikan-manga-api.service';
+import { LastFMApiService } from '../services/last-fm-api.service';
 import { ContestantService } from 'src/app/core/services/Contestant.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-create-template-page',
@@ -22,6 +24,7 @@ export class CreateTemplatePageComponent {
   private apiService!: ApiService;
   private queryParams: QueryParams = {};
   public noResultsFound: boolean = false;
+  public validTemplate = false;
 
   constructor(
     private contestantService: ContestantService,
@@ -46,6 +49,10 @@ export class CreateTemplatePageComponent {
             break;
           case 'manga':
             this.apiService = inject(JikanMangaApiService);
+            this.queryParams.category = this.category;
+            break;
+          case 'albums':
+            this.apiService = inject(LastFMApiService);
             this.queryParams.category = this.category;
             break;
         }
@@ -76,19 +83,25 @@ export class CreateTemplatePageComponent {
   }
 
   public createTemplate(templateName: string) {
+    this.validTemplate = true;
     const template: Template = {
-      templateName: templateName.trim(),
+      templateName: templateName.trim().replace(/\s+/g, ' '),
       category: this.category,
       contestants: this.selectedContestants
     }
     this.templateService.postTemplate(template).subscribe({
       next: resp => {
-        console.log('agregado con exito');
+        //console.log('agregado con exito');
         this.router.navigate([`view-template/${template.templateName}`]);
       },
       error: () => {
         console.log('error');
       }
     });
+  }
+
+  public showConfirmationDialog(message?: string): Observable<boolean> {
+    const confirmation = window.confirm(message || "Desea salir sin guardar?")
+    return of(confirmation);
   }
 }

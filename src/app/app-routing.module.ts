@@ -22,6 +22,10 @@ const routes: Routes = [
     loadChildren: () => import("./modules/choose-category/choose-category.module").then(m => m.ChooseCategoryModule)
   },
   {
+    path: 'credits',
+    loadChildren: () => import("./modules/view-credits/credits.module").then(m => m.CreditsModule)
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   },

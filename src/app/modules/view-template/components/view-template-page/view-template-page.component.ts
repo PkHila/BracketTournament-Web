@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Contestant, Template } from 'src/app/core/interfaces';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TemplateService } from 'src/app/core/services/Template.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Categories } from 'src/app/core/categories.enum';
@@ -21,6 +21,7 @@ export class ViewTemplatePageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private templatetService: TemplateService,
+    private router: Router,
     private fb: FormBuilder) {
     this.form = this.fb.group({
       showStatistics: [false],
@@ -40,7 +41,7 @@ export class ViewTemplatePageComponent implements OnInit {
               this.template.category = translatedCategory;
             }
             this.template.coverImg = this.templatetService.searchForCoverImg(this.template);
-            const maxRoundCount = this.templatetService.calculateMaxRoundCount(this.template);
+            const maxRoundCount = this.templatetService.calculateMaxRoundCount(this.template.contestants!.length);
             for (let i = 2; i < maxRoundCount + 1; i++) {
               this.roundsInfo.push({ round: i, contestantsCount: 2 ** i });
             }
@@ -48,8 +49,8 @@ export class ViewTemplatePageComponent implements OnInit {
               this.roundsInfo.at(-1)!.freePasses = 2 ** maxRoundCount - this.template.contestants!.length;
             }
           },
-          error: err => {
-            console.log(err);
+          error: () => {
+            this.router.navigate([`404`]);
           }
         })
       },

@@ -1,42 +1,81 @@
-<div class="play-area container p-4 p-md-5">
-    <div class="winner-card text-bg-primary bg-gradient rounded container" *ngIf="winner; else displayVoting" >
-        <div class="row justify-content-center align-items-center text-center">
-            <div class="col justify-content-center">
-                <img class="crown-icon m-1" src="../../../../../assets/crown-svgrepo-com.svg">
-                <div class="card winner-cover contain-image m-auto">
-                    <img class="rounded object-fit-cover" src="{{winner.img}}" alt="Winner Cover Image">
+<div class="play-area container">
+    <div class="result-screen px-md-5 py-md-3" *ngIf="tournamentEnded; else displayVoting">
+        <div class="results rounded container pt-2">
+            <div class="row justify-content-center align-items-start text-center">
+                <div class="col-3 justify-content-center">
+                    <div class="card result-card winner-card rounded-4 p-2">
+                        <div class="card result-cover shadow-lg contain-image m-auto">
+                            <img class="object-fit-cover border-0" src="{{playedTournament.firstPlaceCoverImg}}" alt="Winner Cover Image">
+                        </div>
+                        <p class="podium-title fs-4 fw-bold m-2">{{playedTournament.firstPlaceName}}</p>
+                        <img class="placement" src="../../../../assets/number-1-square-svgrepo-com.svg" alt="">
+                    </div>
                 </div>
-                
+                <div class="col-3 justify-content-center">
+                    <div class="card result-card second-place rounded-4 p-2">      
+                        <div class="card result-cover shadow-lg contain-image m-auto">
+                            <img class="object-fit-cover border-0" src="{{playedTournament.secondPlace.contestantCoverImg}}">
+                        </div>
+                        <p class="podium-title fs-4 fw-bold m-2">{{playedTournament.secondPlace.contestantName}}</p>
+                        <img class="placement" src="../../../../assets/number-2-square-svgrepo-com.svg" alt="">
+                    </div>
+                </div>
+                <div class="col-3 justify-content-center">
+                    <div class="card result-card third-place rounded-4 p-2">
+                        <div class="card result-cover shadow-lg contain-image m-auto">
+                            <img class="object-fit-cover border-0" src="{{playedTournament.thirdPlaces[0].contestantCoverImg}}" alt="">
+                        </div>
+                        <p class="podium-title fs-4 fw-bold m-2">{{playedTournament.thirdPlaces[0].contestantName}}</p>
+                        <img class="placement" src="../../../../assets/number-3-square-svgrepo-com.svg" alt="">
+                    </div>
+                </div>
+                <div class="col-3 justify-content-center">
+                    <div class="card result-card third-place rounded-4 p-2">
+                        <div class="card result-cover shadow-lg contain-image m-auto">
+                            <img class="object-fit-cover border-0" src="{{playedTournament.thirdPlaces[1].contestantCoverImg}}" alt="">
+                        </div>
+                        <p class="podium-title fs-4 fw-bold m-2">{{playedTournament.thirdPlaces[1].contestantName}}</p>
+                        <img class="placement" src="../../../../assets/number-3-square-svgrepo-com.svg" alt="">
+                    </div>
+                </div>
             </div>
+            <div class="row p-4">
+                <div class="row fs-4" *ngFor="let loser of playedTournament.losers">
+                    <div class="col mb-2">
+                        <b>{{loser.contestantName}}</b> perdió en ronda
+                        {{loser.lostInRound}} contra <u>{{loser.lostToContestant}}</u>
+                    </div>
+                    <hr>
+                </div>
+            </div>  
         </div>
-        <div class="row justify-content-center align-items-center text-center" >
-            <div class="col g-3">
-                <p class="fs-3">{{winner.name}}</p>
-                <p class="fs-5">Campeón de {{tournament.template.templateName}}</p>
-                <button class="btn bg-warning mb-3" (click)="onTournamentConcluded()">Volver al torneo</button>
-            </div>
+        <div class="d-flex justify-content-end mt-3">
+            <button class="btn bg-warning" (click)="onTournamentConcluded()">Volver al torneo</button>
         </div>
+
     </div>
-    
+
     <ng-template #displayVoting>
-        <div class="row justify-content-center align-items-center g-2 mb-5">
-            <div class="col">
-                <app-tournament-progress [totalRounds]="totalRounds"
-                [currentRound]="currentRound"></app-tournament-progress>
+        <div class="p-4 p-md-5">
+            <div class="row justify-content-center align-items-center g-2 mb-5">
+                <div class="col">
+                    <app-tournament-progress [totalRounds]="totalRounds"
+                        [currentRound]="currentRound"></app-tournament-progress>
+                </div>
             </div>
-        </div>
-        <div class="row justify-content-center align-items-center g-2">
-            <div class="col-md-5">
-                <app-contestant-card-big *ngIf="leftContestant" [contestant]="leftContestant"
-                    (voteContestant)="onVote($event)"></app-contestant-card-big>
-            </div>
-            <div class="col-md-2 text-center py-4">
-                <app-matchup-tracker [currentMatch]="currentMatch + 1"
-                    [totalMatches]="totalMatchesForCurrentRound"></app-matchup-tracker>
-            </div>
-            <div class="col-md-5">
-                <app-contestant-card-big *ngIf="rightContestant" [contestant]="rightContestant"
-                    (voteContestant)="onVote($event)"></app-contestant-card-big>
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col-md-5">
+                    <app-contestant-card-big *ngIf="leftContestant" [contestant]="leftContestant"
+                        (voteContestant)="onVote($event)"></app-contestant-card-big>
+                </div>
+                <div class="col-md-2 text-center py-4">
+                    <app-matchup-tracker [currentMatch]="currentMatch + 1"
+                        [totalMatches]="totalMatchesForCurrentRound"></app-matchup-tracker>
+                </div>
+                <div class="col-md-5">
+                    <app-contestant-card-big *ngIf="rightContestant" [contestant]="rightContestant"
+                        (voteContestant)="onVote($event)"></app-contestant-card-big>
+                </div>
             </div>
         </div>
     </ng-template>

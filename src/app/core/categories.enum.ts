@@ -4,6 +4,7 @@ export enum Categories {
     games = 'games',
     anime = 'anime',
     manga = 'manga',
+    albums = 'albums',
 }
 
 export enum LocaleCategories {
@@ -12,6 +13,7 @@ export enum LocaleCategories {
     games = 'juegos',
     anime = 'anime',
     manga = 'manga',
+    albums = 'discos',
 }
 
 export const isCategory = (value: string): value is Categories => Object.values(Categories).includes(value as Categories);

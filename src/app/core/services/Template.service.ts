@@ -17,6 +17,15 @@ export class TemplateService {
     return this.http.get<Template[]>(`${this.baseUrl}/templates`);
   }
 
+  public getPopularTemplates(): Observable<Template[]> {
+    return this.http.get<Template[]>(`${this.baseUrl}/templates`).pipe(
+      map(templates => {
+        templates.sort((a, b) => b.timesPlayed! - a.timesPlayed!);
+        return templates.slice(0, 6);
+      })
+    );
+  }
+
   public postTemplate(template: Template): Observable<Template> {
     return this.http.post<Template>(`${this.baseUrl}/templates`, template);
   }
@@ -51,16 +60,27 @@ export class TemplateService {
     return this.http.put<Template>(`${this.baseUrl}/templates/${templateId}`, template)
   }
 
-  public calculateMaxRoundCount(template: Template): number {
+  public calculateMaxRoundCount(contestantCount: number): number {
     let maxRoundCount = 2;
-    const contestantCount = template.contestants!.length;
     while (contestantCount > 2 ** maxRoundCount) {
       maxRoundCount++;
     }
-    if (contestantCount < 2 ** maxRoundCount) { // disable free pass feature
+    if (contestantCount < 2 ** maxRoundCount) { // disables free pass feature
       maxRoundCount--;
     }
     return maxRoundCount;
+  }
+
+  public calculateMaxContestants(contestantCount: number): number {
+    return 2 ** this.calculateMaxRoundCount(contestantCount);
+  }
+
+  public calculateFreebies(contestantCount: number): number {
+    return contestantCount - this.calculateMaxContestants(contestantCount);
+  }
+
+  public isPowerOfTwo(contestantCount: number): boolean{
+    return this.calculateFreebies(contestantCount) === 0;
   }
 
   public searchForCoverImg(template: Template): string {
@@ -99,6 +119,8 @@ export class TemplateService {
         return LocaleCategories.anime;
       case Categories.manga:
         return LocaleCategories.manga;
+      case Categories.albums:
+        return LocaleCategories.albums;
       default:
         return undefined;
     }
