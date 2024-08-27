@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkBracketTournament_Web=self.webpackChunkBracketTournament_Web||[]).push([[228],{228:(r,s,t)=>{t.r(s),t.d(s,{HomePageModule:()=>u});var n=t(6814),o=t(6208),e=t(9468);let u=(()=>{class a{static#t=this.\u0275fac=function(c){return new(c||a)};static#a=this.\u0275mod=e.oAB({type:a});static#s=this.\u0275inj=e.cJS({imports:[n.ez,o.m]})}return a})()}}]);
