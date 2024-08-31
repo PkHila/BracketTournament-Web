@@ -9,9 +9,26 @@ import { Categories, LocaleCategories } from '../categories.enum';
 })
 export class TemplateService {
 
-  private baseUrl: string = "http://localhost:3000";
+  /* private baseUrl: string = "http://localhost:3000"; */
+  private templates: Template[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    /* const templateNames = localStorage.getItem('templateNames');
+    if (templateNames) {
+
+    } */
+    this.templates = this.demoTemplates.map(t => {
+      const template: Template = {
+        id: t.id,
+        contestants: t.contestants,
+        templateName: t.templateName,
+        category: t.category,
+        timesPlayed: t.timesPlayed
+      }
+      // localStorage?
+      return template;
+    });
+  }
 
   public getTemplates(): Observable<Template[]> {
     
@@ -74,11 +91,21 @@ export class TemplateService {
   }
 
   public postTemplate(template: Template): Observable<Template> {
-    return this.http.post<Template>(`${this.baseUrl}/templates`, template);
+    const lastId = this.templates.map(t => t.id ?? 0).reduce((max, next) => max < next ? next : max);
+    if (template.id === undefined) template.id = lastId + 1;
+    this.templates.push(template);
+
+    return of(template);
+    /* return this.http.post<Template>(`${this.baseUrl}/templates`, template); */
   }
 
   public putTemplate(template: Template, templateId: number): Observable<Template> {
-    return this.http.put<Template>(`${this.baseUrl}/templates/${templateId}`, template)
+    
+    this.templates = this.templates.filter(t => t.id !== templateId);
+    this.templates.push(template);
+    
+    return of(template);
+    /* return this.http.put<Template>(`${this.baseUrl}/templates/${templateId}`, template) */
   }
 
   public calculateMaxRoundCount(contestantCount: number): number {
@@ -147,7 +174,7 @@ export class TemplateService {
     }
   }
 
-  private templates = [
+  private demoTemplates = [
     {
       "templateName": "Best Star Wars movie ever!",
       "category": "movie",
