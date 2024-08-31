@@ -12,27 +12,7 @@ export class ContestantService {
   private baseUrl: string = "http://localhost:3000";
   private templateNamesInDatabase = new BehaviorSubject<string[]>([]);
 
-  constructor(private http: HttpClient) {
-    this.fetchTemplateNames(); // need to change
-  }
-
-  private fetchTemplateNames(): void {
-    this.http.get<Template[]>(`${this.baseUrl}/templates`)
-      .pipe<string[]>(
-        map(templates => {
-          const templatesNames = templates.map(template =>
-            template.templateName.toLocaleLowerCase())
-          return templatesNames;
-        })
-      ).subscribe({
-        next: templateNames => {
-          this.templateNamesInDatabase.next(templateNames);
-        },
-        error: () => {
-          console.log('error');
-        }
-      })
-  }
+  constructor(private http: HttpClient) { }
 
   public checkTemplateNameExists(templateName: string): Observable<boolean> {
     const normalizedTemplateName = templateName.trim().toLocaleLowerCase().replace(/\s+/g, ' ');
