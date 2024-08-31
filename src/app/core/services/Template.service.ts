@@ -38,7 +38,7 @@ export class TemplateService {
 
   public getPopularTemplates(): Observable<Template[]> {
 
-    const popularTemplates = this.templates.slice().sort((a, b) => b.timesPlayed! - a.timesPlayed!).slice(0, 6);
+    const popularTemplates = this.templates.slice().sort((a, b) => (b.timesPlayed ?? 0) - (a.timesPlayed ?? 0)).slice(0, 6);
     if (popularTemplates.length == 0) {
       return throwError(() => new Error('No templates created yet'));
     }
