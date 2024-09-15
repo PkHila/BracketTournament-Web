@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Contestant, Template } from '../interfaces';
 import { Observable, of, map, throwError } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+/* import { HttpClient } from '@angular/common/http'; */
+import { NgxIndexedDBService } from 'ngx-indexed-db';
 import { Categories, LocaleCategories } from '../categories.enum';
 
 @Injectable({
@@ -10,39 +11,53 @@ import { Categories, LocaleCategories } from '../categories.enum';
 export class TemplateService {
 
   /* private baseUrl: string = "http://localhost:3000"; */
-  private templates: Template[];
+  /* private templates: Template[]; */
 
-  constructor(private http: HttpClient) {
-    /* const templateNames = localStorage.getItem('templateNames');
-    if (templateNames) {
-
-    } */
-    this.templates = this.demoTemplates.map(t => {
-      const template: Template = {
-        id: t.id,
-        contestants: t.contestants,
-        templateName: t.templateName,
-        category: t.category,
-        timesPlayed: t.timesPlayed
-      }
-      // localStorage?
-      return template;
-    });
+  constructor(/* private http: HttpClient, */ private dbService: NgxIndexedDBService) {
+    dbService.count('templates').subscribe({
+      next: count => {
+        if (count == 0) {
+          const templates = this.demoTemplates.map(t => {
+            const template: Template = {
+              id: t.id,
+              contestants: t.contestants,
+              templateName: t.templateName,
+              category: t.category,
+              timesPlayed: t.timesPlayed
+            }
+            return template;
+          });
+          dbService.bulkAdd('templates', templates).subscribe({
+            next: (result) => { console.log(result) }
+          });
+        }
+      },
+      error: console.log
+    })
   }
 
   public getTemplates(): Observable<Template[]> {
-    
-    return of(this.templates);
+
+    return this.dbService.getAll<Template>('templates');
+    /* return of(this.templates); */
     /* return this.http.get<Template[]>(`${this.baseUrl}/templates`); */
   }
 
   public getPopularTemplates(): Observable<Template[]> {
 
-    const popularTemplates = this.templates.slice().sort((a, b) => (b.timesPlayed ?? 0) - (a.timesPlayed ?? 0)).slice(0, 6);
+    return this.dbService.getAll<Template>('templates').pipe(
+      map(templates => {
+        templates.sort((a, b) => (b.timesPlayed ?? 0) - (a.timesPlayed ?? 0));
+        return templates.slice(0, 6);
+      })
+    );
+
+    /* const popularTemplates = this.templates.slice().sort((a, b) => (b.timesPlayed ?? 0) - (a.timesPlayed ?? 0)).slice(0, 6);
     if (popularTemplates.length == 0) {
       return throwError(() => new Error('No templates created yet'));
     }
-    return of(JSON.parse(JSON.stringify(popularTemplates)));
+    return of(JSON.parse(JSON.stringify(popularTemplates))); */
+
     /* return this.http.get<Template[]>(`${this.baseUrl}/templates`).pipe(
       map(templates => {
         templates.sort((a, b) => b.timesPlayed! - a.timesPlayed!);
@@ -53,11 +68,15 @@ export class TemplateService {
 
   public getTemplatesByCategory(category: string): Observable<Template[]> {
 
-    const templatesByCategory = this.templates.filter(template => template['category'] === category);
+    return this.dbService.getAllByIndex<Template>('templates', 'category', IDBKeyRange.only(category))
+      .pipe(map(templates => templates.sort((a, b) => (b.timesPlayed ?? 0) - (a.timesPlayed ?? 0))));
+
+    /* const templatesByCategory = this.templates.filter(template => template['category'] === category);
     if (templatesByCategory.length == 0) {
       return throwError(() => new Error('No templates created in that category'));
     }
-    return of(JSON.parse(JSON.stringify(templatesByCategory)));
+    return of(JSON.parse(JSON.stringify(templatesByCategory))); */
+
     /* return this.http.get<Template[]>(`${this.baseUrl}/templates?category=${category}`).pipe(
       map(response => {
         if (response.length === 0) {
@@ -71,13 +90,16 @@ export class TemplateService {
   }
 
   public getTemplateByName(templateName: string): Observable<Template> {
-    const templateByName = this.templates.find(template => template['templateName'] === templateName);
+
+    return this.dbService.getByIndex<Template>('templates', 'templateName', templateName);
+
+    /* const templateByName = this.templates.find(template => template['templateName'] === templateName);
 
     if (templateByName) {
       return of(JSON.parse(JSON.stringify(templateByName)));
     }
-    return throwError(() => new Error('No template with such name'));
-    
+    return throwError(() => new Error('No template with such name')); */
+
     /* return this.http.get<Template[]>(`${this.baseUrl}/templates?templateName=${templateName}`).pipe(
       map(response => {
         if (response.length === 1) {
@@ -91,20 +113,22 @@ export class TemplateService {
   }
 
   public postTemplate(template: Template): Observable<Template> {
-    const lastId = this.templates.map(t => t.id ?? 0).reduce((max, next) => max < next ? next : max);
+    /* const lastId = this.templates.map(t => t.id ?? 0).reduce((max, next) => max < next ? next : max);
     if (template.id === undefined) template.id = lastId + 1;
-    this.templates.push(template);
+    this.templates.push(template); */
 
-    return of(template);
+
+    return this.dbService.add('templates', template);
     /* return this.http.post<Template>(`${this.baseUrl}/templates`, template); */
   }
 
   public putTemplate(template: Template, templateId: number): Observable<Template> {
-    
-    this.templates = this.templates.filter(t => t.id !== templateId);
+
+    return this.dbService.update('templates', template);
+    /* this.templates = this.templates.filter(t => t.id !== templateId);
     this.templates.push(template);
-    
-    return of(template);
+
+    return of(template); */
     /* return this.http.put<Template>(`${this.baseUrl}/templates/${templateId}`, template) */
   }
 

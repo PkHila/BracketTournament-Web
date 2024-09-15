@@ -79,7 +79,7 @@ export class CreateTemplatePageComponent {
         this.noResultsFound = true;
         this.contestants = [];
       }
-    })
+    });
   }
 
   public createTemplate(templateName: string) {
@@ -88,14 +88,13 @@ export class CreateTemplatePageComponent {
       templateName: templateName.trim().replace(/\s+/g, ' '),
       category: this.category,
       contestants: this.selectedContestants
-    }
+    };
     this.templateService.postTemplate(template).subscribe({
-      next: resp => {
-        //console.log('agregado con exito');
-        this.router.navigate([`view-template/${template.templateName}`]);
+      next: (t) => {
+        this.router.navigate([`view-template/${t.templateName}`]);
       },
-      error: () => {
-        console.log('error');
+      error: (e) => {
+        console.log('error:', e);
       }
     });
   }
