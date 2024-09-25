@@ -43,7 +43,7 @@ export class LastFMApiService implements ApiService {
     if (source) {
       return source;
     } else {
-      return "/assets/img_not_found.png";
+      return "assets/img_not_found.png";
     }
   }
 

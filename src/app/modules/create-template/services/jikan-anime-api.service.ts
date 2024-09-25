@@ -18,7 +18,7 @@ export class JikanAnimeApiService implements ApiService {
       return source;
     }
     else {
-      return "/assets/img_not_found.png";
+      return "assets/img_not_found.png";
     }
   }
 
