@@ -28,12 +28,14 @@ export class TemplateService {
             return template;
           });
           dbService.bulkAdd('templates', templates).subscribe({
-            next: (result) => { console.log(result) }
+            next: (result) => { console.log(result) } // considerar retry de la landing page
           });
         }
       },
       error: console.log
     })
+   /* dbService.clear('templates').subscribe(console.log); */
+   /* dbService.getAll('templates').subscribe(console.log); */
   }
 
   public getTemplates(): Observable<Template[]> {
@@ -90,7 +92,6 @@ export class TemplateService {
   }
 
   public getTemplateByName(templateName: string): Observable<Template> {
-
     return this.dbService.getByIndex<Template>('templates', 'templateName', templateName);
 
     /* const templateByName = this.templates.find(template => template['templateName'] === templateName);
@@ -130,6 +131,13 @@ export class TemplateService {
 
     return of(template); */
     /* return this.http.put<Template>(`${this.baseUrl}/templates/${templateId}`, template) */
+  }
+
+  public checkTemplateNameExists(templateName: string): Observable<boolean> {
+    return this.getTemplateByName(templateName)
+      .pipe(map(t => {
+        return !!t;
+      }));
   }
 
   public calculateMaxRoundCount(contestantCount: number): number {
