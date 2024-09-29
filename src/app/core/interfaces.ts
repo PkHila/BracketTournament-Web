@@ -15,6 +15,7 @@ export interface Template {
     contestants?: Array<Contestant>;
     contestantIds?: Array<number>;
     templateName: string;
+    normalizedTemplateName?: string;
     category: string;
     coverImg?: string;
     timesPlayed?: number;

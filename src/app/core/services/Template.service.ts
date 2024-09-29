@@ -22,6 +22,7 @@ export class TemplateService {
               id: t.id,
               contestants: t.contestants,
               templateName: t.templateName,
+              /* normalizedTemplateName: this.normalizeTemplateName(t.templateName), */
               category: t.category,
               timesPlayed: t.timesPlayed
             }
@@ -34,8 +35,8 @@ export class TemplateService {
       },
       error: console.log
     })
-   /* dbService.clear('templates').subscribe(console.log); */
-   /* dbService.getAll('templates').subscribe(console.log); */
+    /* dbService.clear('templates').subscribe(console.log); */
+    /* dbService.getAll('templates').subscribe(console.log); */
   }
 
   public getTemplates(): Observable<Template[]> {
@@ -118,7 +119,7 @@ export class TemplateService {
     if (template.id === undefined) template.id = lastId + 1;
     this.templates.push(template); */
 
-
+    template.normalizedTemplateName = this.normalizeTemplateName(template.templateName);
     return this.dbService.add('templates', template);
     /* return this.http.post<Template>(`${this.baseUrl}/templates`, template); */
   }
@@ -133,11 +134,23 @@ export class TemplateService {
     /* return this.http.put<Template>(`${this.baseUrl}/templates/${templateId}`, template) */
   }
 
+  /* public deleteTemplate(templateName: string): Observable<boolean> {
+    return this.dbService.deleteByKey('templates', this.normalizeTemplateName(templateName));
+  } */
+
+  private normalizeTemplateName(templateName: string): string {
+    return templateName.trim().toLocaleLowerCase().replace(/\s+/g, '-')/* .replace(/[^a-z0-9-]/g, '') */;
+  }
+
   public checkTemplateNameExists(templateName: string): Observable<boolean> {
-    return this.getTemplateByName(templateName)
-      .pipe(map(t => {
-        return !!t;
-      }));
+    return this.getTemplates()
+      .pipe(
+        map(templates => {
+          return templates.some(
+            t => this.normalizeTemplateName(t.templateName) === this.normalizeTemplateName(templateName)
+          )
+        })
+      )
   }
 
   public calculateMaxRoundCount(contestantCount: number): number {

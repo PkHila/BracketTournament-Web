@@ -15,6 +15,7 @@ const dbConfig: DBConfig = {
     storeConfig: { keyPath: 'id', autoIncrement: true },
     storeSchema: [
       { name: 'templateName', keypath: 'templateName', options: { unique: true, index: true } },
+      /* { name: 'normalizedTemplateName', keypath: 'normalizedTemplateName', options: { unique: true, index: true } }, */
       { name: 'category', keypath: 'category', options: { unique: false, index: true } },
       { name: 'timesPlayed', keypath: 'timesPlayed', options: { unique: false } },
       { name: 'contestants', keypath: 'contestants', options: { unique: false } }
