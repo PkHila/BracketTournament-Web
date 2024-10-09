@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LastFMApiService implements ApiService {
 
-  private baseUrl = "http://ws.audioscrobbler.com/2.0";
+  private baseUrl = "https://ws.audioscrobbler.com/2.0";
 
   constructor(private http: HttpClient) { }
 
@@ -43,7 +43,7 @@ export class LastFMApiService implements ApiService {
     if (source) {
       return source;
     } else {
-      return "/assets/img_not_found.png";
+      return "assets/img_not_found.png";
     }
   }
 

@@ -8,6 +8,7 @@ const routes: Routes = [
   {
     path: ':templateName',
     component: ViewTemplatePageComponent,
+    canActivate: [tournamentGuard],
     loadChildren: () => import("../play-tournament/play-tournament.module").then(m => m.PlayTournamentModule)
   },
   {

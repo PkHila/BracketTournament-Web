@@ -19,7 +19,7 @@ export class RawgIoApiService implements ApiService {
       return this.cropImageSize(source); //si existe, ya se retorna con la url modificada
     }
     else {
-      return "/assets/img_not_found.png";
+      return "assets/img_not_found.png";
     }
   }
 

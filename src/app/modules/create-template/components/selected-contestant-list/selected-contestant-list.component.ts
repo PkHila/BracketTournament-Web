@@ -20,6 +20,8 @@ export class SelectedContestantListComponent{
   public posibleFreebiesCount = -1;
   public powerOfTwo: boolean = true;
 
+  constructor(private formBuilder: FormBuilder/* , private contestantService: ContestantService */, private templateService: TemplateService) { }
+
   public calculatePosibleRounds(): number{
     return this.templateService.calculateMaxRoundCount(this.selectedContestants.length);
   }
@@ -37,10 +39,8 @@ export class SelectedContestantListComponent{
   }
 
   public form = this.formBuilder.group({
-    templateName: ['', [Validators.required], [CustomValidators.templateNameExists(this.contestantService)]],
+    templateName: ['', [Validators.required], [CustomValidators.templateNameExists(this.templateService)]],
   })
-
-  constructor(private formBuilder: FormBuilder, private contestantService: ContestantService, private templateService: TemplateService) { }
 
   public isSubmitEnabled(): boolean {
     return this.selectedContestants.length >= 4 && this.form.valid
